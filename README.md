@@ -4,7 +4,6 @@
 
 
 ![Ubuntu OS](https://img.shields.io/badge/Ubuntu%20OS-24.04-green?style=flat&logo=ubuntu)
-[![Omakub](https://img.shields.io/badge/Omakub-1.1.0-blue?style=flat&link=https://github.com/basecamp/omakub)](https://github.com/basecamp/omakub)
 ![Version](https://img.shields.io/badge/Version-0.0.1alpha-blue?style=flat)
 
 
