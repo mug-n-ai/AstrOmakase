@@ -5,3 +5,11 @@ wget -O anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-
 bash anaconda.sh
 rm anaconda.sh
 cd -
+
+export PATH="$HOME/anaconda3/bin:$PATH"
+
+conda update -n base -c defaults conda -y
+
+conda install -n base numpy pandas matplotlib scipy astropy jupyter -y
+
+echo "Anaconda installed and set."
