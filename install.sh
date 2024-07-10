@@ -33,14 +33,26 @@ for installer in $INSTALL_DIR/install/*.sh; do source $installer; done
 echo "Please select the optional software you want to install:"
 
 # Define the options and corresponding script names
-OPTIONAL_APPS=("Zoom" "Dropbox" "Discord" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Teams")
-OPTIONAL_SCRIPTS=("app-zoom" "app-dropbox" "app-discord" "app-franz" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-teams")
+OPTIONAL_APPS=("Zoom" "Dropbox" "Discord" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Teams" "Upscayl")
+OPTIONAL_SCRIPTS=("app-zoom" "app-dropbox" "app-discord" "app-franz" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-teams" "app-upscayl")
+
+# Inform the user about the default behavior
+echo "Please select the applications you want to install. If you press Enter without selecting any, all applications will be installed by default."
 
 # Use Gum to present the options and get user input
 SELECTED_APPS=$(gum choose --no-limit "${OPTIONAL_APPS[@]}")
 
+# Check if the user made a selection
+if [ -z "$SELECTED_APPS" ]; then
+    # No selection made, use all apps by default
+    SELECTED_APPS=("${OPTIONAL_APPS[@]}")
+else
+    # Convert the space-separated string to an array
+    SELECTED_APPS=($SELECTED_APPS)
+fi
+
 # Install the selected optional software
-for app in $SELECTED_APPS; do
+for app in "${SELECTED_APPS[@]}"; do
     # Find the index of the selected app
     for i in "${!OPTIONAL_APPS[@]}"; do
         if [[ "${OPTIONAL_APPS[$i]}" == "$app" ]]; then
@@ -49,6 +61,12 @@ for app in $SELECTED_APPS; do
         fi
     done
 done
+
+# Set the wallpaper for GNOME
+if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
+    gsettings set org.gnome.desktop.background picture-uri "icons/wallpaper.png"
+    gsettings set org.gnome.desktop.background picture-options "scaled"
+fi
 
 
 echo "AstrOmakub installation and customization complete!"
