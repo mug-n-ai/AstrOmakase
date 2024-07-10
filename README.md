@@ -8,7 +8,7 @@
 
 
 
-**AstrOmakub** is a research and astronomy-oriented version optimized for the Omakib project for astronomers and astrophysicists. The project enhances the original Omakub setup with additional tools and configurations relevant to astronomy,
+**AstrOmakub** is a research and astronomy-oriented version optimized for the [Omakub project](https://github.com/basecamp/omakub) for astronomers and astrophysicists. The project enhances the original Omakub setup with additional tools and configurations relevant to astronomy,
 
 Watch the introduction video and read the documentation for Omakub at [omakub.org](https://omakub.org).
 
