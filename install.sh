@@ -19,17 +19,34 @@ echo "=> AstrOmakub is for fresh Ubuntu 24.04 installations only!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
 
-# Step 1: Install Omakub
+# Install Omakub
 echo "Installing Omakub..."
 mkdir -p $INSTALL_DIR
 cd $INSTALL_DIR
 wget -qO- https://omakub.org/install | bash
 
-# Step 2: Install additional tools
+OMAKUB_DIR="~/.local/share/omakub"
+
+# Uninstall un-needed Omakub software
+echo "removing un-needed tools"
+TO_REMOVE_APP= ("1password" "audacity" "ollama" "pinta" "signal" "spotify" "steam" "web" "rubymine")
+for app in "${TO_REMOVE_APP[@]}"; do
+    echo "Uninstalling ${app}..."
+    source "$OMAKUB_DIR/uninstall/app-${app}.sh"
+done
+echo "Uninstalling webdev languages:"
+echo "Uninstalling php..."
+source "$OMAKUB_DIR/uninstall/php.sh"
+echo "Uninstalling rust..."
+source "$OMAKUB_DIR/uninstall/rust.sh"
+
+
+
+# Install additional tools
 echo "Installing additional tools..."
 for installer in $INSTALL_DIR/install/*.sh; do source $installer; done
 
-# Step 3: Ask the user which optional software to install
+# Ask the user which optional software to install
 echo "Please select the optional software you want to install:"
 
 # Define the options and corresponding script names
