@@ -1,6 +1,6 @@
 ### AstrOmakub
 
-<img src="icons/AstrOmakub.png" alt="icons/AstrOmakub.png" width="200"/>
+<img src="content/icon.png" alt="content/icon.png" width="200"/>
 
 
 ![Ubuntu OS](https://img.shields.io/badge/Ubuntu%20OS-24.04-green?style=flat&logo=ubuntu)

@@ -64,7 +64,7 @@ done
 
 # Set the wallpaper for GNOME
 if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
-    gsettings set org.gnome.desktop.background picture-uri "icons/wallpaper.png"
+    gsettings set org.gnome.desktop.background picture-uri "content/wallpaper.jpg"
     gsettings set org.gnome.desktop.background picture-options "scaled"
 fi
 
