@@ -21,8 +21,16 @@ else
     print_success "Flatpak is already installed."
 fi
 
+echo "Adding Flathub repository to Flatpak..."
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+if [ $? -ne 0 ]; then
+    print_error "Failed to add Flathub repository. Exiting."
+    exit 1
+fi
+print_success "Flathub repository added successfully."
+
 echo "Installing Upscayl via Flatpak..."
-flatpak install -y flathub com.github.linuxguy123.Upscayl
+flatpak install flathub org.upscayl.Upscayl
 if [ $? -ne 0 ]; then
     print_error "Failed to install Upscayl via Flatpak. Exiting."
     exit 1
