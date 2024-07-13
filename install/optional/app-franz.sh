@@ -1,9 +1,9 @@
-# Funzione per stampare messaggi di errore
+# Function to print error messages
 print_error() {
     echo "[ERROR] $1" >&2
 }
 
-# Funzione per stampare messaggi di successo
+# Function to print success messages
 print_success() {
     echo "[SUCCESS] $1"
 }
@@ -18,7 +18,7 @@ fi
 echo "Fetching the latest Franz release download link..."
 LATEST_FRANZ_URL=$(curl -s https://api.github.com/repos/meetfranz/franz/releases/latest | grep "browser_download_url.*amd64.deb" | cut -d '"' -f 4)
 if [ -z "$LATEST_FRANZ_URL" ]; then
-    echo "Unable to fetch the latest Franz release download link. Exiting."
+    print_error "Unable to fetch the latest Franz release download link. Exiting."
     exit 1
 fi
 
@@ -36,7 +36,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Rimuovere il file .deb scaricato
+# Remove the downloaded .deb file
 echo "Cleaning up..."
 rm /tmp/franz.deb
 if [ $? -ne 0 ]; then
@@ -46,5 +46,3 @@ else
 fi
 
 print_success "Franz installation script completed successfully."
-
-
