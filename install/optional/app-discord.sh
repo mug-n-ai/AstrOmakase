@@ -1,7 +1,39 @@
+# Function to print error messages
+print_error() {
+    echo "[ERROR] $1" >&2
+}
 
-cd /tmp
-wget -O discord.deb https://discord.com/api/download?platform=linux&format=deb
+# Function to print success messages
+print_success() {
+    echo "[SUCCESS] $1"
+}
 
-sudo apt install -y ./discord.deb
-rm discord.deb
-cd -
+echo "Checking for Snap installation..."
+if ! command -v snap &> /dev/null; then
+    echo "Snap is not installed. Installing Snap..."
+    sudo apt update
+    sudo apt install -y snapd
+    if [ $? -ne 0 ]; then
+        print_error "Failed to install Snap. Exiting."
+        exit 1
+    fi
+    print_success "Snap installed successfully."
+else
+    print_success "Snap is already installed."
+fi
+
+echo "Ensuring Snapd is enabled and started..."
+sudo systemctl enable --now snapd
+if [ $? -ne 0 ]; then
+    print_error "Failed to enable/start Snapd. Exiting."
+    exit 1
+fi
+print_success "Snapd is enabled and started."
+
+echo "Installing Discord via Snap..."
+sudo snap install discord
+if [ $? -ne 0 ]; then
+    print_error "Failed to install Discord via Snap. Exiting."
+    exit 1
+fi
+print_success "Discord installed successfully via Snap."
