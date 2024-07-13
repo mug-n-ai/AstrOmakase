@@ -4,7 +4,7 @@
 
 
 ![Ubuntu OS](https://img.shields.io/badge/Ubuntu%20OS-24.04-green?style=flat&logo=ubuntu)
-![Version](https://img.shields.io/badge/Version-0.0.1alpha-blue?style=flat)
+![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=flat)
 
 
 
