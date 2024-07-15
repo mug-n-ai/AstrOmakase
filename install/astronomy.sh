@@ -24,13 +24,6 @@ if [ $? -ne 0 ]; then
 fi
 print_success "Stellarium installed successfully."
 
-echo "Installing HDFCompass..."
-sudo apt install -y hdfcompass
-if [ $? -ne 0 ]; then
-    print_error "Failed to install HDFCompass. Exiting."
-    exit 1
-fi
-print_success "HDFCompass installed successfully."
 
 echo "Installing Zotero..."
 curl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash

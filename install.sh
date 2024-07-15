@@ -3,7 +3,7 @@
 set -e
 
 # Define installation directory
-INSTALL_DIR="."
+INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 
 ascii_art='   _____            __         ________                  __        ___.    
@@ -19,27 +19,29 @@ echo "=> AstrOmakub is for fresh Ubuntu 24.04 installations only!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
 
-# Install Omakub
-echo "Installing Omakub..."
-mkdir -p $INSTALL_DIR
-cd $INSTALL_DIR
-wget -qO- https://omakub.org/install | bash
+OMAKUB_DIR="$HOME/.local/share/omakub"
 
-OMAKUB_DIR="~/.local/share/omakub"
+if [ ! -d "$OMAKUB_DIR" ]; then
+    echo "The default omakub directory was not found."
+    echo "Please check if the package is installed."
+    read -p "Do you want to proceed anyway? (y/n): " response
+
+    if [[ "$response" != "y" && "$response" != "Y" ]]; then
+        echo "Operation cancelled by the user."
+        exit 1
+    fi
+fi
+
 
 # Uninstall un-needed Omakub software
-echo "removing un-needed tools"
-TO_REMOVE_APP= ("1password" "audacity" "ollama" "pinta" "signal" "spotify" "steam" "web" "rubymine")
+echo "Removing un-needed tools"
+TO_REMOVE_APP=("1password" "audacity" "ollama" "pinta" "signal" "spotify" "steam" "web" "rubymine")
 for app in "${TO_REMOVE_APP[@]}"; do
     echo "Uninstalling ${app}..."
-    source "$OMAKUB_DIR/uninstall/app-${app}.sh"
+    if ! source "$OMAKUB_DIR/uninstall/app-${app}.sh"; then
+        echo "Failed to uninstall ${app}. It might not be installed."
+    fi
 done
-echo "Uninstalling webdev languages:"
-echo "Uninstalling php..."
-source "$OMAKUB_DIR/uninstall/php.sh"
-echo "Uninstalling rust..."
-source "$OMAKUB_DIR/uninstall/rust.sh"
-
 
 
 # Install additional tools
@@ -79,9 +81,14 @@ for app in "${SELECTED_APPS[@]}"; do
     done
 done
 
+
+# Install additional tools
+echo "Setting environment..."
+for setter in $INSTALL_DIR/settings/*.sh; do source $setter; done
+
 # Set the wallpaper for GNOME
 if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
-    gsettings set org.gnome.desktop.background picture-uri "content/wallpaper.jpg"
+    gsettings set org.gnome.desktop.background picture-uri "$INSTALL_DIR/content/wallpaper.jpg"
     gsettings set org.gnome.desktop.background picture-options "scaled"
 fi
 

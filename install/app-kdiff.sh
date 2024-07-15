@@ -8,10 +8,10 @@ print_success() {
     echo "[SUCCESS] $1"
 }
 
-echo "Installing kdiff..."
-sudo apt install -y kdiff
+echo "Installing kdiff3..."
+sudo apt install -y kdiff3
 if [ $? -ne 0 ]; then
-    print_error "Failed to install kdiff. Exiting."
+    print_error "Failed to install kdiff3. Exiting."
     exit 1
 fi
-print_success "kdiff installed successfully."
+print_success "kdiff3 installed successfully."
