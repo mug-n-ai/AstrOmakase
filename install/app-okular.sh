@@ -1,12 +1,6 @@
-# Function to print error messages
-print_error() {
-    echo "[ERROR] $1" >&2
-}
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../common_functions.sh"  
 
-# Function to print success messages
-print_success() {
-    echo "[SUCCESS] $1"
-}
 
 echo "Installing okular..."
 sudo apt install -y okular

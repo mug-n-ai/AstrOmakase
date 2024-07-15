@@ -1,12 +1,6 @@
-# Function to print error messages
-print_error() {
-    echo "[ERROR] $1" >&2
-}
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../common_functions.sh"  
 
-# Function to print success messages
-print_success() {
-    echo "[SUCCESS] $1"
-}
 
 echo "Downloading PDFsam .deb package..."
 wget -O /tmp/pdfsam.deb https://github.com/torakiki/pdfsam/releases/download/v5.2.3/pdfsam_5.2.3-1_amd64.deb

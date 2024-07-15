@@ -1,14 +1,5 @@
-#!/bin/bash
-
-# Function to print error messages
-print_error() {
-    echo "[ERROR] $1" >&2 # Redirects the error message to stderr
-}
-
-# Function to print success messages
-print_success() {
-    echo "[SUCCESS] $1"
-}
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../../common_functions.sh" 
 
 # Fetch the latest version available on GitHub
 LATEST_VERSION=$(curl -s https://api.github.com/repos/hhannine/superpaper/releases/latest | grep "tag_name" | cut -d '"' -f 4)

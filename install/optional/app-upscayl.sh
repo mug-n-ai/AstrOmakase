@@ -1,12 +1,5 @@
-# Function to print error messages
-print_error() {
-    echo "[ERROR] $1" >&2
-}
-
-# Function to print success messages
-print_success() {
-    echo "[SUCCESS] $1"
-}
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../../common_functions.sh" 
 
 echo "Checking for Flatpak installation..."
 if ! command -v flatpak &> /dev/null; then
