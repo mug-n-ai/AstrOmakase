@@ -52,8 +52,8 @@ for installer in $INSTALL_DIR/install/*.sh; do source $installer; done
 echo "Please select the optional software you want to install:"
 
 # Define the options and corresponding script names
-OPTIONAL_APPS=("Zoom" "Dropbox" "Discord" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Teams" "Upscayl")
-OPTIONAL_SCRIPTS=("app-zoom" "app-dropbox" "app-discord" "app-franz" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-teams" "app-upscayl")
+OPTIONAL_APPS=("Discord" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Teams" "Upscayl")
+OPTIONAL_SCRIPTS=("app-discord" "app-franz" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-teams" "app-upscayl")
 
 # Inform the user about the default behavior
 echo "Please select the applications you want to install. If you press Enter without selecting any, all applications will be installed by default."
