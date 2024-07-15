@@ -1,5 +1,40 @@
+#!/bin/bash
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"  
+
+echo "Checking if Anaconda is already installed..."
+
+# Check if the Anaconda directory exists
+if [ -d "$HOME/anaconda3" ]; then
+    echo "Anaconda directory exists. Checking if 'conda' command is available..."
+    
+    # Check if the 'conda' command is available
+    if command -v conda &> /dev/null; then
+        print_success "Anaconda is already installed and 'conda' command is available. Exiting script."
+        exit 0
+    else
+        print_error "Anaconda directory exists, but 'conda' command is not found."
+        read -p "Do you want to attempt to repair the installation? (y/n): " response
+        if [[ "$response" =~ ^[Yy]$ ]]; then
+            echo "Attempting to repair the Anaconda installation by updating PATH..."
+            export PATH="$HOME/anaconda3/bin:$PATH"
+            # Add to .bashrc for permanence
+            echo 'export PATH="$HOME/anaconda3/bin:$PATH"' >> ~/.bashrc
+            source ~/.bashrc
+            if command -v conda &> /dev/null; then
+                print_success "'conda' command is now available. Exiting script."
+                exit 0
+            else
+                print_error "Failed to repair Anaconda installation. Exiting."
+                exit 1
+            fi
+        else
+            print_error "User chose not to repair the installation. Exiting."
+            exit 1
+        fi
+    fi
+fi
 
 echo "Installing required libraries..."
 sudo apt-get install -y libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
@@ -35,6 +70,9 @@ fi
 
 echo "Updating PATH environment variable..."
 export PATH="$HOME/anaconda3/bin:$PATH"
+# Add to .bashrc for permanence
+echo 'export PATH="$HOME/anaconda3/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
 if [ $? -ne 0 ]; then
     print_error "Failed to update PATH environment variable. Exiting."
     exit 1
@@ -56,5 +94,14 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 print_success "Common packages installed successfully."
+
+echo "Installing additional packages..."
+conda install -n base h5py tqdm photutils -y
+if [ $? -ne 0 ]; then
+    print_error "Failed to install common packages. Exiting."
+    exit 1
+fi
+print_success "Common packages installed successfully."
+
 
 echo "Anaconda installed and set up successfully."
