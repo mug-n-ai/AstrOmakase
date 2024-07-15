@@ -47,9 +47,18 @@ Also, compared to the standard Omakub setup, we removed some tools that are not 
 
 AstrOmakub simplifies the setup process, allowing you to focus on your research and development tasks without the hassle of configuring each tool manually.
 
+**Note**: AstrOmakub is based on Omakub, and it is up to the user to install Omakub before installing AstrOmakub.
+
+
+#### Step 1: Install Omakub
+
+
 Install **Omakub** first:
 
 ```wget -qO- https://omakub.org/install | bash```
+
+#### Step 2: Install AstrOmakub
+
 
 Just run the script below to install AstrOmakub on your Ubuntu 24.04 system:
 
