@@ -6,6 +6,13 @@ mkdir -p $APP_DIR
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../../common_functions.sh" 
 
+
+echo "Checking if scrcpy is installed..."
+if command_exists scrcpy; then
+    print_success "scrcpy is already installed. Skipping."
+    exit 0
+fi
+
 echo "Installing dependencies..."
 sudo apt install -y ffmpeg libsdl2-2.0-0 adb wget \
                  gcc git pkg-config meson ninja-build libsdl2-dev \

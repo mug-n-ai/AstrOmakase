@@ -18,6 +18,13 @@ echo -e "$ascii_art"
 echo "=> AstrOmakub is for fresh Ubuntu 24.04 installations only!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
+# Check if the running system is Ubuntu 24.04
+if ! lsb_release -d | grep -q "Ubuntu 24.04"; then
+    print_error "This script is designed for Ubuntu 24.04. Exiting."
+    exit 1
+fi
+
+
 
 if $RUNNING_GNOME; then
 	# Ensure computer doesn't go to sleep or lock while installing
@@ -109,6 +116,7 @@ echo "Please select the optional software you want to install:"
 
 # Install the selected optional software
 for app in "${SELECTED_APPS[@]}"; do
+
     # Find the index of the selected app
     for i in "${!OPTIONAL_APPS[@]}"; do
         if [[ "${OPTIONAL_APPS[$i]}" == "$app" ]]; then

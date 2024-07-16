@@ -10,18 +10,25 @@ fi
 print_success "SAO DS9, FITSVerify, and FTOOLS FV installed successfully."
 
 echo "Installing Stellarium..."
-sudo apt install -y stellarium
-if [ $? -ne 0 ]; then
-    print_error "Failed to install Stellarium. Exiting."
-    exit 1
+if command_exists stellarium; then
+    print_success "Stellarium is already installed. Skipping."
+else
+    sudo apt install -y stellarium
+    if [ $? -ne 0 ]; then
+        print_error "Failed to install Stellarium. Exiting."
+        exit 1
+    fi
+    print_success "Stellarium installed successfully."
 fi
-print_success "Stellarium installed successfully."
-
 
 echo "Installing Zotero..."
-curl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash
-if [ $? -ne 0 ]; then
-    print_error "Failed to install Zotero. Exiting."
-    exit 1
+if command_exists zotero; then
+    print_success "Zotero is already installed. Skipping."
+else
+    curl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash
+    if [ $? -ne 0 ]; then
+        print_error "Failed to install Zotero. Exiting."
+        exit 1
+    fi
+    print_success "Zotero installed successfully."
 fi
-print_success "Zotero installed successfully."

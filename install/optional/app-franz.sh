@@ -1,6 +1,13 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../../common_functions.sh" 
 
+
+echo "Checking if Franz is installed..."
+if command_exists franz; then
+    print_success "Franz is already installed. Skipping."
+    exit 0
+fi
+
 echo "Installing dependencies..."
 sudo apt install -y libx11-dev libxext-dev libxss-dev libxkbfile-dev
 if [ $? -ne 0 ]; then

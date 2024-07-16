@@ -1,6 +1,13 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../../common_functions.sh" 
 
+echo "Checking if NordVPN is installed..."
+if command_exists nordvpn; then
+    print_success "NordVPN is already installed. Skipping."
+    exit 0
+fi
+
+
 echo "Downloading NordVPN installation script..."
 wget -qO /tmp/nordvpn-install.sh https://downloads.nordcdn.com/apps/linux/install.sh
 if [ $? -ne 0 ]; then

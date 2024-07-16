@@ -2,7 +2,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
 echo "Checking if Zoom is already installed..."
-if command -v zoom &> /dev/null; then
+if command_exists zoom; then
     print_success "Zoom is already installed. Exiting script."
     exit 0
 fi

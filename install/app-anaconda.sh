@@ -10,7 +10,7 @@ if [ -d "$HOME/anaconda3" ]; then
     echo "Anaconda directory exists. Checking if 'conda' command is available..."
     
     # Check if the 'conda' command is available
-    if command -v conda &> /dev/null; then
+    if command_exists conda; then
         print_success "Anaconda is already installed and 'conda' command is available. Exiting script."
         exit 0
     else

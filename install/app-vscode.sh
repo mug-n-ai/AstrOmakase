@@ -2,7 +2,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
 echo "Checking if Visual Studio Code is already installed..."
-if command -v code &> /dev/null; then
+if command_exists code; then
     print_success "Visual Studio Code is already installed. Exiting script."
     exit 0
 fi
