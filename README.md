@@ -50,10 +50,10 @@ AstrOmakub simplifies the setup process, allowing you to focus on your research 
 **Note**: AstrOmakub is based on Omakub, and it is up to the user to install Omakub before installing AstrOmakub.
 
 
-#### Step 1: Install Omakub
+#### Step 1 (optional): Install Omakub
 
 
-Install **Omakub** first:
+For a better experience, we suggest to install **Omakub** first:
 
 ```wget -qO- https://omakub.org/install | bash```
 

@@ -18,11 +18,32 @@ echo -e "$ascii_art"
 echo "=> AstrOmakub is for fresh Ubuntu 24.04 installations only!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
+# Define the options and corresponding script names
+OPTIONAL_APPS=("Discord" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Teams" "Upscayl")
+OPTIONAL_SCRIPTS=("app-discord" "app-franz" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-teams" "app-upscayl")
+
+# Inform the user about the default behavior
+echo "Please select the optional applications you want to install. If you press Enter without selecting any, all applications will be installed by default."
+
+# Use Gum to present the options and get user input
+SELECTED_APPS=$(gum choose --no-limit "${OPTIONAL_APPS[@]}")
+
+# Check if the user made a selection
+if [ -z "$SELECTED_APPS" ]; then
+    # No selection made, use all apps by default
+    SELECTED_APPS=("${OPTIONAL_APPS[@]}")
+else
+    # Convert the space-separated string to an array
+    SELECTED_APPS=($SELECTED_APPS)
+fi
+
+
 
 OMAKUB_DIR="$HOME/.local/share/omakub"
 
 if [ ! -d "$OMAKUB_DIR" ]; then
     echo "The default omakub directory was not found."
+    echo "For a better experience we suggest to start from Omakub installation."
     echo "Please check if the package is installed."
     read -p "Do you want to proceed anyway? (y/n): " response
 
@@ -51,24 +72,6 @@ for installer in $INSTALL_DIR/install/*.sh; do source $installer; done
 # Ask the user which optional software to install
 echo "Please select the optional software you want to install:"
 
-# Define the options and corresponding script names
-OPTIONAL_APPS=("Discord" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Teams" "Upscayl")
-OPTIONAL_SCRIPTS=("app-discord" "app-franz" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-teams" "app-upscayl")
-
-# Inform the user about the default behavior
-echo "Please select the applications you want to install. If you press Enter without selecting any, all applications will be installed by default."
-
-# Use Gum to present the options and get user input
-SELECTED_APPS=$(gum choose --no-limit "${OPTIONAL_APPS[@]}")
-
-# Check if the user made a selection
-if [ -z "$SELECTED_APPS" ]; then
-    # No selection made, use all apps by default
-    SELECTED_APPS=("${OPTIONAL_APPS[@]}")
-else
-    # Convert the space-separated string to an array
-    SELECTED_APPS=($SELECTED_APPS)
-fi
 
 # Install the selected optional software
 for app in "${SELECTED_APPS[@]}"; do
