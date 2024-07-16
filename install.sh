@@ -4,7 +4,7 @@ set -e
 
 # Define installation directory
 INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
+source "$INSTALL_DIR/common_functions.sh"
 
 ascii_art='   _____            __         ________                  __        ___.    
   /  _  \   _______/  |________\_____  \   _____ _____  |  | ____ _\_ |__  
@@ -25,7 +25,6 @@ if ! lsb_release -d | grep -q "Ubuntu 24.04"; then
 fi
 
 
-
 if $RUNNING_GNOME; then
 	# Ensure computer doesn't go to sleep or lock while installing
 	gsettings set org.gnome.desktop.screensaver lock-enabled false
@@ -33,32 +32,6 @@ if $RUNNING_GNOME; then
 fi
 
 
-# Check if gum is installed
-if ! command -v gum &> /dev/null; then
-    echo "gum is not installed. Installing gum..."
-    
-    # Ensure snapd is installed
-    if ! command -v snap &> /dev/null; then
-        echo "snap is not installed. Installing snap..."
-        sudo apt update
-        sudo apt install -y snapd
-        if [ $? -ne 0 ]; then
-            print_error "Failed to install snap. Exiting."
-            exit 1
-        fi
-        print_success "snap installed successfully."
-    fi
-
-    # Install gum using snap
-    sudo snap install gum
-    if [ $? -ne 0 ]; then
-        print_error "Failed to install gum. Exiting."
-        exit 1
-    fi
-    print_success "gum installed successfully."
-else
-    print_success "gum is already installed."
-fi
 
 # Define the options and corresponding script names
 OPTIONAL_APPS=("Discord" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Teams" "Upscayl")
@@ -94,6 +67,10 @@ if [ ! -d "$OMAKUB_DIR" ]; then
     fi
 fi
 
+# Install installers first
+echo "Preparing installers tools..."
+source "$INSTALL_DIR/installers.sh"
+
 
 # Uninstall un-needed Omakub software
 echo "Removing un-needed tools"
@@ -105,13 +82,9 @@ for app in "${TO_REMOVE_APP[@]}"; do
     fi
 done
 
-
 # Install additional tools
-echo "Installing additional tools..."
+echo "Installing AstrOmakub tools..."
 for installer in $INSTALL_DIR/install/*.sh; do source $installer; done
-
-# Ask the user which optional software to install
-echo "Please select the optional software you want to install:"
 
 
 # Install the selected optional software

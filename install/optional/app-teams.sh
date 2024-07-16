@@ -1,6 +1,12 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../../common_functions.sh" 
 
+echo "Checking if Teams for Linux is installed..."
+if command_exists teams-for-linux; then
+    print_success "Teams for Linux is already installed. Skipping."
+    exit 0
+fi
+
 echo "Creating directory for apt keyrings..."
 sudo mkdir -p /etc/apt/keyrings
 if [ $? -ne 0 ]; then
