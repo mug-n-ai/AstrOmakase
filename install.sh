@@ -18,6 +18,41 @@ echo -e "$ascii_art"
 echo "=> AstrOmakub is for fresh Ubuntu 24.04 installations only!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
+
+if $RUNNING_GNOME; then
+	# Ensure computer doesn't go to sleep or lock while installing
+	gsettings set org.gnome.desktop.screensaver lock-enabled false
+	gsettings set org.gnome.desktop.session idle-delay 0
+fi
+
+
+# Check if gum is installed
+if ! command -v gum &> /dev/null; then
+    echo "gum is not installed. Installing gum..."
+    
+    # Ensure snapd is installed
+    if ! command -v snap &> /dev/null; then
+        echo "snap is not installed. Installing snap..."
+        sudo apt update
+        sudo apt install -y snapd
+        if [ $? -ne 0 ]; then
+            print_error "Failed to install snap. Exiting."
+            exit 1
+        fi
+        print_success "snap installed successfully."
+    fi
+
+    # Install gum using snap
+    sudo snap install gum
+    if [ $? -ne 0 ]; then
+        print_error "Failed to install gum. Exiting."
+        exit 1
+    fi
+    print_success "gum installed successfully."
+else
+    print_success "gum is already installed."
+fi
+
 # Define the options and corresponding script names
 OPTIONAL_APPS=("Discord" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Teams" "Upscayl")
 OPTIONAL_SCRIPTS=("app-discord" "app-franz" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-teams" "app-upscayl")
@@ -36,7 +71,6 @@ else
     # Convert the space-separated string to an array
     SELECTED_APPS=($SELECTED_APPS)
 fi
-
 
 
 OMAKUB_DIR="$HOME/.local/share/omakub"
@@ -83,6 +117,7 @@ for app in "${SELECTED_APPS[@]}"; do
         fi
     done
 done
+
 
 
 # Install additional tools
