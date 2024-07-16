@@ -6,16 +6,16 @@ set -e
 INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$INSTALL_DIR/common_functions.sh"
 
-ascii_art='   _____            __         ________                  __        ___.    
-  /  _  \   _______/  |________\_____  \   _____ _____  |  | ____ _\_ |__  
- /  /_\  \ /  ___/\   __\_  __ \/   |   \ /     \\__  \ |  |/ /  |  \ __ \ 
-/    |    \\___ \  |  |  |  | \/    |    \  Y Y  \/ __ \|    <|  |  / \_\ \
-\____|__  /____  > |__|  |__|  \_______  /__|_|  (____  /__|_ \____/|___  /
-        \/     \/                      \/      \/     \/     \/         \/ 
+ascii_art='  ___      _        _____                 _                  
+ / _ \    | |      |  _  |               | |                 
+/ /_\ \___| |_ _ __| | | |_ __ ___   __ _| | ____ _ ___  ___ 
+|  _  / __| __| '__| | | | '_ ` _ \ / _` | |/ / _` / __|/ _ \
+| | | \__ \ |_| |  \ \_/ / | | | | | (_| |   < (_| \__ \  __/
+\_| |_/___/\__|_|   \___/|_| |_| |_|\__,_|_|\_\__,_|___/\___|
 '
 
 echo -e "$ascii_art"
-echo "=> AstrOmakub is for fresh Ubuntu 24.04 installations only!"
+echo "=> AstrOmakase is for fresh Ubuntu 24.04 installations only!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
 # Check if the running system is Ubuntu 24.04
@@ -83,7 +83,7 @@ for app in "${TO_REMOVE_APP[@]}"; do
 done
 
 # Install additional tools
-echo "Installing AstrOmakub tools..."
+echo "Installing AstrOmakase tools..."
 for installer in $INSTALL_DIR/install/*.sh; do source $installer; done
 
 
@@ -112,4 +112,4 @@ if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
 fi
 
 
-echo "AstrOmakub installation and customization complete!"
+echo "AstrOmakase installation and customization complete!"
