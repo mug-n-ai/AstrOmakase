@@ -2,16 +2,19 @@
 
 <img src="content/icon.png" alt="content/icon.png" width="200"/>
 
-
 ![Ubuntu OS](https://img.shields.io/badge/Ubuntu%20OS-24.04-green?style=flat&logo=ubuntu)
 ![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=flat)
 
+**AstrOmakub** is a research and astronomy-oriented version optimized for the [Omakub project](https://github.com/basecamp/omakub), designed for astronomers and astrophysicists. The project enhances the original Omakub setup with additional tools and configurations relevant to astronomy.
+
+Similar to Omakub, the name AstrOmakub is derived from "astronomy" and the Japanese word "omakase," which means "I'll leave it up to you." In Japanese cuisine, omakase is a style of dining where the chef selects and prepares the meal, offering a curated and customized experience. Similarly, AstrOmakub provides a tailored setup optimized for astronomy research, allowing users to focus on their work without worrying about configuring each tool individually.
 
 
-**AstrOmakub** is a research and astronomy-oriented version optimized for the [Omakub project](https://github.com/basecamp/omakub) for astronomers and astrophysicists. The project enhances the original Omakub setup with additional tools and configurations relevant to astronomy,
+### Relation with Omakub
 
-Watch the introduction video and read the documentation for Omakub at [omakub.org](https://omakub.org).
+AstrOmakub is based on Omakub and can function with or without a prior installation of Omakub. However, for the best experience, it is recommended to install Omakub before proceeding with the installation of AstrOmakub.
 
+### Included Tools
 
 Here is a list of tools included in AstrOmakub that are added to the standard Omakub setup:
 
@@ -23,7 +26,7 @@ Here is a list of tools included in AstrOmakub that are added to the standard Om
 - **Franz**: A messaging app that combines multiple chat services into one application.
 - **GIMP**: GNU Image Manipulation Program, a versatile graphics editor.
 - **HDFCompass**: A tool for browsing and analyzing HDF5 data.
-- **Kdiff**: A diff and merge program for comparing files and directories.
+- **Kdiff3**: A diff and merge program for comparing files and directories.
 - **LaTeX Studio**: A comprehensive LaTeX editor for creating scientific documents.
 - **NordVPN**: A secure VPN service for protecting your online privacy.
 - **PDFsam**: A tool to split and merge PDF files.
@@ -41,25 +44,27 @@ Here is a list of tools included in AstrOmakub that are added to the standard Om
 - **Stellarium**: A planetarium software that shows exactly what you see when you look up at the stars.
 - **Zotero**: A reference management tool for organizing research papers and citations.
 
-Also, compared to the standard Omakub setup, we removed some tools that are not commonly used in the astronomy field, such as game emulators and media players.
+Additionally, compared to the standard Omakub setup, some tools that are not commonly used in the astronomy field, such as game emulators and media players, have been removed.
 
 ### Installation
 
 AstrOmakub simplifies the setup process, allowing you to focus on your research and development tasks without the hassle of configuring each tool manually.
 
-**Note**: AstrOmakub is based on Omakub, and it is up to the user to install Omakub before installing AstrOmakub.
-
+**Note:** AstrOmakub can be installed with or without Omakub. However, for the best experience, it is recommended to install Omakub first.
 
 #### Step 1 (optional): Install Omakub
 
+For a better experience, it is suggested to install **Omakub** first:
 
-For a better experience, we suggest to install **Omakub** first:
-
-```wget -qO- https://omakub.org/install | bash```
+```bash
+wget -qO- https://omakub.org/install | bash
+```
 
 #### Step 2: Install AstrOmakub
 
+Run the script below to install AstrOmakub on your Ubuntu 24.04 system:
 
-Just run the script below to install AstrOmakub on your Ubuntu 24.04 system:
-
-```bash install.sh```
+```bash
+bash install.sh
+```
+During the installation, if Omakub is not present, you will be prompted whether to proceed anyway.
