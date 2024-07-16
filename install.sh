@@ -120,7 +120,7 @@ done
 
 
 
-# Install additional tools
+# Settings the tools
 echo "Setting environment..."
 for setter in $INSTALL_DIR/settings/*.sh; do source $setter; done
 
