@@ -1,9 +1,11 @@
+#!/bin/bash
+
 source "$INSTALL_DIR/common_functions.sh"
 
 # Check if gum is installed
 if ! command_exists gum; then
     echo "gum is not installed. Installing gum..."
-    
+
     # Ensure snapd is installed
     if ! command_exists snap; then
         echo "snap is not installed. Installing snap..."

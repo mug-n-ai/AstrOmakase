@@ -1,5 +1,7 @@
+#!/bin/bash
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/../common_functions.sh"  
+source "$SCRIPT_DIR/../common_functions.sh"
 
 echo "Installing hdf-compass..."
 sudo apt install -y hdf-compass
@@ -8,4 +10,3 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 print_success "hdf-compass installed successfully."
-

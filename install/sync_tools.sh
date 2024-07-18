@@ -1,5 +1,7 @@
+#!/bin/bash
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/../common_functions.sh"  
+source "$SCRIPT_DIR/../common_functions.sh"
 
 
 echo "Installing sync tools..."
@@ -9,6 +11,3 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 print_success "sync tools installed successfully."
-
-
-

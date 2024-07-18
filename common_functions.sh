@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Function to print error messages
 print_error() {
     echo "[ERROR] $1" >&2

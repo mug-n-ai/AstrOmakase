@@ -1,5 +1,7 @@
+#!/bin/bash
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/../common_functions.sh"  
+source "$SCRIPT_DIR/../common_functions.sh"
 
 echo "Installing SAO DS9, FITSVerify, and FTOOLS FV..."
 sudo apt install -y saods9 fitsverify ftools-fv

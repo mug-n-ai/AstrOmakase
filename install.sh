@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # Exit immediately if a command exits with a non-zero status
 set -e
@@ -6,13 +7,7 @@ set -e
 INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$INSTALL_DIR/common_functions.sh"
 
-ascii_art='  ___      _        _____                 _                  
- / _ \    | |      |  _  |               | |                 
-/ /_\ \___| |_ _ __| | | |_ __ ___   __ _| | ____ _ ___  ___ 
-|  _  / __| __| '__| | | | '_ ` _ \ / _` | |/ / _` / __|/ _ \
-| | | \__ \ |_| |  \ \_/ / | | | | | (_| |   < (_| \__ \  __/
-\_| |_/___/\__|_|   \___/|_| |_| |_|\__,_|_|\_\__,_|___/\___|
-'
+ascii_art='AstrOmakase'
 
 echo -e "$ascii_art"
 echo "=> AstrOmakase is for fresh Ubuntu 24.04 installations only!"
@@ -34,8 +29,8 @@ fi
 
 
 # Define the options and corresponding script names
-OPTIONAL_APPS=("Discord" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Teams" "Upscayl")
-OPTIONAL_SCRIPTS=("app-discord" "app-franz" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-teams" "app-upscayl")
+OPTIONAL_APPS=("Discord" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Upscayl")
+OPTIONAL_SCRIPTS=("app-discord" "app-franz" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-upscayl")
 
 # Inform the user about the default behavior
 echo "Please select the optional applications you want to install. If you press Enter without selecting any, all applications will be installed by default."
@@ -106,10 +101,8 @@ echo "Setting environment..."
 for setter in $INSTALL_DIR/settings/*.sh; do source $setter; done
 
 # Set the wallpaper for GNOME
-if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
-    gsettings set org.gnome.desktop.background picture-uri "$INSTALL_DIR/content/wallpaper.jpg"
-    gsettings set org.gnome.desktop.background picture-options "scaled"
-fi
+gsettings set org.gnome.desktop.background picture-uri "$INSTALL_DIR/content/wallpaper.jpg"
+gsettings set org.gnome.desktop.background picture-options "scaled"
 
 
 echo "AstrOmakase installation and customization complete!"

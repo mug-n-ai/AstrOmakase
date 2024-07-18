@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Setting favorite apps for dock..."
 
 # Favorite apps for dock
