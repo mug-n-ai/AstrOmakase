@@ -15,7 +15,7 @@ sudo apt-get install -y git >/dev/null
 
 echo "Cloning stable AstrOmakase..."
 rm -rf ~/.local/share/astromakase
-git clone -b stable https://github.com/LorenzoMugnai/AstrOmakase.git ~/.local/share/astromakase >/dev/null
+git clone https://github.com/LorenzoMugnai/AstrOmakase.git ~/.local/share/astromakase >/dev/null
 
 echo "Installation starting..."
 source ~/.local/share/astromakase/install.sh

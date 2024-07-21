@@ -41,3 +41,5 @@ else
 	print_success "Google Chrome set as the default web browser."
 
 fi
+
+sudo apt-get install gnome-browser-connector
