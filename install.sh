@@ -12,8 +12,8 @@ source "$INSTALL_DIR/preinstall_checks.sh"
 
 
 # Define the options and corresponding script names
-OPTIONAL_APPS=("Brave" "Discord" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Upscayl")
-OPTIONAL_SCRIPTS=("app-brave" "app-discord" "app-franz" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-upscayl")
+OPTIONAL_APPS=("Brave"  "Dropbox" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Upscayl")
+OPTIONAL_SCRIPTS=("app-brave" "app-dropbox" "app-discord" "app-franz" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-upscayl")
 
 # Inform the user about the default behavior
 echo "Please select the optional applications you want to install. If you press Enter without selecting any, all applications will be installed by default."
