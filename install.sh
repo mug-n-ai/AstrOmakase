@@ -84,6 +84,9 @@ done
 echo "Setting environment..."
 for setter in $INSTALL_DIR/settings/*.sh; do source $setter; done
 
-
+if $RUNNING_GNOME; then
+	gsettings set org.gnome.desktop.screensaver lock-enabled true
+	gsettings set org.gnome.desktop.session idle-delay 300
+fi
 
 echo "AstrOmakase installation and customization complete!"
