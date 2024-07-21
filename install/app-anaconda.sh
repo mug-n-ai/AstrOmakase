@@ -71,6 +71,9 @@ if ! [ -d "$HOME/anaconda3" ]; then
 	fi
 	print_success "PATH environment variable updated."
 
+	echo "initialising Conda..."
+	conda init
+
 fi
 echo "Updating Conda..."
 conda update -n base -c defaults conda -y
