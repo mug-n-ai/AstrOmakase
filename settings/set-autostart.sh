@@ -7,7 +7,6 @@ startup_apps=(
     "franz.desktop"
     "slack.desktop"
     "dropbox.desktop"
-    "nordvpn.desktop"
 )
 
 # Directory where .desktop files are typically stored

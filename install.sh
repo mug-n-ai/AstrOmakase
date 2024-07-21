@@ -7,12 +7,6 @@ set -e
 INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$INSTALL_DIR/common_functions.sh"
 
-ascii_art='AstrOmakase'
-
-echo -e "$ascii_art"
-echo "=> AstrOmakase is for fresh Ubuntu 24.04 installations only!"
-echo -e "\nBegin installation (or abort with ctrl+c)..."
-
 # Check if the running system is Ubuntu 24.04
 if ! lsb_release -d | grep -q "Ubuntu 24.04"; then
     print_error "This script is designed for Ubuntu 24.04. Exiting."
@@ -29,8 +23,8 @@ fi
 
 
 # Define the options and corresponding script names
-OPTIONAL_APPS=("Discord" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Upscayl")
-OPTIONAL_SCRIPTS=("app-discord" "app-franz" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-upscayl")
+OPTIONAL_APPS=("Brave" "Discord" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Upscayl")
+OPTIONAL_SCRIPTS=("app-brave" "app-discord" "app-franz" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-upscayl")
 
 # Inform the user about the default behavior
 echo "Please select the optional applications you want to install. If you press Enter without selecting any, all applications will be installed by default."
@@ -63,19 +57,9 @@ if [ ! -d "$OMAKUB_DIR" ]; then
 fi
 
 # Install installers first
-echo "Preparing installers tools..."
-source "$INSTALL_DIR/installers.sh"
+echo "Preparing required tools..."
+source "$INSTALL_DIR/required.sh"
 
-
-# Uninstall un-needed Omakub software
-echo "Removing un-needed tools"
-TO_REMOVE_APP=("1password" "audacity" "ollama" "pinta" "signal" "spotify" "steam" "web" "rubymine")
-for app in "${TO_REMOVE_APP[@]}"; do
-    echo "Uninstalling ${app}..."
-    if ! source "$OMAKUB_DIR/uninstall/app-${app}.sh"; then
-        echo "Failed to uninstall ${app}. It might not be installed."
-    fi
-done
 
 # Install additional tools
 echo "Installing AstrOmakase tools..."

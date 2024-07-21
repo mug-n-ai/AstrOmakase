@@ -5,6 +5,7 @@ echo "Setting favorite apps for dock..."
 # Favorite apps for dock
 apps=(
     "org.gnome.Nautilus.desktop"
+	"brave-browseer.desktop"
 	"google-chrome.desktop"
 	"Alacritty.desktop"
     "Neovim.desktop"
