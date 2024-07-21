@@ -84,9 +84,6 @@ done
 echo "Setting environment..."
 for setter in $INSTALL_DIR/settings/*.sh; do source $setter; done
 
-# Set the wallpaper for GNOME
-gsettings set org.gnome.desktop.background picture-uri "$INSTALL_DIR/content/wallpaper.jpg"
-gsettings set org.gnome.desktop.background picture-options "scaled"
 
 
 echo "AstrOmakase installation and customization complete!"

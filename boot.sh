@@ -19,3 +19,6 @@ git clone -b stable https://github.com/LorenzoMugnai/AstrOmakase.git ~/.local/sh
 
 echo "Installation starting..."
 source ~/.local/share/astromakase/install.sh
+
+# Logout to pickup changes
+gum confirm "Ready to logout for all settings to take effect?" && gnome-session-quit --logout --no-prompt
