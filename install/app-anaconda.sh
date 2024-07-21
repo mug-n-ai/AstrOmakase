@@ -84,7 +84,7 @@ fi
 print_success "Conda updated successfully."
 
 echo "Installing common packages..."
-conda install -n base numpy pandas matplotlib scipy astropy jupyter -y
+conda install -n base numpy pandas matplotlib scipy astropy jupyter pip -y
 if [ $? -ne 0 ]; then
     print_error "Failed to install common packages. Exiting."
     exit 1
@@ -98,6 +98,5 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 print_success "Common packages installed successfully."
-
 
 echo "Anaconda installed and set up successfully."
