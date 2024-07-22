@@ -17,12 +17,4 @@ else
 
 fi
 
-echo "Installing dbxfs..."
-pip3 install dbxfs
-if [ $? -ne 0 ]; then
-    print_error "Failed to install dbxfs. Exiting."
-    exit 1
-fi
-print_success "dbxfs installed successfully."
-
 echo "Dropbox setup completed successfully."
