@@ -7,6 +7,9 @@
 
 **AstrOmakase** is a research and astronomy-oriented version optimized for the [Omakub project](https://github.com/basecamp/omakub), designed for astronomers and astrophysicists. The project enhances the original Omakub setup with additional tools and configurations relevant to astronomy.
 
+AstrOmakase is an installer that helps users download all the packages useful for astronomical research. It includes all the packages that, according to the maintainers, are useful for Ubuntu. We invite the community to participate and enhance this package.
+
+
 Similar to Omakub, the name AstrOmakase is derived from "astronomy" and the Japanese word "omakase," which means "I'll leave it up to you." In Japanese cuisine, omakase is a style of dining where the chef selects and prepares the meal, offering a curated and customized experience. Similarly, AstrOmakase provides a tailored setup optimized for astronomy research, allowing users to focus on their work without worrying about configuring each tool individually.
 
 
@@ -14,7 +17,7 @@ Similar to Omakub, the name AstrOmakase is derived from "astronomy" and the Japa
 
 AstrOmakase is based on Omakub and can function with or without a prior installation of Omakub. However, for the best experience, it is recommended to install Omakub before proceeding with the installation of AstrOmakase.
 
-### Included Tools
+### The Menu
 
 Here is a list of tools included in AstrOmakase that are added to the standard Omakub setup:
 
