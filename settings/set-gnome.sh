@@ -28,3 +28,13 @@ else
     echo "Wallpaper file not found: $WALLPAPER"
     exit 1
 fi
+
+#install gnome extensions
+echo "Installing GNOME extensions..."
+echo "Installing IP finder extension..."
+# other extension are inclused in Omakub
+sudo apt install -y gnome-shell-extension-manager pipx
+pipx install gnome-extensions-cli --system-site-packages
+
+gext install 2983 #ip-finder
+print_success "IP finder extension installed"
