@@ -20,23 +20,20 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 
 #### General Tools
 
-- **Anaconda**: A powerful distribution for Python and R programming languages, widely used for scientific computing.
-- **Discord**: A communication platform for chat and voice, useful for collaborative projects.
-- **Dropbox**: Cloud storage service for easy file sharing and backup.
-- **Franz**: A messaging app that combines multiple chat services into one application.
+- **Anaconda**: A powerful distribution for Python and R programming languages, widely used for scientific computing. Anaconda includes popular data science libraries such as NumPy, SciPy, and Matplotlib.
+- **Chrome browser**: A fast, secure, and easy-to-use web browser.
 - **GIMP**: GNU Image Manipulation Program, a versatile graphics editor.
 - **HDFCompass**: A tool for browsing and analyzing HDF5 data.
 - **Kdiff3**: A diff and merge program for comparing files and directories.
-- **LaTeX Studio**: A comprehensive LaTeX editor for creating scientific documents.
-- **NordVPN**: A secure VPN service for protecting your online privacy.
+- **LibreOffice**: A powerful office suite for word processing, spreadsheets, presentations, and more.
+- **OBS Studio**: A free and open-source software for video recording and live streaming.
+- **Okular**: A document viewer for PDF, PostScript, DjVu, and other formats.
 - **PDFsam**: A tool to split and merge PDF files.
+- **Precommit**: A framework for managing and maintaining multi-language pre-commit hooks.
+- **Transmission**: A BitTorrent client for downloading files.
+- **VLC Media Player**: A versatile media player that can play most multimedia files and streaming protocols.
 - **rSync**: A utility for efficiently transferring and synchronizing files.
 - **rClone**: A command-line program to manage files on cloud storage.
-- **ScrCPy**: A screen mirroring application for Android devices.
-- **Slack**: A collaboration hub that connects teams.
-- **SuperPaper**: A multi-monitor wallpaper manager.
-- **Microsoft Teams**: A collaboration app that helps your team stay organized.
-- **Zoom**: A video conferencing tool for meetings and webinars.
 
 #### Astronomy Tools
 
@@ -45,6 +42,21 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 - **Zotero**: A reference management tool for organizing research papers and citations.
 
 Additionally, compared to the standard Omakub setup, some tools that are not commonly used in the astronomy field, such as game emulators and media players, have been removed.
+
+#### Optional Tools
+
+- **Brave Browser**: A privacy-focused web browser that blocks ads and trackers.
+- **Discord**: A communication platform for chat and voice, useful for collaborative projects.
+- **Dropbox**: Cloud storage service for easy file sharing and backup.
+- **Franz**: A messaging app that combines multiple chat services into one application.
+- **LaTeX Studio**: A comprehensive LaTeX editor for creating scientific documents.
+- **NordVPN**: A secure VPN service for protecting your online privacy.
+- **ScrCPy**: A screen mirroring application for Android devices.
+- **Slack**: A collaboration hub that connects teams.
+- **SuperPaper**: A multi-monitor wallpaper manager.
+- **Speedtest**: A tool for testing internet speed.
+- **Zoom**: A video conferencing tool for meetings and webinars.
+- **Upscayl**: A tool for upscaling images using AI.
 
 ### Installation
 
@@ -69,3 +81,12 @@ wget -qO- https://raw.githubusercontent.com/LorenzoMugnai/AstrOmakase/master/boo
 ```
 
 During the installation, if Omakub is not present, you will be prompted whether to proceed anyway.
+
+### Contributions
+We welcome contributions! To contribute, follow these steps:
+
+Fork the repository.
+Create a new branch for your feature (`git checkout -b feature/feature-name`).
+Commit your changes (`git commit -m 'Add feature'`).
+Push the branch (`git push origin feature/feature-name`).
+Open a Pull Request.
