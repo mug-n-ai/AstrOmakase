@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 cat <<EOF >~/.local/share/applications/AstrOmakase.desktop
 [Desktop Entry]
 Version=1.0
