@@ -31,7 +31,7 @@ AstrOmakase is built on the foundation of the Omakub project. It can function wi
 <div style="margin-bottom: 20px;"></div>
 
 <div class="centered-container">
-  <img src="assets/img/desktop.png" alt="AstrOmakase icon" width="700" class="centered-icon"/>
+  <img src="assets/img/desktop.png" alt="AstrOmakase icon" width="900" class="centered-icon"/>
 </div>
 
 <div style="margin-bottom: 20px;"></div>
