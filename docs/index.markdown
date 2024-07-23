@@ -77,7 +77,7 @@ For the best experience, it is recommended to install Omakub first:
 
 <div class="code-container">
   <pre><code>wget -qO- https://omakub.org/install | bash</code></pre>
-  <button class="copy-btn">Copy</button>
+  <i class="fas fa-copy copy-icon"></i>
 </div>
 
 ### Step 2: Install AstrOmakase
@@ -86,8 +86,9 @@ Install AstrOmakase on your Ubuntu 24.04 system with the following command:
 
 <div class="code-container">
   <pre><code>wget -qO- https://raw.githubusercontent.com/LorenzoMugnai/AstrOmakase/master/boot.sh | bash</code></pre>
-  <button class="copy-btn">Copy</button>
+  <i class="fas fa-copy copy-icon"></i>
 </div>
+
 
 ## Acknowledgments
 
