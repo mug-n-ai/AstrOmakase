@@ -2,8 +2,8 @@
 
 <img src="content/icon.png" alt="content/icon.png" width="200"/>
 
-![Ubuntu OS](https://img.shields.io/badge/Ubuntu%20OS-24.04-green?style=flat&logo=ubuntu)
-![Version](https://img.shields.io/badge/Version-0.1.0-blue?style=flat)
+<!-- ![Ubuntu OS](https://img.shields.io/badge/Ubuntu%20OS-24.04-green?style=flat&logo=ubuntu)
+![Version](https://img.shields.io/badge/Version-0.1.0-blue?style=flat) -->
 
 **AstrOmakase** is a research and astronomy-oriented version optimized for the [Omakub project](https://github.com/basecamp/omakub), designed for astronomers and astrophysicists. The project enhances the original Omakub setup with additional tools and configurations relevant to astronomy.
 
