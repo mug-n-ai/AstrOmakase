@@ -33,7 +33,7 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 - **Okular**: A document viewer for PDF, PostScript, DjVu, and other formats.
 - **PDFsam**: A tool to split and merge PDF files.
 - **Precommit**: A framework for managing and maintaining multi-language pre-commit hooks.
-- **Transmission**: A BitTorrent client for downloading files.
+- **qBTorrent**: A BitTorrent client for downloading files.
 - **VLC Media Player**: A versatile media player that can play most multimedia files and streaming protocols.
 - **rSync**: A utility for efficiently transferring and synchronizing files.
 - **rClone**: A command-line program to manage files on cloud storage.

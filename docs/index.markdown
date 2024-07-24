@@ -52,7 +52,7 @@ AstrOmakase comes packed with a range of tools that cater to both general and as
 - **Okular**: Document viewer supporting various formats.
 - **PDFsam**: Tool for splitting and merging PDF files.
 - **Precommit**: Framework for managing multi-language pre-commit hooks.
-- **Transmission**: BitTorrent client.
+- **qBTorrent**: BitTorrent client.
 - **VLC Media Player**: Versatile multimedia player.
 - **rSync**: Efficient file transfer and synchronization utility.
 - **rClone**: Manages files on cloud storage.
