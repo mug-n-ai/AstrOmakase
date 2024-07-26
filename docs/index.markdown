@@ -73,7 +73,7 @@ AstrOmakase simplifies the setup process, allowing you to focus on your research
 
 ### Step 1 (Optional): Install Omakub
 
-For the best experience, it is recommended to install Omakub first:
+For the best experience and specifically for code-oriented work, it is recommended to install Omakub first:
 
 <div class="code-container">
   <pre><code>wget -qO- https://omakub.org/install | bash</code></pre>
