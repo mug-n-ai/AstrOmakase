@@ -56,6 +56,7 @@ AstrOmakase comes packed with a range of tools that cater to both general and as
 - **VLC Media Player**: Versatile multimedia player.
 - **rSync**: Efficient file transfer and synchronization utility.
 - **rClone**: Manages files on cloud storage.
+- **Xournal++**: A PDF editor and note-taking application.
 
 ### Astronomy Tools
 
