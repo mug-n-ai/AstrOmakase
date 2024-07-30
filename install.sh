@@ -65,3 +65,5 @@ if $RUNNING_GNOME; then
 fi
 
 echo "AstrOmakase installation and customization complete!"
+
+gum confirm "Ready to logout for all settings to take effect?" && gnome-session-quit --logout --no-prompt
