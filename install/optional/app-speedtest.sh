@@ -23,9 +23,5 @@ if [ $? -ne 0 ]; then
     print_error "Failed to add Speedtest CLI repository. Exiting."
     exit 1
 fi
-sudo apt-get install -y speedtest-cli
-if [ $? -ne 0 ]; then
-    print_error "Failed to install Speedtest CLI. Exiting."
-    exit 1
-fi
-print_success "Speedtest CLI installed successfully."
+
+apt_install speedtest-cli

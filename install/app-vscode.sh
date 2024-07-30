@@ -17,13 +17,7 @@ else
 	fi
 	print_success "Visual Studio Code downloaded successfully."
 
-	echo "Installing Visual Studio Code..."
-	sudo apt install -y ./code.deb
-	if [ $? -ne 0 ]; then
-	    print_error "Failed to install Visual Studio Code. Exiting."
-	    exit 1
-	fi
-	print_success "Visual Studio Code installed successfully."
+	apt_install ./code.deb
 
 	echo "Removing temporary files..."
 	rm code.deb

@@ -29,12 +29,7 @@ else
 	    exit 1
 	fi
 
-	echo "Installing Franz..."
-	sudo apt install -y /tmp/franz.deb
-	if [ $? -ne 0 ]; then
-	    print_error "Failed to install Franz. Exiting."
-	    exit 1
-	fi
+	apt_install /tmp/franz.deb
 
 	# Remove the downloaded .deb file
 	echo "Cleaning up..."

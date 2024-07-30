@@ -15,13 +15,7 @@ else
 	fi
 	print_success "Zoom downloaded successfully."
 
-	echo "Installing Zoom..."
-	sudo apt install -y /tmp/zoom.deb
-	if [ $? -ne 0 ]; then
-	    print_error "Failed to install Zoom. Exiting."
-	    exit 1
-	fi
-	print_success "Zoom installed successfully."
+	 apt_install /tmp/zoom.deb
 
 	echo "Removing temporary files..."
 	rm /tmp/zoom.deb

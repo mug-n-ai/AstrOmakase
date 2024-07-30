@@ -17,13 +17,7 @@ else
     fi
     print_success "PDFsam .deb package downloaded successfully."
 
-    echo "Installing PDFsam..."
-    sudo apt install -y /tmp/pdfsam.deb
-    if [ $? -ne 0 ]; then
-        print_error "Failed to install PDFsam. Exiting."
-        exit 1
-    fi
-    print_success "PDFsam installed successfully."
+    apt_install /tmp/pdfsam.deb
 
     echo "Cleaning up..."
     rm /tmp/pdfsam.deb

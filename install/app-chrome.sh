@@ -16,13 +16,7 @@ else
 	fi
 	print_success "Google Chrome downloaded successfully."
 
-	echo "Installing Google Chrome..."
-	sudo apt install -y /tmp/chrome.deb
-	if [ $? -ne 0 ]; then
-	    print_error "Failed to install Google Chrome. Exiting."
-	    exit 1
-	fi
-	print_success "Google Chrome installed successfully."
+	apt_install /tmp/chrome.deb
 
 	echo "Removing temporary files..."
 	rm /tmp/chrome.deb
