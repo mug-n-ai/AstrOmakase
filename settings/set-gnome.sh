@@ -3,7 +3,7 @@
 echo "Setting GNOME wallpaper..."
 
 INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-WALLPAPER="$INSTALL_DIR/../content/wallpaper.jpg"
+WALLPAPER="$INSTALL_DIR/../content/wallpaper.png"
 
 # Check if the wallpaper file exists
 if [[ -f "$WALLPAPER" ]]; then
@@ -11,13 +11,13 @@ if [[ -f "$WALLPAPER" ]]; then
 
     # Set the wallpaper for GNOME
     gsettings set org.gnome.desktop.background picture-uri "file://$WALLPAPER"
-    gsettings set org.gnome.desktop.background picture-options "fit"
+    gsettings set org.gnome.desktop.background picture-options "zoom"
 
     # Verify the change
     CURRENT_WALLPAPER=$(gsettings get org.gnome.desktop.background picture-uri)
     CURRENT_OPTIONS=$(gsettings get org.gnome.desktop.background picture-options)
 
-    if [[ "$CURRENT_WALLPAPER" == "'file://$WALLPAPER'" && "$CURRENT_OPTIONS" == "'fit'" ]]; then
+    if [[ "$CURRENT_WALLPAPER" == "'file://$WALLPAPER'" && "$CURRENT_OPTIONS" == "'zoom'" ]]; then
         echo "Wallpaper successfully set to $WALLPAPER with fitted options."
     else
         echo "Failed to set wallpaper."
