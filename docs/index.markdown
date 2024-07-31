@@ -86,7 +86,7 @@ For the best experience and specifically for code-oriented work, it is recommend
 Install AstrOmakase on your Ubuntu 24.04 system with the following command:
 
 <div class="code-container">
-  <pre><code> wget -qO- https://lorenzomugnai.github.io/AstrOmakase/downloader.sh | bash</code></pre>
+  <pre><code> wget -qO- https://lorenzomugnai.github.io/AstrOmakase/installer.sh | bash</code></pre>
   <i class="fas fa-copy copy-icon"></i>
 </div>
 

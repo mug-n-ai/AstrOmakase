@@ -81,10 +81,10 @@ wget -qO- https://omakub.org/install | bash
 Run the script below to install AstrOmakase on your Ubuntu 24.04 system:
 
 ```bash
-wget -qO- https://lorenzomugnai.github.io/AstrOmakase/downloader.sh | bash
+wget -qO- https://lorenzomugnai.github.io/AstrOmakase/installer.sh | bash
 ```
 
-During the installation, if Omakub is not present, you will be prompted whether to proceed anyway.
+During the installation, if Omakub is not present, you installerwill be prompted whether to proceed anyway.
 
 ### Contributions
 We welcome contributions! To contribute, follow these steps:
