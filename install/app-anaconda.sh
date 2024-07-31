@@ -3,6 +3,30 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
+
+# Function to check and delete Python installations in Mise
+cleanup_mise_python() {
+    # Directory where Mise installs are located
+    MISE_INSTALLS_DIR="$HOME/.local/share/mise/installs/python"
+
+    # Check if the directory exists
+    if [ -d "$MISE_INSTALLS_DIR" ]; then
+        # Check if there are any Python installations
+        if [ "$(ls -A $MISE_INSTALLS_DIR)" ]; then
+            gum confirm "This will delete all Python installations in Mise to make Anaconda the default Python environment manager and avoid conflicts. Do you want to proceed?" && {
+                echo "Deleting Python installations in Mise..."
+                # Remove all Python installations
+                rm -rf "$MISE_INSTALLS_DIR"/*
+                echo "All Python installations have been deleted from Mise."
+            } || {
+                echo "Operation cancelled by the user."
+            }
+        fi
+    else
+        echo "Mise installs directory for Python does not exist."
+    fi
+}
+
 check_anaconda_installed() {
     echo "Checking if Anaconda is already installed..."
     if [ -d "$HOME/anaconda3" ]; then
@@ -126,6 +150,7 @@ install_additional_packages() {
 }
 
 main() {
+    cleanup_mise_python
     check_anaconda_installed
     update_conda
     install_common_packages
