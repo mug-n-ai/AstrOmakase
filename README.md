@@ -38,6 +38,7 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 - **rSync**: A utility for efficiently transferring and synchronizing files.
 - **rClone**: A command-line program to manage files on cloud storage.
 - **Xournal++**: A PDF editor and note-taking application.
+- **Zed**: A high-performance, multiplayer code editor .
 
 #### Astronomy Tools
 
