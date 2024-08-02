@@ -57,6 +57,7 @@ AstrOmakase comes packed with a range of tools that cater to both general and as
 - **rSync**: Efficient file transfer and synchronization utility.
 - **rClone**: Manages files on cloud storage.
 - **Xournal++**: A PDF editor and note-taking application.
+- **Zed**: A high-performance, multiplayer code editor.
 
 ### Astronomy Tools
 
