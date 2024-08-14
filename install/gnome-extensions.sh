@@ -31,10 +31,15 @@ else
     gext install undecorate@sun.wxg@gmail.com
 fi
 
+# remove Vitals extension if it is installed (by Omakub)
 if extension_installed "Vitals@CoreCoding.com"; then
-    print_success "Extension 'Vitals@CoreCoding.com' is already installed."
+    gext uninstall Vitals@CoreCoding.com
+fi
+
+if extension_installed "tophat@fflewddur.github.io"; then
+    print_success "Extension 'tophat@fflewddur.github.io' is already installed."
 else
-    gext install Vitals@CoreCoding.com
+    gext install tophat@fflewddur.github.io
 fi
 
 if extension_installed "AlphabeticalAppGrid@stuarthayhurst"; then
@@ -44,8 +49,8 @@ else
 fi
 
 # Compile gsettings schemas only if the extensions were installed
-if [ -f ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com/schemas/org.gnome.shell.extensions.vitals.gschema.xml ]; then
-    sudo cp ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com/schemas/org.gnome.shell.extensions.vitals.gschema.xml /usr/share/glib-2.0/schemas/
+if [ -f ~/.local/share/gnome-shell/extensions/tophat@fflewddur.github.io/schemas/org.gnome.shell.extensions.tophat.gschema.xml ]; then
+    sudo cp ~/.local/share/gnome-shell/extensions/tophat@fflewddur.github.io/schemas/org.gnome.shell.extensions.tophat.gschema.xml /usr/share/glib-2.0/schemas/
 fi
 
 if [ -f ~/.local/share/gnome-shell/extensions/AlphabeticalAppGrid@stuarthayhurst/schemas/org.gnome.shell.extensions.AlphabeticalAppGrid.gschema.xml ]; then
