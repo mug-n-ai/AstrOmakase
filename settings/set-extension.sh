@@ -3,11 +3,41 @@
 # enable Ubuntu AppIndicators
 gnome-extensions enable ubuntu-appindicators@ubuntu.com
 
-# Configure Vitals
-gsettings set org.gnome.shell.extensions.vitals hide-icons false
-gsettings set org.gnome.shell.extensions.vitals hot-sensors "['_processor_usage_', '_memory_usage_', '__temperature_avg__', '__network-rx_max__']"
-gsettings set org.gnome.shell.extensions.vitals icon-style 0
-gsettings set org.gnome.shell.extensions.vitals network-speed-format 1
+# Configure TopHat
+gsettings set org.gnome.shell.extensions.tophat show-icons true
+gsettings set org.gnome.shell.extensions.tophat show-cpu true
+gsettings set org.gnome.shell.extensions.tophat show-disk true
+gsettings set org.gnome.shell.extensions.tophat show-mem true
+gsettings set org.gnome.shell.extensions.tophat network-usage-unit bits
+
+# Set TopHat color based on the current theme
+theme=$(gsettings get org.gnome.desktop.interface icon-theme)
+
+case $theme in
+    "'Yaru-purple'")
+        color="#924d8b"
+        ;;
+    "'Yaru-red'")
+        color="#e92020"
+        ;;
+    "'Yaru-blue'")
+        color="#208fe9"
+        ;;
+    "'Yaru-sage'"|"'Yaru-bark'")
+        color="#78ab50"
+        ;;
+    "'Yaru-magenta'")
+        color="#e920a3"
+        ;;
+    *)
+        echo "No matching theme found."
+        exit 1
+        ;;
+esac
+
+# Set the TopHat color
+gsettings set org.gnome.shell.extensions.tophat meter-fg-color "$color"
+
 
 # configure Alphabetical App Grid
 gsettings set org.gnome.shell.extensions.alphabetical-app-grid folder-order-position 'end'
