@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# set onlyoffice as default for office files
+xdg-mime default onlyoffice-desktopeditors.desktop application/vnd.openxmlformats-officedocument.wordprocessingml.document
+xdg-mime default onlyoffice-desktopeditors.desktop application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+xdg-mime default onlyoffice-desktopeditors.desktop application/vnd.openxmlformats-officedocument.presentationml.presentation
+xdg-mime default onlyoffice-desktopeditors.desktop text/csv
+
+
 # set Chrome as default web browser
 xdg-settings set default-web-browser google-chrome.desktop
 

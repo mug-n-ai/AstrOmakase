@@ -28,8 +28,8 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 - **GIMP**: GNU Image Manipulation Program, a versatile graphics editor.
 - **HDFCompass**: A tool for browsing and analyzing HDF5 data.
 - **Kdiff3**: A diff and merge program for comparing files and directories.
-- **LibreOffice**: A powerful office suite for word processing, spreadsheets, presentations, and more.
 - **OBS Studio**: A free and open-source software for video recording and live streaming.
+- **OnlyOffice**: An office suite for document editing, project management, and CRM compatible with Microsoft Office.
 - **Okular**: A document viewer for PDF, PostScript, DjVu, and other formats.
 - **PDFsam**: A tool to split and merge PDF files.
 - **Precommit**: A framework for managing and maintaining multi-language pre-commit hooks.
