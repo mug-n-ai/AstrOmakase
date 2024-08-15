@@ -6,9 +6,12 @@ gnome-extensions enable ubuntu-appindicators@ubuntu.com
 # Configure TopHat
 gsettings set org.gnome.shell.extensions.tophat show-icons true
 gsettings set org.gnome.shell.extensions.tophat show-cpu true
-gsettings set org.gnome.shell.extensions.tophat show-disk true
+gsettings set org.gnome.shell.extensions.tophat show-disk false
 gsettings set org.gnome.shell.extensions.tophat show-mem true
+gsettings set org.gnome.shell.extensions.tophat cpu-display numeric
+gsettings set org.gnome.shell.extensions.tophat mem-display numeric
 gsettings set org.gnome.shell.extensions.tophat network-usage-unit bits
+gsettings set org.gnome.shell.extensions.tophat show-animations false
 
 # Set TopHat color based on the current theme
 theme=$(gsettings get org.gnome.desktop.interface icon-theme)
