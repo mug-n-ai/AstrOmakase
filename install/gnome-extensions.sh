@@ -9,6 +9,13 @@ extension_installed() {
     gnome-extensions list | grep -q "$extension_id"
 }
 
+#install gnome extensions
+echo "Installing GNOME extensions..."
+# other extension are inclused in Omakub
+sudo apt install -y gnome-shell-extension-manager pipx
+pipx install gnome-extensions-cli --system-site-packages
+
+
 # Check if gnome-shell-extension-manager is installed
 if command_exists gnome-shell-extension-manager; then
     print_success "Gnome shell extension manager is already installed."
@@ -46,6 +53,12 @@ if extension_installed "AlphabeticalAppGrid@stuarthayhurst"; then
     print_success "Extension 'AlphabeticalAppGrid@stuarthayhurst' is already installed."
 else
     gext install AlphabeticalAppGrid@stuarthayhurst
+fi
+
+if extension_installed "IP-Finder@linxgem33.com"; then
+    print_success "Extension 'IP-Finder@linxgem33.com' is already installed."
+else
+    gext install IP-Finder@linxgem33.com
 fi
 
 # Compile gsettings schemas only if the extensions were installed
