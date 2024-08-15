@@ -5,8 +5,6 @@ INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 source "$INSTALL_DIR/ascii.sh"
 echo "version $(cat $INSTALL_DIR/version)"
 
-#!/bin/bash
-
 # Definisci il percorso del browser (usa 'xdg-open' per aprire il browser predefinito)
 BROWSER="xdg-open"
 
