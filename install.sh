@@ -16,11 +16,11 @@ source "$INSTALL_DIR/preinstall_checks.sh"
 
 
 # Define the options and corresponding script names
-OPTIONAL_APPS=("Brave"  "Dropbox" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Upscayl")
+OPTIONAL_APPS=("Brave"  "Dropbox" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Upscayl" "None")
 OPTIONAL_SCRIPTS=("app-brave" "app-dropbox" "app-discord" "app-franz" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-upscayl")
 
 # Inform the user about the default behavior
-echo "Please select the optional applications you want to install. If you press Enter without selecting any, all applications will be installed by default."
+echo "Please select the optional applications you want to install. If you press Enter without selecting any, all applications will be installed by default. Select None to skip optional applications installation."
 
 # Use Gum to present the options and get user input
 SELECTED_APPS=$(gum choose --no-limit "${OPTIONAL_APPS[@]}")
@@ -36,6 +36,20 @@ else
 fi
 
 
+# Check if "None" was selected
+INSTALL_NONE=false
+for APP in "${SELECTED_APPS[@]}"; do
+    if [ "$APP" == "None" ]; then
+        INSTALL_NONE=true
+        break
+    fi
+done
+
+if [ "$INSTALL_NONE" = true ]; then
+    # User selected "None", skip installation of optional apps
+    SELECTED_APPS=()
+    echo "No optional applications will be installed."
+fi
 # Install required tools first
 echo "Preparing required tools..."
 source "$INSTALL_DIR/required.sh"
