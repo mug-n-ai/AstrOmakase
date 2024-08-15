@@ -3,9 +3,13 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
+
 # Define installation directory
 INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$INSTALL_DIR/common_functions.sh"
+
+source "$INSTALL_DIR/ascii.sh"
+echo "version $(cat version)"
 
 # running pre install checks
 source "$INSTALL_DIR/preinstall_checks.sh"
