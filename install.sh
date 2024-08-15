@@ -16,7 +16,7 @@ source "$INSTALL_DIR/preinstall_checks.sh"
 
 
 # Define the options and corresponding script names
-OPTIONAL_APPS=("Brave"  "Dropbox" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Upscayl" "None")
+OPTIONAL_APPS=("None" "Brave"  "Dropbox" "Franz" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Upscayl")
 OPTIONAL_SCRIPTS=("app-brave" "app-dropbox" "app-discord" "app-franz" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-upscayl")
 
 # Inform the user about the default behavior
@@ -37,10 +37,10 @@ fi
 
 
 # Check if "None" was selected
-INSTALL_NONE=false
+INSTALL_NONE=true
 for APP in "${SELECTED_APPS[@]}"; do
-    if [ "$APP" == "None" ]; then
-        INSTALL_NONE=true
+    if [ "$APP" != "None" ]; then
+        INSTALL_NONE=false
         break
     fi
 done
