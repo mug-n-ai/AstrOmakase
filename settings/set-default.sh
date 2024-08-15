@@ -30,4 +30,4 @@ xdg-mime default zed.desktop text/x-c++src
 
 
 # set Okular as default for PDF files
-xdg-mime default okular.desktop application/pdf
+xdg-mime default org.kde.okular.desktop application/pdf
