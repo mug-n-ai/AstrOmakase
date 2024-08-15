@@ -22,9 +22,10 @@ case $CHOICE in
         wget -qO- https://lorenzomugnai.github.io/AstrOmakase/installer.sh | bash
         ;;
     "Update develop")
-        echo "Updating the system to the current develop version..."
         cd $INSTALL_DIR
-        git pull
+        echo "Updating the system to the current develop version..."
+        git checkout master > /dev/null
+        git pull > /dev/null
         source $INSTALL_DIR/install.sh
         ;;
     "visit github")
