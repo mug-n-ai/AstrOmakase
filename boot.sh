@@ -4,9 +4,7 @@
 
 set -e
 
-source ascii.sh
-echo "$(cat version)"
-
+echo "AstrOmakase bootstrapper"
 echo "=> AstrOmakase is for fresh Ubuntu 24.04 installations only!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
