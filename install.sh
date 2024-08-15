@@ -29,6 +29,7 @@ SELECTED_APPS=$(gum choose --no-limit "${OPTIONAL_APPS[@]}")
 if [ -z "$SELECTED_APPS" ]; then
     # No selection made, use all apps by default
     SELECTED_APPS=("${OPTIONAL_APPS[@]}")
+    echo "No selection made. Installing all optional applications by default."
 else
     # Convert the space-separated string to an array
     SELECTED_APPS=($SELECTED_APPS)
