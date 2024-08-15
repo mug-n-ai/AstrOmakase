@@ -37,6 +37,7 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 - **VLC Media Player**: A versatile media player that can play most multimedia files and streaming protocols.
 - **rSync**: A utility for efficiently transferring and synchronizing files.
 - **rClone**: A command-line program to manage files on cloud storage.
+- **screen**: A terminal multiplexer that allows multiple windows within a single terminal session.
 - **Xournal++**: A PDF editor and note-taking application.
 - **Zed**: A high-performance, multiplayer code editor.
 
