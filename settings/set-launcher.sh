@@ -10,10 +10,11 @@ Exec=astromakase
 Terminal=true
 Type=Application
 Icon=/home/$USER/.local/share/astromakase/content/icon.png
-Categories=GTK;
+Categories=Utility;System;
 MimeType=text/html;text/xml;application/xhtml_xml;
 StartupNotify=true
 EOF
+
 
 # Aggiungi i permessi di esecuzione al file astromakase
 sudo chmod +x $HOME/.local/share/astromakase/bin/astromakase
