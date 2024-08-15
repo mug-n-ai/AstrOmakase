@@ -34,7 +34,7 @@ if ! command -v pre-commit &> /dev/null; then
     echo "Reactivating the base conda environment..."
     conda activate
 
-    _success "Script completed successfully."
+    print_success "Script completed successfully."
 else
-    _success "pre-commit is already installed. Exiting script."
+    print_success "pre-commit is already installed. Exiting script."
 fi
