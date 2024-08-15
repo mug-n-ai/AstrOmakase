@@ -12,3 +12,8 @@ for app in "${TO_REMOVE_APP[@]}"; do
         echo "Failed to uninstall ${app}. It might not be installed."
     fi
 done
+
+# remove Vitals extension if it is installed (by Omakub)
+if extension_installed "Vitals@CoreCoding.com"; then
+    gext uninstall Vitals@CoreCoding.com
+fi

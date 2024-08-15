@@ -3,7 +3,11 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
-if ! command_exists onlyoffice-desktopeditors; then
+if command_exists onlyoffice-desktopeditors; then
+
+    print_success "PDFsam is already installed. Exiting script."
+
+else
     # add repository
     mkdir -p -m 700 ~/.gnupg
     gpg --no-default-keyring --keyring gnupg-ring:/tmp/onlyoffice.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5

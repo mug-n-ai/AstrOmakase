@@ -5,7 +5,7 @@ source "$SCRIPT_DIR/../common_functions.sh"
 
 if command_exists qbittorrent; then
     print_success "qBittorrent is already installed. Exiting script."
-    else
+else
     echo "Installing qBittorrent..."
     sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
     sudo apt-get update

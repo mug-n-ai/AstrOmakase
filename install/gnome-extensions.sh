@@ -11,10 +11,6 @@ extension_installed() {
 
 #install gnome extensions
 echo "Installing GNOME extensions..."
-# other extension are inclused in Omakub
-sudo apt install -y gnome-shell-extension-manager pipx
-pipx install gnome-extensions-cli --system-site-packages
-
 
 # Check if gnome-shell-extension-manager is installed
 if command_exists gnome-shell-extension-manager; then
@@ -38,10 +34,6 @@ else
     gext install undecorate@sun.wxg@gmail.com
 fi
 
-# remove Vitals extension if it is installed (by Omakub)
-if extension_installed "Vitals@CoreCoding.com"; then
-    gext uninstall Vitals@CoreCoding.com
-fi
 
 if extension_installed "tophat@fflewddur.github.io"; then
     print_success "Extension 'tophat@fflewddur.github.io' is already installed."
