@@ -33,7 +33,7 @@ case $CHOICE in
         ;;
     "visit website")
         echo "Opening website..."
-        $BROWSER "https://your-website-url.com"
+        $BROWSER "https://lorenzomugnai.github.io/AstrOmakase/"
         ;;
     *)
         echo "No valid option selected or exiting..."
