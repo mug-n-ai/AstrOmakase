@@ -59,6 +59,16 @@ AstrOmakase comes packed with a range of tools that cater to both general and as
 - **Xournal++**: A PDF editor and note-taking application.
 - **Zed**: A high-performance, multiplayer code editor.
 
+### Console Tools
+
+- **fd**: A simple, fast, and user-friendly alternative to `find`.
+- **htop** and **btop** two interactive process viewers for Unix systems.
+- **lt**: A tool for listing files and directories in a tree-like format.
+- **plocate**: A tool for quickly locating files on the filesystem.
+- **screen**: A terminal multiplexer that allows multiple windows within a single terminal session.
+- **zoxide**: A fast, flexible, and smart directory jumper.
+
+
 ### Astronomy Tools
 
 - **SAOImage DS9**: For astronomical imaging and data visualization.
