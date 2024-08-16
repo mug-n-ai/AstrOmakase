@@ -16,13 +16,14 @@ echo "=> AstrOmakase is for fresh Ubuntu 24.04 installations only!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
 echo "Installing git..."
-sudo apt-get update
 sudo apt-get install -y git >/dev/null
 
 echo "Cloning stable AstrOmakase..."
 rm -rf ~/.local/share/astromakase
-git clone https://github.com/LorenzoMugnai/AstrOmakase.git ~/.local/share/astromakase >/dev/null
+INSTALL_DIR=~/.local/share/astromakase
+git clone https://github.com/LorenzoMugnai/AstrOmakase.git $INSTALL_DIR >/dev/null
 
+cd $INSTALL_DIR
 LATEST_RELEASE=$(get_latest_release)
 
 echo "Latest release: $LATEST_RELEASE"
