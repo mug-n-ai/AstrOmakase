@@ -28,3 +28,7 @@ else
     echo "Wallpaper file not found: $WALLPAPER"
     exit 1
 fi
+
+# Set GNOME settings
+# never suspend if plugged in
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 0
