@@ -12,4 +12,5 @@ else
     apt_install libglib2.0-dev-bin
     echo "Installing gdm-settings..."
     apt_install gdm-settings
+    print_success "gdm-settings installed successfully."
 fi
