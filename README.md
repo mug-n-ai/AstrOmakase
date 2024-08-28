@@ -64,6 +64,7 @@ Additionally, compared to the standard Omakub setup, some tools that are not com
 - **Discord**: A communication platform for chat and voice, useful for collaborative projects.
 - **Dropbox**: Cloud storage service for easy file sharing and backup.
 - **Franz**: A messaging app that combines multiple chat services into one application.
+- **gdm-settings**: A tool for customizing GNOME Display Manager settings.
 - **LaTeX Studio**: A comprehensive LaTeX editor for creating scientific documents.
 - **NordVPN**: A secure VPN service for protecting your online privacy.
 - **ScrCPy**: A screen mirroring application for Android devices.
