@@ -42,25 +42,26 @@ AstrOmakase comes packed with a range of tools that cater to both general and as
 
 ### General Tools
 
-- **Anaconda**: Essential for scientific computing, Anaconda includes popular data science libraries such as NumPy, SciPy, and Matplotlib.
-- **Chrome Browser**: Fast, secure, and user-friendly.
-- **GIMP**: A versatile graphics editor.
-- **HDFCompass**: Ideal for browsing and analyzing HDF5 data.
-- **Kdiff3**: Useful for comparing files and directories.
-- **LibreOffice**: Comprehensive office suite.
-- **OBS Studio**: For video recording and live streaming.
-- **Okular**: Document viewer supporting various formats.
-- **PDFsam**: Tool for splitting and merging PDF files.
-- **Precommit**: Framework for managing multi-language pre-commit hooks.
-- **qBTorrent**: BitTorrent client.
-- **VLC Media Player**: Versatile multimedia player.
-- **rSync**: Efficient file transfer and synchronization utility.
-- **rClone**: Manages files on cloud storage.
+- **Anaconda**: A powerful distribution for Python and R programming languages, widely used for scientific computing. Anaconda includes popular data science libraries such as NumPy, SciPy, and Matplotlib.
+- **Chrome browser**: A fast, secure, and easy-to-use web browser.
+- **GIMP**: GNU Image Manipulation Program, a versatile graphics editor.
+- **HDFCompass**: A tool for browsing and analyzing HDF5 data.
+- **Kdiff3**: A diff and merge program for comparing files and directories.
+- **OBS Studio**: A free and open-source software for video recording and live streaming.
+- **OnlyOffice**: An office suite for document editing, project management, and CRM compatible with Microsoft Office.
+- **Okular**: A document viewer for PDF, PostScript, DjVu, and other formats.
+- **PDFsam**: A tool to split and merge PDF files.
+- **Precommit**: A framework for managing and maintaining multi-language pre-commit hooks.
+- **qBTorrent**: A BitTorrent client for downloading files.
+- **VLC Media Player**: A versatile media player that can play most multimedia files and streaming protocols.
+- **rSync**: A utility for efficiently transferring and synchronizing files.
+- **rClone**: A command-line program to manage files on cloud storage.
 - **Xournal++**: A PDF editor and note-taking application.
 - **Zed**: A high-performance, multiplayer code editor.
 
 ### Console Tools
 
+- **fastfetch**: A fast system information tool written in Rust.
 - **fd**: A simple, fast, and user-friendly alternative to `find`.
 - **htop** and **btop** two interactive process viewers for Unix systems.
 - **lt**: A tool for listing files and directories in a tree-like format.
@@ -77,7 +78,23 @@ AstrOmakase comes packed with a range of tools that cater to both general and as
 
 ### Optional Tools
 
-Additional optional tools include Brave Browser, Discord, Dropbox, Franz, LaTeX Studio, NordVPN, ScrCPy, Slack, SuperPaper, Speedtest, Zoom, and Upscayl. These tools can be installed based on personal preference and specific needs.
+Additional optional tools include:
+
+- **Brave Browser**: A privacy-focused web browser that blocks ads and trackers.
+- **Discord**: A communication platform for chat and voice, useful for collaborative projects.
+- **Dropbox**: Cloud storage service for easy file sharing and backup.
+- **Franz**: A messaging app that combines multiple chat services into one application.
+- **gdm-settings**: A tool for customizing GNOME Display Manager settings.
+- **LaTeX Studio**: A comprehensive LaTeX editor for creating scientific documents.
+- **NordVPN**: A secure VPN service for protecting your online privacy.
+- **ScrCPy**: A screen mirroring application for Android devices.
+- **Slack**: A collaboration hub that connects teams.
+- **SuperPaper**: A multi-monitor wallpaper manager.
+- **Speedtest**: A tool for testing internet speed.
+- **Zoom**: A video conferencing tool for meetings and webinars.
+- **Upscayl**: A tool for upscaling images using AI. 
+
+These tools can be installed based on personal preference and specific needs.
 
 ## Installation
 
