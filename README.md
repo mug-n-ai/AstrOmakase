@@ -42,6 +42,7 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 
 ### Console Tools
 
+- **fastfetch**: A fast system information tool written in Rust.
 - **fd**: A simple, fast, and user-friendly alternative to `find`.
 - **htop** and **btop** two interactive process viewers for Unix systems.
 - **lt**: A tool for listing files and directories in a tree-like format.
@@ -63,6 +64,7 @@ Additionally, compared to the standard Omakub setup, some tools that are not com
 - **Discord**: A communication platform for chat and voice, useful for collaborative projects.
 - **Dropbox**: Cloud storage service for easy file sharing and backup.
 - **Franz**: A messaging app that combines multiple chat services into one application.
+- **gdm-settings**: A tool for customizing GNOME Display Manager settings.
 - **LaTeX Studio**: A comprehensive LaTeX editor for creating scientific documents.
 - **NordVPN**: A secure VPN service for protecting your online privacy.
 - **ScrCPy**: A screen mirroring application for Android devices.
