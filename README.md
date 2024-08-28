@@ -42,6 +42,7 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 
 ### Console Tools
 
+- **fastfetch**: A fast system information tool written in Rust.
 - **fd**: A simple, fast, and user-friendly alternative to `find`.
 - **htop** and **btop** two interactive process viewers for Unix systems.
 - **lt**: A tool for listing files and directories in a tree-like format.
