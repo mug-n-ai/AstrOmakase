@@ -74,6 +74,16 @@ Additionally, compared to the standard Omakub setup, some tools that are not com
 - **Zoom**: A video conferencing tool for meetings and webinars.
 - **Upscayl**: A tool for upscaling images using AI.
 
+#### Included Fonts
+
+The package also includes a collection of fonts that are commonly used:
+- Garamond
+- Handjet
+- Helvetica
+- Roboto
+- Times New Roman
+- tt chocolates
+
 ### Installation
 
 AstrOmakase simplifies the setup process, allowing you to focus on your research and development tasks without the hassle of configuring each tool manually.
