@@ -96,6 +96,16 @@ Additional optional tools include:
 
 These tools can be installed based on personal preference and specific needs.
 
+### Included Fonts
+
+The package also includes a collection of fonts that are commonly used:
+- Garamond
+- Handjet
+- Helvetica
+- Roboto
+- Times New Roman
+- tt chocolates
+
 ## Installation
 
 AstrOmakase simplifies the setup process, allowing you to focus on your research without the hassle of manual configuration.
