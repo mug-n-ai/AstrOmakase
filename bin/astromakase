@@ -10,31 +10,35 @@ BROWSER="xdg-open"
 
 # Se non ci sono argomenti, apri il menu con gum
 if [ $# -eq 0 ]; then
-    CHOICE=$(gum choose "Update stable" "Update develop" "Visit GitHub" "Visit Website" "Quit" --height 10 --header "Choose an option:" | tr '[:upper:]' '[:lower:]')
+    CHOICE=$(gum choose "Update stable" "Update develop" "Visit GitHub" "Visit Website" "Quit" --height 10 --header "Choose an option:" | tr '[:upper:]' '[:lower:]' | tr -d '[:space:]')
+    echo "Choice selected: '$CHOICE'"  # Aggiungi un'eco di debug
 else
-    CHOICE=$1
+    CHOICE=$(echo "$1" | tr '[:upper:]' '[:lower:]' | tr -d '[:space:]')  # Rimuovi anche gli spazi in input
 fi
 
 # Esegui l'azione in base alla scelta
 case $CHOICE in
-    "Update stable")
+    "updatestable")
         echo "Updating the system installing the next stable version..."
         wget -qO- https://lorenzomugnai.github.io/AstrOmakase/installer.sh | bash
         ;;
-    "Update develop")
+    "updatedevelop")
         cd $INSTALL_DIR
         echo "Updating the system to the current develop version..."
         git checkout master > /dev/null
         git pull > /dev/null
         source $INSTALL_DIR/install.sh
         ;;
-    "visit github")
+    "visitgithub")
         echo "Opening GitHub..."
         $BROWSER "https://github.com/LorenzoMugnai/AstrOmakase"
         ;;
-    "visit website")
+    "visitwebsite")
         echo "Opening website..."
         $BROWSER "https://lorenzomugnai.github.io/AstrOmakase/"
+        ;;
+    "quit")
+        echo "Exiting..."
         ;;
     *)
         echo "No valid option selected or exiting..."
