@@ -23,12 +23,6 @@ PreCommit integrates with popular version control systems like Git to automate t
 
 The tool’s configuration is simple, allowing users to define a set of hooks that will be executed automatically during the commit process. This helps to maintain high code quality and reduces the likelihood of introducing issues into the codebase.
 
-**Zed**
-+++++++++++++
-
-Zed is a versatile and modern text editor designed for efficient coding and text manipulation. It provides a clean and intuitive interface that supports a variety of programming languages and file formats. Zed is designed to enhance productivity with features such as syntax highlighting, code completion, and seamless integration with version control systems.
-
-The editor’s lightweight nature ensures that it performs well even with large files and complex projects. Zed also supports customisation through plugins and extensions, allowing users to tailor the editor to their specific workflow and preferences. Its focus on simplicity and functionality makes it a valuable tool for both novice and experienced developers.
 
 **VSCode**
 +++++++++++++
@@ -38,3 +32,12 @@ Visual Studio Code (VSCode) is a powerful and widely-used code editor developed 
 Key features of VSCode include a built-in terminal, integrated debugging tools, and an extensive library of extensions available through the Visual Studio Code Marketplace. These extensions enable users to add functionality for language support, linting, version control, and more, allowing for a highly customisable development environment.
 
 VSCode’s user-friendly interface and robust feature set make it a popular choice among developers for coding, debugging, and managing projects efficiently. Its support for collaborative coding through Live Share and seamless integration with Git further enhances its appeal as a comprehensive development tool.
+
+**GitHub CLI**
+++++++++++++++
+
+GitHub CLI (gh) is a powerful command-line interface tool that allows developers to interact with GitHub directly from the terminal. It simplifies common tasks such as managing repositories, creating issues, and reviewing pull requests by providing a set of intuitive commands that streamline workflow.
+
+With GitHub CLI, users can perform a wide range of GitHub-related tasks without leaving the command line environment. This includes cloning repositories, creating and merging pull requests, and managing issues and discussions. The tool’s integration with GitHub’s API ensures that users can access and manage their GitHub projects efficiently and effectively.
+
+GitHub CLI enhances productivity by providing a more streamlined and scriptable way to interact with GitHub, making it an invaluable tool for developers who prefer to work within a terminal-based workflow.

@@ -46,6 +46,15 @@ Zed`s customisation options allow users to tailor the editor to their specific n
 Its lightweight nature ensures that it runs smoothly without consuming excessive system resources, allowing users to focus on their work without interruptions. 
 Zed`s combination of speed, functionality, and ease of use makes it an excellent choice for text editing tasks.
 
+**Gnome-Sushi**
++++++++++++++++
+
+Gnome-Sushi is a lightweight and efficient file previewer designed for the GNOME desktop environment. 
+It provides a quick and seamless way to view the contents of files without needing to open them in their respective applications. 
+By simply selecting a file and pressing the spacebar, users can preview a wide range of file types, including images, PDFs, text files, and more.
+The tool`s functionality enhances productivity by allowing users to quickly access and review files, making it easier to manage and organise large numbers of documents. 
+Gnome-Sushi integrates smoothly with the GNOME file manager, offering a convenient preview feature that streamlines file handling and reduces the need for multiple application windows.
+
 
 **LaTeX Studio** (optional)
 ++++++++++++++++++++++++++++
