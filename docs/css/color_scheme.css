@@ -62,6 +62,10 @@ html[data-theme="light"] :root {
   .only-dark {
     display: none !important;
   }
+
+  img {
+    background: transparent !important;
+}
 }
 
 /*******************************************************************************
@@ -131,6 +135,11 @@ html[data-theme="dark"] :root {
 
   // specific brightness applied on images
   img {
-    filter: brightness(0.9) contrast(1.1); /* Tokyo Night Image Filter */
+    background: transparent !important;
+    filter: brightness(0.9) contrast(1.1); /* Assicurati che questo non influisca sulla trasparenza */
   }
+}
+
+body img {
+  background: transparent !important;
 }

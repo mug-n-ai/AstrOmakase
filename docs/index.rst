@@ -5,7 +5,7 @@ Welcome to Astromakase's documentation!
 .. grid:: 2
 
    .. grid-item::
-      :columns: auto
+      :columns: 3
 
       .. image:: _static/icon.png
          :width: 200

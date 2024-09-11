@@ -40,7 +40,7 @@ html_favicon = "_static/favicon.ico"
 html_title = "Astromakase"
 
 html_context = {
-    "default_mode": "dark"
+    "default_mode": "light"
 }
 
 html_theme_options = {
