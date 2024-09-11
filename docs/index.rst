@@ -70,6 +70,20 @@ The Menu
 Here is a list of tools included in AstrOmakase that are added to the standard Omakub setup. 
 The tools are organized into categories for easy navigation and access.
 
+.. .. toctree::
+..    :hidden:
+..    :maxdepth: 1
+
+..    Desktop Tools <desktop>
+..    Coding Tools <code>
+..    Remote working Tools <remote>
+..    Syncing and Backup <sync>
+..    Astronomy Tools <astro>
+..    Image and Video Editing <image>
+..    Console Tools <console>
+
+
+
 .. grid:: 2
    :gutter: 1 1 2 2 
    
@@ -124,7 +138,10 @@ General Tools
 
 - **Anaconda**: A powerful distribution for Python and R programming languages, widely used for scientific computing. Anaconda includes popular data science libraries such as NumPy, SciPy, and Matplotlib.
 - **Chrome browser**: A fast, secure, and easy-to-use web browser.
+- **Flameshot**: A powerful yet simple-to-use screenshot tool.
+- **GitHub CLI**: gh is GitHub on the command line.
 - **GIMP**: GNU Image Manipulation Program, a versatile graphics editor.
+- **Gnome-sushi**: A quick previewer for files in GNOME.
 - **HDFCompass**: A tool for browsing and analyzing HDF5 data.
 - **Kdiff3**: A diff and merge program for comparing files and directories.
 - **OBS Studio**: A free and open-source software for video recording and live streaming.
@@ -136,7 +153,8 @@ General Tools
 - **VLC Media Player**: A versatile media player that can play most multimedia files and streaming protocols.
 - **rSync**: A utility for efficiently transferring and synchronizing files.
 - **rClone**: A command-line program to manage files on cloud storage.
-- **VSCode**:
+- **Sushi**: A tool to preview file content from the file manager. 
+- **VSCode**: A versatile and complete coding IDE.
 - **Xournal++**: A PDF editor and note-taking application.
 - **Zed**: A high-performance, multiplayer code editor.
 
