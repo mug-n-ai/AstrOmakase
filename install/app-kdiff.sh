@@ -3,4 +3,4 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
-apt_install kdiff3
+install_package "kdiff3" "kdiff3" "kdiff3" "apt" "None"

@@ -3,19 +3,14 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
-echo "Installing SAO DS9, FITSVerify, and FTOOLS FV..."
 
-apt_install saods9
-apt_install fitsverify
-apt_install ftools-fv
+install_package "SAO DS9" "ds9" "saods9" "apt" "None"
 
+install_package "FITSVerify" "fitsverify" "ftools-fv" "apt" "None"
 
-echo "Installing Stellarium..."
-if command_exists stellarium; then
-    print_success "Stellarium is already installed. Skipping."
-else
-    apt_install stellarium
-fi
+install_package "FTOOLS FV" "ftools-fv" "ftools-fv" "apt" "None"
+
+install_package "Stellarium" "stellarium" "stellarium" "apt" "None"
 
 echo "Installing Zotero..."
 if command_exists zotero; then

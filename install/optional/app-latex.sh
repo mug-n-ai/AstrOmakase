@@ -4,4 +4,4 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../../common_functions.sh"
 
 
-apt_install texstudio
+install_package "texstudio" "texstudio" "texstudio" "apt" "None"
