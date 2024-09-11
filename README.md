@@ -25,6 +25,7 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 
 - **Anaconda**: A powerful distribution for Python and R programming languages, widely used for scientific computing. Anaconda includes popular data science libraries such as NumPy, SciPy, and Matplotlib.
 - **Chrome browser**: A fast, secure, and easy-to-use web browser.
+- **Flameshot**: A powerful yet simple-to-use screenshot tool.
 - **GIMP**: GNU Image Manipulation Program, a versatile graphics editor.
 - **HDFCompass**: A tool for browsing and analyzing HDF5 data.
 - **Kdiff3**: A diff and merge program for comparing files and directories.
