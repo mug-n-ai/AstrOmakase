@@ -1,34 +1,27 @@
 .. _sync:
 
-Remote Work Software
-=====================
+Syncing and Backup
+====================
 
-This section outlines the tools available for remote communication and collaboration. Each application is designed to facilitate effective teamwork and communication, whether you're working from home or managing remote teams.
+This section describes the tools available for syncing and backing up files, ensuring that your data is safely stored and easily accessible across different devices.
 
-**Discord** (optional)
+**rSync**
++++++++++++++++
+
+`rSync <https://en.wikipedia.org/wiki/Rsync>`_ is a powerful and flexible tool for synchronising files and directories between different locations, either locally or across a network. It is widely used for its efficiency and capability to perform incremental backups, meaning only the changes made since the last sync are transferred.
+
+rSync supports a variety of options for customisation, such as excluding files or directories, setting bandwidth limits, and preserving file permissions. Its robustness and versatility make it an ideal choice for both personal and professional use, helping to maintain up-to-date backups and synchronised files across multiple systems.
+
+**rClone**
++++++++++++++++
+
+`rClone <https://rclone.org/docs/>`_ is a command-line program designed for managing and synchronising files across various cloud storage services and remote file systems. It supports a wide range of cloud providers, including Google Drive, Dropbox, Amazon S3, and many others.
+
+With rClone, users can easily transfer files, synchronize directories, and manage remote storage with a consistent and straightforward command-line interface. It also provides advanced features such as encryption, caching, and multi-threaded transfers, making it a powerful tool for managing large volumes of data and integrating multiple cloud services.
+
+**Dropbox** (optional)
 +++++++++++++++++++++++++++
 
-Discord is a versatile communication platform originally designed for gamers but widely adopted for various types of communities and professional groups. It offers a range of features including voice and video calls, text chat, and the ability to create channels for different topics or teams.
+`Dropbox <https://www.dropbox.com/home>`_ is a popular cloud storage service that provides easy-to-use file syncing and sharing capabilities. It allows users to store files in the cloud, synchronise them across different devices, and share them with others via simple links.
 
-The platform supports rich media sharing and integrates with numerous third-party apps, making it a valuable tool for team collaboration. Discord’s server-based architecture allows for flexible organisation and customisation, which can enhance remote work by providing dedicated spaces for project discussions and team coordination.
-
-**Franz** (optional)
-+++++++++++++++++++++++++++
-
-Franz is a unified messaging platform that consolidates multiple communication services into a single application. It supports a variety of messaging and collaboration tools, including Slack, WhatsApp, Facebook Messenger, and more.
-
-With Franz, users can manage all their communication channels in one place, reducing the need to switch between different apps. This streamlining of communication tools helps to improve efficiency and organisation, making it easier to keep track of conversations and notifications from various platforms.
-
-**Slack** (optional)
-+++++++++++++++++++++++++++
-
-Slack is a widely used team collaboration tool that facilitates communication and project management within teams. It provides channels for different topics or projects, direct messaging, and integrates with a wide range of other tools and services.
-
-Slack’s features include file sharing, search capabilities, and the ability to create and manage tasks and projects. Its integration with various apps and services enhances productivity by centralising communication and providing a collaborative environment for teams to work together effectively, no matter where they are located.
-
-**Zoom** (optional)
-+++++++++++++++++++++++++++
-
-Zoom is a leading video conferencing tool that offers high-quality video and audio calls for meetings, webinars, and virtual events. It is widely used for its ease of use and reliable performance, making it an essential tool for remote work and virtual collaboration.
-
-The platform supports a range of features including screen sharing, meeting recording, breakout rooms, and integrations with other productivity tools. Zoom’s functionality allows teams to conduct virtual meetings, collaborate on projects, and connect with clients or colleagues globally, providing a seamless remote work experience.
+Dropbox’s user-friendly interface and seamless integration with various operating systems and applications make it a convenient option for managing and accessing files from anywhere. Its collaborative features, such as file commenting and shared folders, enhance team productivity by facilitating easy sharing and real-time collaboration on documents and projects.
