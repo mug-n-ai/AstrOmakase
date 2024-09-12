@@ -30,4 +30,3 @@ xdg-mime default zed.desktop text/x-c++hdr
 xdg-mime default zed.desktop text/x-c++src
 
 
-# set Okular as default for PDF files
