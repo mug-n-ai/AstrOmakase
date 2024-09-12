@@ -5,6 +5,7 @@ xdg-mime default onlyoffice-desktopeditors.desktop application/vnd.openxmlformat
 xdg-mime default onlyoffice-desktopeditors.desktop application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 xdg-mime default onlyoffice-desktopeditors.desktop application/vnd.openxmlformats-officedocument.presentationml.presentation
 xdg-mime default onlyoffice-desktopeditors.desktop text/csv
+xdg-mime default onlyoffice-desktopeditors.desktop application/pdf
 
 
 # set Chrome as default web browser
@@ -30,4 +31,3 @@ xdg-mime default zed.desktop text/x-c++src
 
 
 # set Okular as default for PDF files
-xdg-mime default org.kde.okular.desktop application/pdf
