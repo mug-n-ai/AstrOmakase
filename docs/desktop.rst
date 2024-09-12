@@ -12,7 +12,7 @@ Office Suite and data handling
 **OnlyOffice**
 +++++++++++++++
 
-OnlyOffice is a comprehensive office suite designed to cater to all your document needs. It strongly resemble Microsoft Office 365. 
+`OnlyOffice <https://www.onlyoffice.com/>`_ is a comprehensive office suite designed to cater to all your document needs. It strongly resemble Microsoft Office 365. 
 It supports a wide array of formats including DOCX, XLSX, and PPTX, making it highly compatible with files from other major office suites like Microsoft Office. 
 
 The suite features a clean and intuitive interface that simplifies tasks such as document editing, spreadsheet calculations, and presentation creation. 
