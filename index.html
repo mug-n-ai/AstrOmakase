@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome to AstrOmakase’s Documentation! &#8212; Astromakase</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/./css/color_scheme.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=7f41d439"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Astromakase</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/LorenzoMugnai/AstrOmakase/tree/master" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/LorenzoMugnai/AstrOmakase/tree/master" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="welcome-to-astromakase-s-documentation">
+<h1>Welcome to AstrOmakase’s Documentation!<a class="headerlink" href="#welcome-to-astromakase-s-documentation" title="Link to this heading">#</a></h1>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<a class="sd-m-auto reference internal image-reference" href="_images/icon.png"><img alt="_images/icon.png" class="sd-m-auto" src="_images/icon.png" style="width: 200px;" />
+</a>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Welcome to AstrOmakase!</div>
+<p class="sd-card-text"><strong>AstrOmakase</strong> is an optimised Ubuntu 24.04 setup specifically designed for astronomers and astrophysicists. It builds on the foundation of the <a class="reference external" href="https://github.com/basecamp/omakub">Omakub project</a>, offering a curated and comprehensive environment that includes all the essential tools needed for astronomical research and development.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="what-is-astromakase">
+<h2>What is AstrOmakase?<a class="headerlink" href="#what-is-astromakase" title="Link to this heading">#</a></h2>
+<p>AstrOmakase is more than just a collection of software. It is a thoughtfully crafted setup tailored to streamline your research workflow.</p>
+<p>The name “AstrOmakase” combines “astronomy” with the Japanese word “omakase,” which means “I’ll leave it up to you.” Just as in an omakase dining experience, where the chef selects and prepares a personalized meal, AstrOmakase provides a tailored software environment, allowing you to focus on your research without worrying about configuring each tool individually.</p>
+<img alt="Desktop view of AstrOmakase" src="_images/desktop.png" />
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p>AstrOmakase simplifies the setup process, enabling you to focus on your research and development tasks without the hassle of manual configuration.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>AstrOmakase is inspired by the <a class="reference external" href="https://github.com/basecamp/omakub">Omakub project</a>. While it can function independently, it is recommended to install Omakub first for a better experience. For more details, visit the <a class="reference external" href="https://omakub.org/">Omakub website</a> and <a class="reference external" href="https://manual.omakub.org/">documentation</a>.</p>
+<p>To install Omakub:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>-qO-<span class="w"> </span>https://omakub.org/install<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</pre></div>
+</div>
+</div>
+<p>Run the following script to install AstrOmakase on your Ubuntu 24.04 system:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>-qO-<span class="w"> </span>https://lorenzomugnai.github.io/AstrOmakase/installer.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</pre></div>
+</div>
+<p>If Omakub is not installed, the installer will prompt you whether to proceed.</p>
+</section>
+<section id="the-menu">
+<h2>The Menu<a class="headerlink" href="#the-menu" title="Link to this heading">#</a></h2>
+<p>Below is a list of tools included in AstrOmakase that are added to the standard Omakub setup. The tools are organised into categories for easy navigation and access.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Desktop Tools</div>
+<p class="sd-card-text">This section covers desktop tools such as the office suite, PDF handler, and more.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="desktop.html#desktop"><span class="std std-ref">Desktop Tools</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Coding Tools</div>
+<p class="sd-card-text">This section covers coding tools such as IDEs, text editors, and version control systems.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="code.html#coding"><span class="std std-ref">Coding Tools</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Remote Working Tools</div>
+<p class="sd-card-text">This section covers tools for remote working such as video conferencing and VPN services.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="remote.html#remote"><span class="std std-ref">Remote working Tools</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Syncing and Backup</div>
+<p class="sd-card-text">This section covers tools for syncing and backing up data with clouds or remote servers.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="sync.html#sync"><span class="std std-ref">Syncing and Backup</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Astronomy Tools</div>
+<p class="sd-card-text">This section covers tools for astronomical research such as DS9 and Zotero.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="astro.html#astro"><span class="std std-ref">Astronomy Tools</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Image and Video Editing</div>
+<p class="sd-card-text">This section covers tools for image and video editing such as GIMP and OBS Studio.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="image.html#image"><span class="std std-ref">Image and Video Editing</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Console Tools</div>
+<p class="sd-card-text">This section covers terminal tools for your Linux environment.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="console.html#console"><span class="std std-ref">Console Tools</span></a></div>
+</div>
+</div>
+</div>
+<section id="general-tools">
+<h3>General Tools<a class="headerlink" href="#general-tools" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Anaconda</strong>: A powerful distribution for Python and R programming, widely used for scientific computing. Includes libraries like NumPy, SciPy, and Matplotlib.</p></li>
+<li><p><strong>Chrome</strong>: A fast, secure, and easy-to-use web browser.</p></li>
+<li><p><strong>Flameshot</strong>: A simple yet powerful screenshot tool.</p></li>
+<li><p><strong>GitHub CLI</strong>: Command-line interface for GitHub (<cite>gh</cite>).</p></li>
+<li><p><strong>GIMP</strong>: GNU Image Manipulation Program, a versatile graphics editor.</p></li>
+<li><p><strong>Gnome-sushi</strong>: A quick file previewer for GNOME.</p></li>
+<li><p><strong>HDFCompass</strong>: A tool for browsing and analyzing HDF5 data.</p></li>
+<li><p><strong>Kdiff3</strong>: A diff and merge program for comparing files and directories.</p></li>
+<li><p><strong>OBS Studio</strong>: Open-source software for video recording and live streaming.</p></li>
+<li><p><strong>OnlyOffice</strong>: Office suite for document editing, project management, and CRM.</p></li>
+<li><p><strong>Okular</strong>: A versatile document viewer.</p></li>
+<li><p><strong>PDFsam</strong>: A tool for splitting and merging PDF files.</p></li>
+<li><p><strong>PreCommit</strong>: A framework for managing pre-commit hooks across multiple languages.</p></li>
+<li><p><strong>qBittorrent</strong>: A lightweight, open-source BitTorrent client.</p></li>
+<li><p><strong>VLC Media Player</strong>: A media player supporting most multimedia files and streaming protocols.</p></li>
+<li><p><strong>rSync</strong>: A utility for efficient file transfer and synchronization.</p></li>
+<li><p><strong>rClone</strong>: A command-line program to manage files on cloud storage.</p></li>
+<li><p><strong>VSCode</strong>: A complete and versatile code editor.</p></li>
+<li><p><strong>Xournal++</strong>: A PDF annotation and note-taking tool.</p></li>
+<li><p><strong>Zed</strong>: A high-performance multiplayer code editor.</p></li>
+</ul>
+</section>
+<section id="console-tools">
+<h3>Console Tools<a class="headerlink" href="#console-tools" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>fastfetch</strong>: A fast system information tool written in Rust.</p></li>
+<li><p><strong>fd</strong>: A simple, fast, and user-friendly alternative to <cite>find</cite>.</p></li>
+<li><p><strong>htop</strong> and <strong>btop</strong>: Two interactive process viewers for Unix systems.</p></li>
+<li><p><strong>lt</strong>: A tool for listing files and directories in a tree-like format.</p></li>
+<li><p><strong>plocate</strong>: A tool for quickly locating files on the filesystem.</p></li>
+<li><p><strong>screen</strong>: A terminal multiplexer for managing multiple windows in a single session.</p></li>
+<li><p><strong>zoxide</strong>: A fast, flexible, and smart directory jumper.</p></li>
+</ul>
+</section>
+<section id="astronomy-tools">
+<h3>Astronomy Tools<a class="headerlink" href="#astronomy-tools" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>SAOImage DS9</strong>: An application for astronomical imaging and data visualisation.</p></li>
+<li><p><strong>Stellarium</strong>: A planetarium software that simulates the night sky.</p></li>
+<li><p><strong>Zotero</strong>: A reference management tool for organising research papers and citations.</p></li>
+</ul>
+</section>
+<section id="optional-tools">
+<h3>Optional Tools<a class="headerlink" href="#optional-tools" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Brave</strong>: A privacy-focused web browser that blocks ads and trackers.</p></li>
+<li><p><strong>Discord</strong>: A communication platform for chat and voice, useful for collaborative projects.</p></li>
+<li><p><strong>Dropbox</strong>: Cloud storage service for file sharing and backup.</p></li>
+<li><p><strong>Franz</strong>: A messaging app that consolidates multiple chat services into one platform.</p></li>
+<li><p><strong>gdm-settings</strong>: A tool for customising GNOME Display Manager settings.</p></li>
+<li><p><strong>LaTeX Studio</strong>: A comprehensive LaTeX editor for scientific documents.</p></li>
+<li><p><strong>NordVPN</strong>: A secure VPN service to protect online privacy.</p></li>
+<li><p><strong>Scrcpy</strong>: A screen mirroring application for Android devices.</p></li>
+<li><p><strong>Slack</strong>: A collaboration platform for teams.</p></li>
+<li><p><strong>SuperPaper</strong>: A multi-monitor wallpaper manager.</p></li>
+<li><p><strong>Speedtest</strong>: A tool to test internet speed.</p></li>
+<li><p><strong>Zoom</strong>: A video conferencing tool for meetings and webinars.</p></li>
+<li><p><strong>Upscayl</strong>: A tool for upscaling images using AI.</p></li>
+</ul>
+</section>
+<section id="included-fonts">
+<h3>Included Fonts<a class="headerlink" href="#included-fonts" title="Link to this heading">#</a></h3>
+<p>The AstrOmakase package includes a collection of commonly used fonts:</p>
+<ul class="simple">
+<li><p>Garamond</p></li>
+<li><p>Handjet</p></li>
+<li><p>Helvetica</p></li>
+<li><p>Roboto</p></li>
+<li><p>Times New Roman</p></li>
+<li><p>tt chocolates</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="contributing-to-astromakase">
+<h1>Contributing to AstrOmakase<a class="headerlink" href="#contributing-to-astromakase" title="Link to this heading">#</a></h1>
+<p>We warmly welcome contributions to AstrOmakase! Whether you’re fixing bugs, adding new features, or improving the documentation, your efforts help us build a better tool for the astronomy community. Here are the steps to follow if you’d like to contribute:</p>
+<section id="how-to-contribute">
+<h2>How to Contribute<a class="headerlink" href="#how-to-contribute" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Fork the repository</strong>:
+Start by forking the AstrOmakase repository to your own GitHub account.</p></li>
+<li><p><strong>Create a new branch</strong>:
+Create a branch for your new feature or bug fix. This ensures that your changes remain isolated from the main branch.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/your-feature-name
+</pre></div>
+</div>
+</li>
+<li><p><strong>Make your changes</strong>:
+Add or modify the code as necessary. Ensure that your changes are well-tested and documented.</p></li>
+<li><p><strong>Commit your changes</strong>:
+Once you’re satisfied with your changes, commit them with a clear and descriptive message.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;Add feature: your feature name&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Push your branch</strong>:
+Push the branch to your forked repository.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/your-feature-name
+</pre></div>
+</div>
+</li>
+<li><p><strong>Open a Pull Request</strong>:
+Finally, submit a Pull Request to the main AstrOmakase repository. Please include a description of your changes, any relevant issues your code addresses, and any tests you’ve written.</p></li>
+</ol>
+<p>We will review your Pull Request as soon as possible, and once approved, it will be merged into the main branch!</p>
+<p>Thank you for your contribution to AstrOmakase—together we can build an even better tool for the astronomical research community!</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to AstrOmakase’s Documentation!</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-astromakase">What is AstrOmakase?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-menu">The Menu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-tools">General Tools</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#console-tools">Console Tools</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astronomy-tools">Astronomy Tools</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-tools">Optional Tools</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#included-fonts">Included Fonts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-to-astromakase">Contributing to AstrOmakase</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-contribute">How to Contribute</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Lorenzo Mugnai.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
