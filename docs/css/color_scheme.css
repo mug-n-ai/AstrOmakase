@@ -1,0 +1,145 @@
+/*******************************************************************************
+* light theme
+*
+* all the variables used for light theme coloring
+*/
+html[data-theme="light"] :root {
+  /*****************************************************************************
+  * main colors
+  */
+  --pxd-color-primary: rgb(128, 90, 213); /* Viola Tokyo Night */
+  --pxd-color-secondary: rgb(187, 134, 252); /* Viola chiaro Tokyo Night */
+  --pxd-color-success: rgb(98, 175, 126); /* Verde Tokyo Night */
+  --pxd-color-info: var(--pxd-color-primary);
+  --pxd-color-warning: var(--pxd-color-secondary);
+  --pxd-color-danger: rgb(255, 82, 82); /* Rosso Tokyo Night */
+  --pxd-color-text-base: rgb(51, 51, 51); /* Testo base Tokyo Night */
+  --pxd-color-text-muted: rgb(77, 77, 77); /* Testo sfumato Tokyo Night */
+  --pxd-color-border: rgb(201, 201, 201); /* Confine Tokyo Night */
+  --pxd-color-shadow: rgb(216, 216, 216); /* Ombra Tokyo Night */
+
+  /*****************************************************************************
+  * depth colors
+  *
+  * background: the more in depth color
+  * on-background: the object directly set on the background, use of shadows in light theme
+  * surface: object set on the background (without shadows)
+  * on_surface: object set on surface object (without shadows)
+  */
+  --pxd-color-background: rgb(255, 255, 255); /* Sfondo Tokyo Night */
+  --pxd-color-on-background: rgb(255, 255, 255); /* Su sfondo Tokyo Night */
+  --pxd-color-surface: rgb(240, 240, 240); /* Superficie Tokyo Night */
+  --pxd-color-on-surface: rgb(255, 255, 238); /* Su superficie Tokyo Night */
+
+  /*****************************************************************************
+  * extentions
+  */
+
+  --pxd-color-panel-background: var(--pxd-color-background);
+
+  /*****************************************************************************
+  * layout
+  */
+
+  // links
+  --pxd-color-link: var(--pxd-color-primary);
+  --pxd-color-link-hover: var(--pxd-color-secondary);
+  --pxd-color-link-active: var(--pxd-color-primary); /* Colore link attivo */
+
+  // inline code
+  --pxd-color-inline-code: rgb(221, 158, 194); /* Viola rosa Tokyo Night */
+
+  // targeted content
+  --pxd-color-target: rgb(102, 51, 153); /* Viola scuro Tokyo Night */
+
+  // highlights
+  --pxd-color-note-highlight: var(--pxd-color-secondary); /* Highlight note */
+
+  // titles
+  --pxd-color-title: var(--pxd-color-primary); /* Colore titoli */
+
+  // hide any content that should not be displayed in the light theme
+  .only-dark {
+    display: none !important;
+  }
+
+  img {
+    background: transparent !important;
+}
+}
+
+/*******************************************************************************
+* dark theme
+*
+* all the variables used for dark theme coloring
+*/
+html[data-theme="dark"] :root {
+  /*****************************************************************************
+  * main colors
+  */
+  --pxd-color-primary: rgb(128, 90, 213); /* Viola Tokyo Night */
+  --pxd-color-secondary: rgb(187, 134, 252); /* Viola chiaro Tokyo Night */
+  --pxd-color-success: rgb(98, 175, 126); /* Verde Tokyo Night */
+  --pxd-color-info: var(--pxd-color-primary);
+  --pxd-color-warning: var(--pxd-color-secondary);
+  --pxd-color-danger: rgb(255, 82, 82); /* Rosso Tokyo Night */
+  --pxd-color-text-base: rgb(224, 224, 224); /* Testo base chiaro Tokyo Night */
+  --pxd-color-text-muted: rgb(150, 150, 150); /* Testo sfumato chiaro Tokyo Night */
+  --pxd-color-border: rgb(150, 150, 150); /* Confine chiaro Tokyo Night */
+  --pxd-color-shadow: rgb(30, 30, 30); /* Ombra Tokyo Night */
+
+  /*****************************************************************************
+  * depth colors
+  *
+  * background: the more in depth color
+  * on-background: the object directly set on the background, use of a light grey in dark theme
+  * surface: object set on the background (without shadows)
+  * on_surface: object set on surface object (without shadows)
+  */
+  --pxd-color-background: rgb(18, 18, 18); /* Sfondo Tokyo Night */
+  --pxd-color-on-background: rgb(30, 30, 30); /* Su sfondo Tokyo Night */
+  --pxd-color-surface: rgb(41, 41, 41); /* Superficie Tokyo Night */
+  --pxd-color-on-surface: rgb(55, 55, 55); /* Su superficie Tokyo Night */
+
+  /*****************************************************************************
+  * extentions
+  */
+
+  --pxd-color-panel-background: var(--pxd-color-background);
+
+  /*****************************************************************************
+  * layout
+  */
+
+  // links
+  --pxd-color-link: var(--pxd-color-primary);
+  --pxd-color-link-hover: var(--pxd-color-secondary);
+  --pxd-color-link-active: var(--pxd-color-primary); /* Colore link attivo */
+
+  // inline code
+  --pxd-color-inline-code: rgb(221, 158, 194); /* Viola rosa Tokyo Night */
+
+  // targeted content
+  --pxd-color-target: rgb(102, 51, 153); /* Viola scuro Tokyo Night */
+
+  // highlights
+  --pxd-color-note-highlight: var(--pxd-color-secondary); /* Highlight note */
+
+  // titles
+  --pxd-color-title: var(--pxd-color-primary); /* Colore titoli */
+
+  // hide any content that should not be displayed in the dark theme
+  .only-light {
+    display: none !important;
+  }
+
+  // specific brightness applied on images
+  img {
+    background: transparent !important;
+    filter: brightness(0.9) contrast(1.1); /* Assicurati che questo non influisca sulla trasparenza */
+  }
+}
+
+body img {
+  background: transparent !important;
+}

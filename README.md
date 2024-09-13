@@ -26,6 +26,7 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 - **Anaconda**: A powerful distribution for Python and R programming languages, widely used for scientific computing. Anaconda includes popular data science libraries such as NumPy, SciPy, and Matplotlib.
 - **Chrome browser**: A fast, secure, and easy-to-use web browser.
 - **Flameshot**: A powerful yet simple-to-use screenshot tool.
+- **GitHub CLI**: gh is GitHub on the command line.
 - **GIMP**: GNU Image Manipulation Program, a versatile graphics editor.
 - **Gnome-sushi**: A quick previewer for files in GNOME.
 - **HDFCompass**: A tool for browsing and analyzing HDF5 data.
@@ -39,6 +40,8 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 - **VLC Media Player**: A versatile media player that can play most multimedia files and streaming protocols.
 - **rSync**: A utility for efficiently transferring and synchronizing files.
 - **rClone**: A command-line program to manage files on cloud storage.
+- **Sushi**: A tool to preview file content from the file manager. 
+- **VSCode**: A versatile and complete coding IDE.
 - **Xournal++**: A PDF editor and note-taking application.
 - **Zed**: A high-performance, multiplayer code editor.
 
@@ -79,9 +82,11 @@ Additionally, compared to the standard Omakub setup, some tools that are not com
 #### Included Fonts
 
 The package also includes a collection of fonts that are commonly used:
+- Cascadia mono
 - Garamond
 - Handjet
 - Helvetica
+- iafonts
 - Roboto
 - Times New Roman
 - tt chocolates
