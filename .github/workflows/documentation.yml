@@ -29,16 +29,17 @@ jobs:
         run: |
           sphinx-build docs _build
 
-      # Deploy to GitHub Pages
+      - name: Copy installer file to build directory
+        run: |
+          cp docs/installer.sh _build/installer.sh
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build
 
-      # - name: Copy installer file to build directory
-      #   run: |
-      #     cp docs/installer.sh _build/installer.sh
+
       # - name: Running the Sphinx to gh-pages Action
       #   uses: uibcdf/action-sphinx-docs-to-gh-pages@v2.1.0
       #   with:
