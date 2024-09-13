@@ -31,7 +31,7 @@ jobs:
 
       - name: Copy .sh file to build directory
         run: |
-          cp docs/installer.sh _build/html/your-script.sh
+          cp docs/installer.sh docs/_build/html/installer.sh
       - name: Running the Sphinx to gh-pages Action
         uses: uibcdf/action-sphinx-docs-to-gh-pages@v2.1.0
         with:
