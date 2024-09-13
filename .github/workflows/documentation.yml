@@ -24,7 +24,7 @@ jobs:
       - name: Running the Sphinx to gh-pages Action
         uses: uibcdf/action-sphinx-docs-to-gh-pages@v2.1.0
         with:
-          branch: main
+          branch: master
           dir_docs: docs
           sphinx-apidoc: false
           
