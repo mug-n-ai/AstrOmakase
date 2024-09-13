@@ -21,11 +21,10 @@ jobs:
       - name: Sphinx build
         run: |
           sphinx-build docs _build
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Running the Sphinx to gh-pages Action
+        uses: uibcdf/action-sphinx-docs-to-gh-pages@v2.1.0
         with:
-          publish_branch: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _build/html
-
-
+          branch: main
+          dir_docs: docs
+          sphinx-apidoc: false
+          
