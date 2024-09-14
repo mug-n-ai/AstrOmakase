@@ -12,6 +12,8 @@ AstrOmakase is an installer that helps users download all the packages useful fo
 
 Similar to Omakub, the name AstrOmakase is derived from "astronomy" and the Japanese word "omakase," which means "I'll leave it up to you." In Japanese cuisine, omakase is a style of dining where the chef selects and prepares the meal, offering a curated and customized experience. Similarly, AstrOmakase provides a tailored setup optimized for astronomy research, allowing users to focus on their work without worrying about configuring each tool individually.
 
+<img src="docs/_static/desktop.png" alt="desktop" width="600"/>
+
 
 ### Relation with Omakub
 
@@ -23,7 +25,7 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 
 #### General Tools
 
-- **Anaconda**: A powerful distribution for Python and R programming languages, widely used for scientific computing. Anaconda includes popular data science libraries such as NumPy, SciPy, and Matplotlib.
+- **Anaconda**: A powerful distribution for Python and R programming languages, widely used for scientific computing. Anaconda installation includes popular data science libraries such as **NumPy**, **SciPy**, and **Matplotlib**.
 - **Chrome browser**: A fast, secure, and easy-to-use web browser.
 - **Flameshot**: A powerful yet simple-to-use screenshot tool.
 - **GitHub CLI**: gh is GitHub on the command line.
@@ -114,6 +116,16 @@ wget -qO- https://lorenzomugnai.github.io/AstrOmakase/installer.sh | bash
 ```
 
 During the installation, if Omakub is not present, you installerwill be prompted whether to proceed anyway.
+
+### Updates
+
+AstrOmakase can be easily updated from the dedicated executable:
+
+<img src="docs/_static/app.png" alt="app" width="600"/>
+
+
+The app also shows the installed version. The user can launch the application from console running `astromakase`, or with the dedicated launcher. 
+
 
 ### Contributions
 We welcome contributions! To contribute, follow these steps:

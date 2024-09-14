@@ -9,6 +9,7 @@ apps=(
     "Alacritty.desktop"
     "code.desktop"
     "Activity.desktop"
+    "AstrOmakase.desktop"
 )
 
 # Array to hold installed favorite apps

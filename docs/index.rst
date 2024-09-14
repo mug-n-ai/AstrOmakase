@@ -48,6 +48,16 @@ Run the following script to install AstrOmakase on your Ubuntu 24.04 system:
 
 If Omakub is not installed, the installer will prompt you whether to proceed.
 
+How to Update
+--------------
+
+AstrOmakase can be easily updated from the dedicated executable:
+
+.. image:: _static/app.png
+   :alt: AstrOmakase launcher
+
+The app also shows the installed version. The user can launch the application from console running `astromakase`, or with the dedicated launcher. 
+
 The Menu
 --------
 
@@ -115,7 +125,7 @@ Below is a list of tools included in AstrOmakase that are added to the standard 
 General Tools
 +++++++++++++
 
-- **Anaconda**: A powerful distribution for Python and R programming, widely used for scientific computing. Includes libraries like NumPy, SciPy, and Matplotlib.
+- **Anaconda**: A powerful distribution for Python and R programming, widely used for scientific computing. Includes libraries like **NumPy**, **SciPy**, and **Matplotlib**.
 - **Chrome**: A fast, secure, and easy-to-use web browser.
 - **Flameshot**: A simple yet powerful screenshot tool.
 - **GitHub CLI**: Command-line interface for GitHub (`gh`).
