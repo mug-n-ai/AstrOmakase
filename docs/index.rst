@@ -181,16 +181,6 @@ Optional Tools
 - **Zoom**: A video conferencing tool for meetings and webinars.
 - **Upscayl**: A tool for upscaling images using AI.
 
-Included Fonts
-++++++++++++++
-
-The AstrOmakase package includes a collection of commonly used fonts:
-
-- Cascadia mono
-- Nimbus Sans (open source similar to Helvetica)
-- iafonts
-- Roboto
-- Tinos (open source similar to Times New Roman)
 
 
 Contributing to AstrOmakase

@@ -80,14 +80,6 @@ Additionally, compared to the standard Omakub setup, some tools that are not com
 - **Zoom**: A video conferencing tool for meetings and webinars.
 - **Upscayl**: A tool for upscaling images using AI.
 
-#### Included Fonts
-
-The package also includes a collection of fonts that are commonly used:
-- Cascadia mono
-- Nimbus Sans (open source similar to Helvetica)
-- iafonts
-- Roboto
-- Tinos (open source similar to Times New Roman)
 
 ### Installation
 
