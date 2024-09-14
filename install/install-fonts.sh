@@ -17,6 +17,12 @@ install_font() {
     # Download the font
     wget -q "$FONT_URL" -O "$FONT_DIR/$FONT_NAME"
     
+    # Check if the font was downloaded correctly
+    if [ ! -f "$FONT_DIR/$FONT_NAME" ]; then
+        print_error "Failed to download $FONT_NAME."
+        return 1
+    fi
+
     # If it's a zip file, extract only the .ttf files and remove the zip
     if [[ "$FONT_NAME" == *.zip ]]; then
         unzip -jo "$FONT_DIR/$FONT_NAME" "*.ttf" -d "$FONT_DIR" # Extract only .ttf files into ~/.fonts
@@ -28,8 +34,11 @@ install_font() {
         print_success "$FONT_NAME installed successfully."
     else
         print_error "Failed to install $FONT_NAME."
+        return 1
     fi
 }
+
+echo "Installing fonts..."
 
 # Cascadia Mono (zip file)
 install_font "CascadiaCode.zip" "https://github.com/microsoft/cascadia-code/releases/download/v2106.17/CascadiaCode-2106.17.zip"
@@ -40,8 +49,8 @@ install_font "NimbusSansL.zip" "https://github.com/ArtifexSoftware/urw-base35-fo
 # iafonts (Input Mono - direct download)
 install_font "InputMono.ttf" "https://input.djr.com/build/?fontSelection=mono&language=english&name=InputMono&export=ttf"
 
-# Roboto (single .ttf file)
-install_font "Roboto.ttf" "https://github.com/google/fonts/blob/main/apache/roboto/Roboto%5Bwdth%2Cwght%5D.ttf?raw=true"
+# Roboto (simplified direct link)
+install_font "Roboto.ttf" "https://github.com/google/fonts/raw/main/apache/roboto/Roboto-Regular.ttf"
 
 # Times New Roman (Tinos as an open-source alternative, single .ttf file)
 install_font "Tinos.ttf" "https://github.com/google/fonts/raw/main/apache/tinos/Tinos%5Bwght%5D.ttf"

@@ -187,10 +187,10 @@ Included Fonts
 The AstrOmakase package includes a collection of commonly used fonts:
 
 - Cascadia mono
-- Helvetica
+- Nimbus Sans (open source similar to Helvetica)
 - iafonts
 - Roboto
-- Tinos
+- Tinos (open source similar to Times New Roman)
 
 
 Contributing to AstrOmakase

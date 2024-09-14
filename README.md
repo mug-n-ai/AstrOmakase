@@ -84,10 +84,10 @@ Additionally, compared to the standard Omakub setup, some tools that are not com
 
 The package also includes a collection of fonts that are commonly used:
 - Cascadia mono
-- Helvetica
+- Nimbus Sans (open source similar to Helvetica)
 - iafonts
 - Roboto
-- Tinos
+- Tinos (open source similar to Times New Roman)
 
 ### Installation
 
