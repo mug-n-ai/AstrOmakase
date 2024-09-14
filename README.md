@@ -84,13 +84,10 @@ Additionally, compared to the standard Omakub setup, some tools that are not com
 
 The package also includes a collection of fonts that are commonly used:
 - Cascadia mono
-- Garamond
-- Handjet
 - Helvetica
 - iafonts
 - Roboto
-- Times New Roman
-- tt chocolates
+- Tinos
 
 ### Installation
 

@@ -3,49 +3,50 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
-
-# Destination directory for the AppImage
+# Directory for the fonts
 FONT_DIR="$HOME/.fonts"
-mkdir -p $FONT_DIR
+mkdir -p "$FONT_DIR"
 
-FONT_SOURCE="$HOME/.fonts"
+# Function to install a font
+install_font() {
+    FONT_NAME=$1
+    FONT_URL=$2
 
-# Define the source directory (parent of the current directory)
-FONT_SOURCE="$(cd "$(dirname "${BASH_SOURCE[0]}")/../content/fonts" && pwd)"
+    echo "Installing $FONT_NAME..."
 
-echo "Installing fonts..."
-
-# Check if the directory exists
-if [ -d "$FONT_SOURCE" ]; then
-    echo "Looking for .zip files in $FONT_SOURCE..."
-else
-    print_error "Directory $FONT_SOURCE does not exist. Exiting..."
-    exit 1
-fi
-
-# Loop through all .zip files in the directory
-for zip_file in "$FONT_SOURCE"/*.zip; do
-    if [ -f "$zip_file" ]; then
-        echo "Extracting $zip_file..."
-
-        # Create a temporary directory to extract the files
-        TEMP_DIR=$(mktemp -d)
-
-        # Extract the zip file into the temporary directory
-        unzip -q "$zip_file" -d "$TEMP_DIR"
-
-        # Find all .ttf files and copy them to the font directory
-        find "$TEMP_DIR" -type f -name "*.ttf" -exec cp {} "$FONT_DIR" \;
-
-        # Clean up temporary directory
-        rm -rf "$TEMP_DIR"
-    else
-        print_error "No zip files found in $FONT_SOURCE."
+    # Download the font
+    wget -q "$FONT_URL" -O "$FONT_DIR/$FONT_NAME"
+    
+    # If it's a zip file, extract only the .ttf files and remove the zip
+    if [[ "$FONT_NAME" == *.zip ]]; then
+        unzip -jo "$FONT_DIR/$FONT_NAME" "*.ttf" -d "$FONT_DIR" # Extract only .ttf files into ~/.fonts
+        rm "$FONT_DIR/$FONT_NAME" # Remove the zip file after extraction
     fi
-done
 
-echo "Updating font cache..."
-fc-cache -f 
+    # Check the result of the operation
+    if [ $? -eq 0 ]; then
+        print_success "$FONT_NAME installed successfully."
+    else
+        print_error "Failed to install $FONT_NAME."
+    fi
+}
 
-print_success "Font extraction completed. TTF files have been copied to $FONT_DIR."
+# Cascadia Mono (zip file)
+install_font "CascadiaCode.zip" "https://github.com/microsoft/cascadia-code/releases/download/v2106.17/CascadiaCode-2106.17.zip"
 
+# Helvetica (Nimbus Sans L open-source alternative, zip file)
+install_font "NimbusSansL.zip" "https://github.com/ArtifexSoftware/urw-base35-fonts/archive/refs/heads/master.zip"
+
+# iafonts (Input Mono - direct download)
+install_font "InputMono.ttf" "https://input.djr.com/build/?fontSelection=mono&language=english&name=InputMono&export=ttf"
+
+# Roboto (single .ttf file)
+install_font "Roboto.ttf" "https://github.com/google/fonts/blob/main/apache/roboto/Roboto%5Bwdth%2Cwght%5D.ttf?raw=true"
+
+# Times New Roman (Tinos as an open-source alternative, single .ttf file)
+install_font "Tinos.ttf" "https://github.com/google/fonts/raw/main/apache/tinos/Tinos%5Bwght%5D.ttf"
+
+# Update the font cache
+fc-cache -fv
+
+print_success "All fonts installed and font cache updated."

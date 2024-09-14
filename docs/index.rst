@@ -186,12 +186,12 @@ Included Fonts
 
 The AstrOmakase package includes a collection of commonly used fonts:
 
-- Garamond
-- Handjet
+- Cascadia mono
 - Helvetica
+- iafonts
 - Roboto
-- Times New Roman
-- tt chocolates
+- Tinos
+
 
 Contributing to AstrOmakase
 ===========================
