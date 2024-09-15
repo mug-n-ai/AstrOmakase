@@ -31,7 +31,7 @@ install_package() {
                 apt_install "$dep"
             done
         fi
-        
+
         echo "Installing $1..."
         if [ "$4" = "apt" ]; then
             apt_install "$3"
@@ -46,7 +46,7 @@ install_package() {
     fi
 
     print_success "$1 setup completed successfully."
-    
+
 }
 
 apt_install() {

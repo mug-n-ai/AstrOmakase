@@ -29,6 +29,6 @@ VLC’s user-friendly interface and robust performance ensure smooth playback an
 **Upscayl** (optional)
 ++++++++++++++++++++++++++++
 
-`Upscayl <https://upscayl.org/>`_ is a tool designed for enhancing image quality through upscaling. It uses advanced algorithms to increase the resolution of images while preserving detail and reducing artifacts. 
+`Upscayl <https://upscayl.org/>`_ is a tool designed for enhancing image quality through upscaling. It uses advanced algorithms to increase the resolution of images while preserving detail and reducing artifacts.
 
 Upscayl is particularly useful for improving the quality of low-resolution images, making it ideal for users who need to enlarge images without sacrificing visual fidelity. Its intuitive interface and powerful processing capabilities make it a valuable tool for photographers, designers, and anyone needing to enhance image quality.

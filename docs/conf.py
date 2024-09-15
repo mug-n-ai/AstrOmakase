@@ -55,4 +55,3 @@ html_theme_options = {
 }
 
 html_copy_source = False
-

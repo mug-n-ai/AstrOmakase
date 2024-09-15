@@ -77,4 +77,3 @@ else
     echo "Zotero Connector installed successfully. Please enable it in the Chrome extensions settings."
 
 fi
-

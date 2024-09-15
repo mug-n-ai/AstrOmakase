@@ -12,61 +12,61 @@ Office Suite and data handling
 **OnlyOffice**
 +++++++++++++++
 
-`OnlyOffice <https://www.onlyoffice.com/>`_ is a comprehensive office suite designed to cater to all your document needs. It strongly resemble Microsoft Office 365. 
-It supports a wide array of formats including DOCX, XLSX, PPTX and PDF, making it highly compatible with files from other major office suites like Microsoft Office. 
+`OnlyOffice <https://www.onlyoffice.com/>`_ is a comprehensive office suite designed to cater to all your document needs. It strongly resemble Microsoft Office 365.
+It supports a wide array of formats including DOCX, XLSX, PPTX and PDF, making it highly compatible with files from other major office suites like Microsoft Office.
 
-The suite features a clean and intuitive interface that simplifies tasks such as document editing, spreadsheet calculations, and presentation creation. 
+The suite features a clean and intuitive interface that simplifies tasks such as document editing, spreadsheet calculations, and presentation creation.
 
 **HDFCompass**
 ++++++++++++++++++++++++++++
 
-`HDFCompass <https://github.com/HDFGroup/hdf-compass>`_ is a sophisticated visualisation tool designed to facilitate the exploration and analysis of HDF5 (Hierarchical Data Format version 5) files. 
-HDF5 is a widely used format for managing large amounts of data in a hierarchical structure. HDFCompass provides an intuitive interface that allows users to navigate through the complex hierarchies of HDF5 files, view datasets, and inspect metadata. 
+`HDFCompass <https://github.com/HDFGroup/hdf-compass>`_ is a sophisticated visualisation tool designed to facilitate the exploration and analysis of HDF5 (Hierarchical Data Format version 5) files.
+HDF5 is a widely used format for managing large amounts of data in a hierarchical structure. HDFCompass provides an intuitive interface that allows users to navigate through the complex hierarchies of HDF5 files, view datasets, and inspect metadata.
 
 Its capabilities extend to data exploration, including viewing and editing dataset values and attributes, making it an invaluable tool for researchers and engineers working with HDF5 data.
-The application supports various data visualisation options, which enable users to gain insights into their data more effectively. 
+The application supports various data visualisation options, which enable users to gain insights into their data more effectively.
 
-HDFCompass also offers features for searching and filtering data, which simplifies the process of managing and extracting relevant information from large and intricate datasets. 
+HDFCompass also offers features for searching and filtering data, which simplifies the process of managing and extracting relevant information from large and intricate datasets.
 The ease of use and comprehensive functionality make HDFCompass a go-to tool for anyone dealing with HDF5 files.
 
 
 **Kdiff3**
 ++++++++++++++++++++++++++++
 
-`Kdiff3 <https://kdiff3.sourceforge.net/>`_ is a powerful file and directory comparison tool that excels in merging and analysing differences between files. 
-It is particularly useful for developers and researchers who need to compare multiple versions of text files or directories, such as codebases or documentation. 
+`Kdiff3 <https://kdiff3.sourceforge.net/>`_ is a powerful file and directory comparison tool that excels in merging and analysing differences between files.
+It is particularly useful for developers and researchers who need to compare multiple versions of text files or directories, such as codebases or documentation.
 Kdiff3 supports side-by-side and inline comparisons, making it easy to spot differences and inconsistencies.
 
-One of Kdiff3's standout features is its three-way merge capability, which allows users to combine changes from multiple sources while preserving the integrity of the original files. 
+One of Kdiff3's standout features is its three-way merge capability, which allows users to combine changes from multiple sources while preserving the integrity of the original files.
 This is especially valuable in collaborative environments where multiple contributors may be working on different versions of a document or code. The tool also includes features for conflict resolution, ensuring that discrepancies are managed efficiently and accurately. Its user-friendly interface and robust functionality make Kdiff3 an essential tool for managing and merging file changes.
 
-**Zed** 
+**Zed**
 ++++++++++++++++++++++++++++
 
-`Zed <https://zed.dev/>`_ is a modern text editor designed to streamline the coding and text editing experience. It offers a clean and efficient interface that supports various programming languages and file formats. 
+`Zed <https://zed.dev/>`_ is a modern text editor designed to streamline the coding and text editing experience. It offers a clean and efficient interface that supports various programming languages and file formats.
 Zed is particularly noted for its performance and responsiveness, which enhances productivity when working with large codebases or documents.
 
-The editor provides essential features such as syntax highlighting, code completion, and multi-cursor support, making it a valuable tool for developers who need a reliable and fast editing environment. 
-Zed`s customisation options allow users to tailor the editor to their specific needs, including configuring themes, key bindings, and extensions. 
-Its lightweight nature ensures that it runs smoothly without consuming excessive system resources, allowing users to focus on their work without interruptions. 
+The editor provides essential features such as syntax highlighting, code completion, and multi-cursor support, making it a valuable tool for developers who need a reliable and fast editing environment.
+Zed`s customisation options allow users to tailor the editor to their specific needs, including configuring themes, key bindings, and extensions.
+Its lightweight nature ensures that it runs smoothly without consuming excessive system resources, allowing users to focus on their work without interruptions.
 Zed`s combination of speed, functionality, and ease of use makes it an excellent choice for text editing tasks.
 
 **Gnome-Sushi**
 +++++++++++++++
 
-`Gnome-Sushi <https://en.wikipedia.org/wiki/GNOME_sushi>`_ is a lightweight and efficient file previewer designed for the GNOME desktop environment. 
-It provides a quick and seamless way to view the contents of files without needing to open them in their respective applications. 
+`Gnome-Sushi <https://en.wikipedia.org/wiki/GNOME_sushi>`_ is a lightweight and efficient file previewer designed for the GNOME desktop environment.
+It provides a quick and seamless way to view the contents of files without needing to open them in their respective applications.
 By simply selecting a file and pressing the spacebar, users can preview a wide range of file types, including images, PDFs, text files, and more.
 
-The tool`s functionality enhances productivity by allowing users to quickly access and review files, making it easier to manage and organise large numbers of documents. 
+The tool`s functionality enhances productivity by allowing users to quickly access and review files, making it easier to manage and organise large numbers of documents.
 Gnome-Sushi integrates smoothly with the GNOME file manager, offering a convenient preview feature that streamlines file handling and reduces the need for multiple application windows.
 
 
 **LaTeX Studio** (optional)
 ++++++++++++++++++++++++++++
 
-`LaTeX Studio <https://www.texstudio.org/>`_ is a robust LaTeX editor designed to facilitate the creation of high-quality scientific and technical documents. 
-It offers a rich set of features for editing LaTeX files, including syntax highlighting, real-time preview, and a comprehensive set of tools for document formatting and referencing. 
+`LaTeX Studio <https://www.texstudio.org/>`_ is a robust LaTeX editor designed to facilitate the creation of high-quality scientific and technical documents.
+It offers a rich set of features for editing LaTeX files, including syntax highlighting, real-time preview, and a comprehensive set of tools for document formatting and referencing.
 
 LaTeX Studio is particularly well-suited for academics and researchers who need to produce professional-grade papers, theses, and reports with precise formatting and complex document structures.
 
@@ -80,20 +80,20 @@ Currently, AstrOmakase uses OnlyOffice as default PDF viewer, but it also instal
 +++++++++++++
 
 
-`Okular <https://okular.kde.org/en-gb/>`_ is a versatile and feature-rich document viewer that handles various file formats including PDFs, PostScript, DjVu, and more. 
-It excels in its ability to manage and annotate documents, offering tools for highlighting text, adding notes, and even drawing shapes. 
-This makes Okular an invaluable tool for reviewing and marking up research papers, technical documents, or any other text-based files. 
+`Okular <https://okular.kde.org/en-gb/>`_ is a versatile and feature-rich document viewer that handles various file formats including PDFs, PostScript, DjVu, and more.
+It excels in its ability to manage and annotate documents, offering tools for highlighting text, adding notes, and even drawing shapes.
+This makes Okular an invaluable tool for reviewing and marking up research papers, technical documents, or any other text-based files.
 
 Its robust navigation features, such as bookmarks and text search, ensure that you can quickly find and access important information within your documents.
 
 **Xournal++**
 +++++++++++++
 
-`Xournal++ <https://xournalpp.github.io/>`_ is a versatile application for PDF annotation and note-taking, ideal for both academic and professional use. 
-It offers a range of tools for annotating PDF documents, including highlighting, underlining, and drawing shapes. 
+`Xournal++ <https://xournalpp.github.io/>`_ is a versatile application for PDF annotation and note-taking, ideal for both academic and professional use.
+It offers a range of tools for annotating PDF documents, including highlighting, underlining, and drawing shapes.
 Xournal++ supports freehand drawing, which is particularly useful for adding personal notes, sketches, or diagrams directly onto your documents.
 
-One of the standout features of Xournal++ is its support for handwritten notes. You can use a stylus or tablet to write directly on the document, making it a great choice for those who prefer taking notes in a more natural, handwritten format. 
+One of the standout features of Xournal++ is its support for handwritten notes. You can use a stylus or tablet to write directly on the document, making it a great choice for those who prefer taking notes in a more natural, handwritten format.
 Additionally, Xournal++ includes functionality for managing and organizing your notes, allowing you to create and save multiple notebooks within the application.
 Xournal++ also supports exporting annotations and notes to various formats, such as PDF and image files, enabling easy sharing and collaboration. The application`s user-friendly interface and extensive annotation tools make it an invaluable resource for reviewing documents, brainstorming ideas, and maintaining organized notes.
 
@@ -101,10 +101,10 @@ Xournal++ also supports exporting annotations and notes to various formats, such
 **PDFsam**
 +++++++++++++
 
-`PDFsam <https://pdfsam.org/>`_ is a straightforward and efficient utility for managing PDF files. 
-It provides essential functionalities such as merging multiple PDFs into a single document, splitting a large PDF into smaller sections, and rotating pages to adjust their orientation. 
+`PDFsam <https://pdfsam.org/>`_ is a straightforward and efficient utility for managing PDF files.
+It provides essential functionalities such as merging multiple PDFs into a single document, splitting a large PDF into smaller sections, and rotating pages to adjust their orientation.
 
-The tool's user-friendly interface makes these tasks simple and accessible, allowing you to easily organize and manipulate your PDFs without needing advanced technical knowledge. 
+The tool's user-friendly interface makes these tasks simple and accessible, allowing you to easily organize and manipulate your PDFs without needing advanced technical knowledge.
 PDFsam is ideal for preparing documents for distribution or creating custom PDFs from various sources.
 
 Internet
@@ -134,9 +134,9 @@ Overall, qBittorrent combines functionality with ease of use, making it a reliab
 **Brave Browser** (optional)
 ++++++++++++++++++++++++++++
 
-`Brave <https://brave.com/>`_ is a modern web browser that prioritizes user privacy and security. 
-It blocks unwanted ads and trackers by default, which not only enhances your browsing speed but also protects your personal data from being monitored by third parties. 
-Brave's built-in privacy features, such as fingerprinting protection and secure browsing modes, make it a valuable tool for anyone concerned about online privacy. 
+`Brave <https://brave.com/>`_ is a modern web browser that prioritizes user privacy and security.
+It blocks unwanted ads and trackers by default, which not only enhances your browsing speed but also protects your personal data from being monitored by third parties.
+Brave's built-in privacy features, such as fingerprinting protection and secure browsing modes, make it a valuable tool for anyone concerned about online privacy.
 
 Additionally, Brave offers a clean and fast browsing experience, with support for all modern web standards and extensions.
 Brave is also able to import all the preferences from Chrome, and allows for the creation of different users.
@@ -144,7 +144,7 @@ Brave is also able to import all the preferences from Chrome, and allows for the
 Also, please consider set `Ecosia <https://ecosia.helpscoutdocs.com/article/471-use-ecosia-on-your-desktop-row-markets>`_ as default search engine, as it uses its profits to plant trees around the world.
 
 
-.. note:: 
+.. note::
     **Ecosia** (optional - search engine)
 
     `Ecosia <https://www.ecosia.org/>`_ is a search engine that uses its profits to plant trees around the world.
@@ -154,7 +154,7 @@ Also, please consider set `Ecosia <https://ecosia.helpscoutdocs.com/article/471-
 **NordVPN** (optional)
 ++++++++++++++++++++++++++++
 
-`NordVPN <https://nordvpn.com/>`_ is a leading virtual private network (VPN) service that provides robust security and privacy features for online activities. It is designed to protect your internet connection by encrypting your data and masking your IP address, thereby enhancing your privacy and security while browsing the web. 
+`NordVPN <https://nordvpn.com/>`_ is a leading virtual private network (VPN) service that provides robust security and privacy features for online activities. It is designed to protect your internet connection by encrypting your data and masking your IP address, thereby enhancing your privacy and security while browsing the web.
 One of NordVPN's key features is its extensive server network, which spans numerous countries around the world. This allows users to connect to servers in different locations, bypass geographic restrictions, and access content that may be blocked in their region. NordVPN's advanced encryption protocols ensure that your data remains secure and private, protecting it from potential threats such as hackers and surveillance.
 In addition to its core VPN functionalities, NordVPN offers additional features such as a built-in ad blocker and malware protection, which further enhance your browsing experience by reducing unwanted ads and safeguarding against malicious sites. The service also includes options for split tunnelling, allowing you to choose which apps or websites use the VPN connection and which use your regular internet connection.
 
@@ -166,9 +166,9 @@ Desktop management Tools
 **Flameshot**
 ++++++++++++++++++++++++++++
 
-`Flameshot <https://flameshot.org/>`_ is a powerful and flexible screenshot tool that enhances the screenshot-taking experience with a range of advanced features. 
-It allows you to capture your screen in various ways, including full-screen, window, or selected area. 
-Once a screenshot is taken, Flameshot provides an array of editing tools to annotate the image directly—adding text, arrows, shapes, and blur effects to highlight specific areas. 
+`Flameshot <https://flameshot.org/>`_ is a powerful and flexible screenshot tool that enhances the screenshot-taking experience with a range of advanced features.
+It allows you to capture your screen in various ways, including full-screen, window, or selected area.
+Once a screenshot is taken, Flameshot provides an array of editing tools to annotate the image directly—adding text, arrows, shapes, and blur effects to highlight specific areas.
 
 Its intuitive interface and extensive customization options make it an excellent choice for creating detailed and informative screenshots for reports, tutorials, or documentation.
 
@@ -176,23 +176,23 @@ Its intuitive interface and extensive customization options make it an excellent
 **gdm-settings** (optional)
 ++++++++++++++++++++++++++++
 
-`gdm-settings <https://gdm-settings.github.io/>`_ is a utility for configuring the GNOME Display Manager, which controls the login screen and user session management in GNOME-based environments. 
-This tool allows you to customize various aspects of the login screen, such as background images, layout settings, and themes. 
+`gdm-settings <https://gdm-settings.github.io/>`_ is a utility for configuring the GNOME Display Manager, which controls the login screen and user session management in GNOME-based environments.
+This tool allows you to customize various aspects of the login screen, such as background images, layout settings, and themes.
 By using gdm-settings, you can personalize your login experience to better match your aesthetic preferences or organisational requirements, providing a more tailored and engaging user interface.
 
 
 **SuperPaper** (optional)
 ++++++++++++++++++++++++++++
 
-`SuperPaper <https://github.com/hhannine/superpaper>`_ is a specialized tool for managing wallpapers across multiple monitors. 
-It allows you to set different images on each screen, creating a customized and visually cohesive desktop environment. 
-With SuperPaper, you can select and display high-resolution wallpapers that span across your monitors or choose unique images for each display. 
+`SuperPaper <https://github.com/hhannine/superpaper>`_ is a specialized tool for managing wallpapers across multiple monitors.
+It allows you to set different images on each screen, creating a customized and visually cohesive desktop environment.
+With SuperPaper, you can select and display high-resolution wallpapers that span across your monitors or choose unique images for each display.
 This tool is ideal for users with multi-monitor setups who want to enhance their workspace's visual appeal and organisation.
 
 
 **Scrcpy** (optional)
 ++++++++++++++++++++++++++++
 
-`Scrcpy <https://github.com/Genymobile/scrcpy>`_ is a powerful application for screen mirroring and controlling Android devices from your desktop. 
-It provides high-resolution, low-latency mirroring of your device's screen, allowing you to interact with apps, view notifications, and manage your content directly from your computer. 
+`Scrcpy <https://github.com/Genymobile/scrcpy>`_ is a powerful application for screen mirroring and controlling Android devices from your desktop.
+It provides high-resolution, low-latency mirroring of your device's screen, allowing you to interact with apps, view notifications, and manage your content directly from your computer.
 Scrcpy's performance and ease of use make it a valuable tool for developers, testers, or anyone who needs to access their Android device's interface while working on a larger screen.

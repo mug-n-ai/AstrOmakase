@@ -13,12 +13,12 @@ Welcome to AstrOmakase's Documentation!
    .. grid-item-card:: Welcome to AstrOmakase!
       :columns: 9
 
-      **AstrOmakase** is an optimised Ubuntu 24.04 setup specifically designed for astronomers and astrophysicists. It builds on the foundation of the `Omakub project <https://github.com/basecamp/omakub>`_, offering a curated and comprehensive environment that includes all the essential tools needed for astronomical research and development. 
+      **AstrOmakase** is an optimised Ubuntu 24.04 setup specifically designed for astronomers and astrophysicists. It builds on the foundation of the `Omakub project <https://github.com/basecamp/omakub>`_, offering a curated and comprehensive environment that includes all the essential tools needed for astronomical research and development.
 
 What is AstrOmakase?
 --------------------
 
-AstrOmakase is more than just a collection of software. It is a thoughtfully crafted setup tailored to streamline your research workflow. 
+AstrOmakase is more than just a collection of software. It is a thoughtfully crafted setup tailored to streamline your research workflow.
 
 The name "AstrOmakase" combines "astronomy" with the Japanese word "omakase," which means "I'll leave it up to you." Just as in an omakase dining experience, where the chef selects and prepares a personalized meal, AstrOmakase provides a tailored software environment, allowing you to focus on your research without worrying about configuring each tool individually.
 
@@ -56,7 +56,7 @@ AstrOmakase can be easily updated from the dedicated executable:
 .. image:: _static/app.png
    :alt: AstrOmakase launcher
 
-The app also shows the installed version. The user can launch the application from console running `astromakase`, or with the dedicated launcher. 
+The app also shows the installed version. The user can launch the application from console running `astromakase`, or with the dedicated launcher.
 
 The Menu
 --------
@@ -77,7 +77,7 @@ Below is a list of tools included in AstrOmakase that are added to the standard 
 
 
 .. grid:: 2
-   :gutter: 1 1 2 2 
+   :gutter: 1 1 2 2
 
    .. grid-item-card:: Desktop Tools
       :link: desktop
@@ -224,4 +224,3 @@ How to Contribute
 We will review your Pull Request as soon as possible, and once approved, it will be merged into the main branch!
 
 Thank you for your contribution to AstrOmakase—together we can build an even better tool for the astronomical research community!
-
