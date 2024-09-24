@@ -87,7 +87,9 @@ Additionally, compared to the standard Omakub setup, some tools that are not com
 
 AstrOmakase simplifies the setup process, allowing you to focus on your research and development tasks without the hassle of configuring each tool manually.
 
-**Note:** AstrOmakase can be installed with or without Omakub. However, for the best experience, it is recommended to install Omakub first.
+
+> [!TIP]
+> AstrOmakase can be installed with or without Omakub. However, for the best experience, it is recommended to install Omakub first.
 
 #### Step 1 (optional): Install Omakub
 
