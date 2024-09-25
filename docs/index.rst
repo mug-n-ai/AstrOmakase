@@ -189,9 +189,6 @@ Contributing to AstrOmakase
 
 We warmly welcome contributions to AstrOmakase! Whether you're fixing bugs, adding new features, or improving the documentation, your efforts help us build a better tool for the astronomy community. Here are the steps to follow if you'd like to contribute:
 
-How to Contribute
-------------------
-
 1. **Fork the repository**:
    Start by forking the AstrOmakase repository to your own GitHub account.
 
