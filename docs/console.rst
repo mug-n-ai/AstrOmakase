@@ -32,7 +32,7 @@ This section introduces various console tools that enhance terminal-based workfl
 **nmap** 
 ++++++++++++++++++++++++++++
 
-`nmap <https://nmap.org/>_`` is a powerful and versatile network scanning tool designed to discover hosts and services on a computer network. It offers a comprehensive suite of features, including host discovery, port scanning, service version detection, and operating system identification. With its flexible scripting engine and extensive customization options, `nmap`` enables users to perform detailed network audits, security assessments, and troubleshoot connectivity issues effectively. Whether you are a network administrator, security professional, or enthusiast, `nmap` serves as an essential tool for maintaining and securing network infrastructures, providing deep insights into network topology and potential vulnerabilities.
+`nmap <https://nmap.org/>`_ is a powerful and versatile network scanning tool designed to discover hosts and services on a computer network. It offers a comprehensive suite of features, including host discovery, port scanning, service version detection, and operating system identification. With its flexible scripting engine and extensive customization options, `nmap`` enables users to perform detailed network audits, security assessments, and troubleshoot connectivity issues effectively. Whether you are a network administrator, security professional, or enthusiast, `nmap` serves as an essential tool for maintaining and securing network infrastructures, providing deep insights into network topology and potential vulnerabilities.
 
 **plocate**
 ++++++++++++++++++++++++++++
