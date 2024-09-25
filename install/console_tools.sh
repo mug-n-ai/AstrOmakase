@@ -25,3 +25,5 @@ apt_install fd-find
 apt_install plocate
 
 apt_install zoxide
+
+apt_install nmap

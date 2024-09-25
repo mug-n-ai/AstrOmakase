@@ -153,6 +153,7 @@ Console Tools
 - **fd**: A simple, fast, and user-friendly alternative to `find`.
 - **htop** and **btop**: Two interactive process viewers for Unix systems.
 - **lt**: A tool for listing files and directories in a tree-like format.
+- **nmap**: A network exploration tool and security scanner.
 - **plocate**: A tool for quickly locating files on the filesystem.
 - **screen**: A terminal multiplexer for managing multiple windows in a single session.
 - **zoxide**: A fast, flexible, and smart directory jumper.

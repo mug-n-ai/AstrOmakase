@@ -29,6 +29,11 @@ This section introduces various console tools that enhance terminal-based workfl
 
 `lt` is a tool for listing files and directories in a tree-like format. It provides a clear and hierarchical view of your filesystem, making it easier to navigate and understand the structure of your directories and files. With options for custom formatting and depth control, `lt` offers flexibility in how file structures are displayed.
 
+**nmap** 
+++++++++++++++++++++++++++++
+
+`nmap <https://nmap.org/>_`` is a powerful and versatile network scanning tool designed to discover hosts and services on a computer network. It offers a comprehensive suite of features, including host discovery, port scanning, service version detection, and operating system identification. With its flexible scripting engine and extensive customization options, `nmap`` enables users to perform detailed network audits, security assessments, and troubleshoot connectivity issues effectively. Whether you are a network administrator, security professional, or enthusiast, `nmap` serves as an essential tool for maintaining and securing network infrastructures, providing deep insights into network topology and potential vulnerabilities.
+
 **plocate**
 ++++++++++++++++++++++++++++
 
