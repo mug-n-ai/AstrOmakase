@@ -14,7 +14,6 @@ echo "version $(cat version)"
 # running pre install checks
 source "$INSTALL_DIR/preinstall_checks.sh"
 
-
 # Define the options and corresponding script names
 OPTIONAL_APPS=("None" "Brave"  "Dropbox" "Franz" "gdm-settings" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Upscayl")
 OPTIONAL_SCRIPTS=("app-brave" "app-dropbox" "app-discord" "app-franz" "app-gdm-settings" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-upscayl")
@@ -54,6 +53,9 @@ fi
 echo "Preparing required tools..."
 source "$INSTALL_DIR/required.sh"
 
+# Run migrations if necessary
+echo "Running preparatory migrations..."
+source "$INSTALL_DIR/migrations.sh"
 
 # Install additional tools
 echo "Installing AstrOmakase tools..."

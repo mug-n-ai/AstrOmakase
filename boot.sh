@@ -18,10 +18,22 @@ echo -e "\nBegin installation (or abort with ctrl+c)..."
 echo "Installing git..."
 sudo apt-get install -y git >/dev/null
 
+# Save the current version if it exists, to a temporary location
+if [ -f ~/.local/share/astromakase/version ]; then
+    echo "Saving the current version..."
+    mv ~/.local/share/astromakase/version /tmp/version_previous
+fi
+
 echo "Cloning stable AstrOmakase..."
 rm -rf ~/.local/share/astromakase
 INSTALL_DIR=~/.local/share/astromakase
 git clone https://github.com/LorenzoMugnai/AstrOmakase.git $INSTALL_DIR >/dev/null
+
+# Restore the previous version file to the new directory, if it was saved
+if [ -f /tmp/version_previous ]; then
+    mv /tmp/version_previous ~/.local/share/astromakase/version_previous
+    echo "Previous version restored."
+fi
 
 cd $INSTALL_DIR
 LATEST_RELEASE=$(get_latest_release)

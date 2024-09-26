@@ -35,13 +35,11 @@ install_package() {
         echo "Installing $1..."
         if [ "$4" = "apt" ]; then
             apt_install "$3"
+        elif [ "$4" = "snap" ]; then
+            snap_install "$3"
         else
-            if [ "$4" = "snap" ]; then
-                snap_install "$3"
-            else
-                print_error "Invalid package manager. Exiting."
-                exit 1
-            fi
+            print_error "Invalid package manager. Exiting."
+            exit 1
         fi
     fi
 
