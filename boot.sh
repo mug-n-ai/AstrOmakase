@@ -11,8 +11,19 @@ get_latest_release() {
 
 set -e
 
-echo "AstrOmakase bootstrapper"
-echo "=> AstrOmakase is for fresh Ubuntu 24.04 installations only!"
+#Initial Message
+echo "========================================="
+echo "   Welcome to the AstrOmakase Installer    "
+echo "========================================="
+echo "This script will guide you through the installation of AstrOmakase on your Ubuntu 24.04 system."
+echo "If Omakub is not detected, you will have the option to install it for an enhanced experience."
+echo -e "\nBegin installation (or abort with Ctrl+C)...\n"
+
+INSTALL_DIR=~/.local/share/astromakase
+
+if [ ! -d "$INSTALL_DIR" ]; then
+    echo "=> AstrOmakase is for fresh Ubuntu 24.04 installations only!"
+fi
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
 echo "Installing git..."
@@ -25,8 +36,7 @@ if [ -f ~/.local/share/astromakase/version ]; then
 fi
 
 echo "Cloning stable AstrOmakase..."
-rm -rf ~/.local/share/astromakase
-INSTALL_DIR=~/.local/share/astromakase
+rm -rf $INSTALL_DIR
 git clone https://github.com/LorenzoMugnai/AstrOmakase.git $INSTALL_DIR >/dev/null
 
 # Restore the previous version file to the new directory, if it was saved
