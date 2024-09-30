@@ -25,7 +25,8 @@ if [ ! -d "$OMAKUB_DIR" ]; then
     case "$response" in
         [yY]|[yY][eE][sS])
             echo "Omakub will be installed in $OMAKUB_DIR."
-            echo "Note that you will be logged out at the end of the installation. To compleste Astromakase installation you will need to log back in and rerun the installation script."
+            echo "==> IMPORTANT <== "
+            echo "==> Note that you will be logged out at the end of the installation. To compleste Astromakase installation you will need to log back in and rerun the installation script.<=="
             echo "Installing Omakub..."
             wget -qO- https://omakub.org/install | bash
 
