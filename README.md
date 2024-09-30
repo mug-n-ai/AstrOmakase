@@ -105,8 +105,8 @@ During the installation, if Omakub is not detected, you will be prompted with th
 
 >[!IMPORTANT]
 >If you choose to install Omakub, the installer will proceed with the Omakub installation.
->After Omakub is installed, you will need to log out and log back in to apply the necessary environment changes.
->Once you have logged back in, rerun the AstrOmakase installation script to complete the setup process.
+>**After Omakub is installed**, you will need to log out and log back in to apply the necessary environment changes.
+>Once you have logged back in, **rerun the AstrOmakase installation script to complete the setup process**.
 >If you choose not to install Omakub:
 
 >[!NOTE]
