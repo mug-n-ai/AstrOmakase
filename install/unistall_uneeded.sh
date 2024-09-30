@@ -17,3 +17,9 @@ done
 if extension_installed "Vitals@CoreCoding.com"; then
     gext uninstall Vitals@CoreCoding.com
 fi
+
+# remove mise
+echo  "Removing mise: to uninstall, select Yes when prompted"
+if command_exists mise; then
+    sudo mise implode
+fi
