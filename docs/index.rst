@@ -227,7 +227,7 @@ We warmly welcome contributions to AstrOmakase! Whether you're fixing bugs, addi
       git push origin feature/your-feature-name
 
 6. **Open a Pull Request**:
-   Finally, submit a Pull Request to the main AstrOmakase repository. Please include a description of your changes, any relevant issues your code addresses, and any tests you've written.
+   Finally, submit a `Pull Request <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>_` to the main AstrOmakase repository. Please include a description of your changes, any relevant issues your code addresses, and any tests you've written.
 
 We will review your Pull Request as soon as possible, and once approved, it will be merged into the main branch!
 

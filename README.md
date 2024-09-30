@@ -65,7 +65,7 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 - **Stellarium**: A planetarium software that shows exactly what you see when you look up at the stars.
 - **Zotero**: A reference management tool for organizing research papers and citations.
 
-Additionally, compared to the standard Omakub setup, some tools that are not commonly used in the astronomy field, such as game emulators and media players, have been removed.
+Additionally, compared to the standard Omakub setup, some tools that are not commonly used in the astronomy field have been removed.
 
 #### Optional Tools
 
@@ -131,4 +131,4 @@ Fork the repository.
 Create a new branch for your feature (`git checkout -b feature/feature-name`).
 Commit your changes (`git commit -m 'Add feature'`).
 Push the branch (`git push origin feature/feature-name`).
-Open a Pull Request.
+Open a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
