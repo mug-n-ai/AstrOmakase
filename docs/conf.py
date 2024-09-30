@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Astromakase'
-copyright = '2024, <a href="https://www.lorenzomugnai.com">Lorenzo Mugnai</a>'
+copyright = '2024, Lorenzo Mugnai'
 author = 'Lorenzo Mugnai'
 
 # -- General configuration ---------------------------------------------------
