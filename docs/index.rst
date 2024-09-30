@@ -46,7 +46,17 @@ Run the following script to install AstrOmakase on your Ubuntu 24.04 system:
 
    wget -qO- https://lorenzomugnai.github.io/AstrOmakase/installer.sh | bash
 
-If Omakub is not installed, the installer will prompt you whether to proceed.
+During the installation, if Omakub is not detected, you will be prompted with the option to install it.
+
+.. important::
+   If you choose to install Omakub, the installer will proceed with the Omakub installation.
+   **After Omakub is installed**, you will need to log out and log back in to apply the necessary environment changes.
+   Once you have logged back in, **rerun the AstrOmakase installation script to complete the setup** process.
+   If you choose not to install Omakub:
+
+.. note::
+   If you choose to not install Omakub, the installation will continue without Omakub.
+   Note that some features may be limited or unavailable without Omakub.
 
 How to Update
 --------------

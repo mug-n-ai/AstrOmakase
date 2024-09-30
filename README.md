@@ -91,16 +91,9 @@ AstrOmakase simplifies the setup process, allowing you to focus on your research
 
 > [!TIP]
 > AstrOmakase can be installed with or without Omakub. However, for the best experience, it is recommended to install Omakub first.
-
-#### Step 1 (optional): Install Omakub
-
-For a better experience and specifically for code-oriented work, it is suggested to install **Omakub** first:
-
-```bash
-wget -qO- https://omakub.org/install | bash
-```
-
-#### Step 2: Install AstrOmakase
+> ```bash
+> wget -qO- https://omakub.org/install | bash
+> ```
 
 Run the script below to install AstrOmakase on your Ubuntu 24.04 system:
 
@@ -108,7 +101,18 @@ Run the script below to install AstrOmakase on your Ubuntu 24.04 system:
 wget -qO- https://lorenzomugnai.github.io/AstrOmakase/installer.sh | bash
 ```
 
-During the installation, if Omakub is not present, you installerwill be prompted whether to proceed anyway.
+During the installation, if Omakub is not detected, you will be prompted with the option to install it.
+
+>[!IMPORTANT]
+>If you choose to install Omakub, the installer will proceed with the Omakub installation.
+>After Omakub is installed, you will need to log out and log back in to apply the necessary environment changes.
+>Once you have logged back in, rerun the AstrOmakase installation script to complete the setup process.
+>If you choose not to install Omakub:
+
+>[!NOTE]
+>If you choose to not install Omakub, the installation will continue without Omakub.
+>Note that some features may be limited or unavailable without Omakub.
+
 
 ### Updates
 
