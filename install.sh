@@ -15,39 +15,35 @@ echo "version $(cat version)"
 source "$INSTALL_DIR/preinstall_checks.sh"
 
 # Define the options and corresponding script names
-OPTIONAL_APPS=("None" "Brave"  "Dropbox" "Franz" "gdm-settings" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Upscayl")
+OPTIONAL_APPS=("Install all" "Brave" "Dropbox" "Franz" "gdm-settings" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Upscayl")
 OPTIONAL_SCRIPTS=("app-brave" "app-dropbox" "app-discord" "app-franz" "app-gdm-settings" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-upscayl")
 
-# Inform the user about the default behavior
-echo "Please select the optional applications you want to install. If you press Enter without selecting any, all applications will be installed by default. Select None to skip optional applications installation."
+# Inform the user about the selection
+echo "Select the optional applications you want to install. You can select 'Install all' to install every application."
 
 # Use Gum to present the options and get user input
 SELECTED_APPS=$(gum choose --no-limit "${OPTIONAL_APPS[@]}")
 
-# Check if the user made a selection
-if [ -z "$SELECTED_APPS" ]; then
-    # No selection made, use all apps by default
-    SELECTED_APPS=("${OPTIONAL_APPS[@]}")
-    echo "No selection made. Installing all optional applications by default."
-else
-    # Convert the space-separated string to an array
-    SELECTED_APPS=($SELECTED_APPS)
-fi
+# Convert the space-separated string to an array
+IFS=$'\n' read -r -d '' -a SELECTED_APPS_ARRAY <<< "$SELECTED_APPS"
 
-
-# Check if "None" was selected
-INSTALL_NONE=true
-for APP in "${SELECTED_APPS[@]}"; do
-    if [ "$APP" != "None" ]; then
-        INSTALL_NONE=false
+# Check if "Install all" was selected
+INSTALL_ALL=false
+for APP in "${SELECTED_APPS_ARRAY[@]}"; do
+    if [ "$APP" == "Install all" ]; then
+        INSTALL_ALL=true
         break
     fi
 done
 
-if [ "$INSTALL_NONE" = true ]; then
-    # User selected "None", skip installation of optional apps
-    SELECTED_APPS=()
-    echo "No optional applications will be installed."
+# If "Install all" is selected, override all other selections and install everything
+if [ "$INSTALL_ALL" = true ]; then
+    echo "'Install all' selected. Installing all applications."
+    SELECTED_APPS=("${OPTIONAL_APPS[@]:1}")  # Exclude "Install all" from the list
+else
+    # Use only the selected apps
+    SELECTED_APPS=("${SELECTED_APPS_ARRAY[@]}")
+    echo "Installing the following optional applications: ${SELECTED_APPS[*]}"
 fi
 # Install required tools first
 echo "Preparing required tools..."
