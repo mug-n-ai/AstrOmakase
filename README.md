@@ -77,6 +77,7 @@ Additionally, compared to the standard Omakub setup, some tools that are not com
 - **gdm-settings**: A tool for customizing GNOME Display Manager settings.
 - **LaTeX Studio**: A comprehensive LaTeX editor for creating scientific documents.
 - **NordVPN**: A secure VPN service for protecting your online privacy.
+- **remmina**: A remote desktop client for accessing remote desktops.
 - **ScrCPy**: A screen mirroring application for Android devices.
 - **Slack**: A collaboration hub that connects teams.
 - **SuperPaper**: A multi-monitor wallpaper manager.

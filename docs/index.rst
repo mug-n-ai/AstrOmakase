@@ -186,6 +186,7 @@ Optional Tools
 - **gdm-settings**: A tool for customising GNOME Display Manager settings.
 - **LaTeX Studio**: A comprehensive LaTeX editor for scientific documents.
 - **NordVPN**: A secure VPN service to protect online privacy.
+- **remmina**: A remote desktop client for accessing remote systems.
 - **Scrcpy**: A screen mirroring application for Android devices.
 - **Slack**: A collaboration platform for teams.
 - **SuperPaper**: A multi-monitor wallpaper manager.

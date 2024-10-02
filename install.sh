@@ -15,8 +15,8 @@ echo "version $(cat version)"
 source "$INSTALL_DIR/preinstall_checks.sh"
 
 # Define the options and corresponding script names
-OPTIONAL_APPS=("Install all" "Brave" "Dropbox" "Franz" "gdm-settings" "LaTex" "nordvpn" "scrcpy" "Slack" "speedtest" "superpaper" "Upscayl")
-OPTIONAL_SCRIPTS=("app-brave" "app-dropbox" "app-discord" "app-franz" "app-gdm-settings" "app-latex" "app-nordvpn" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-upscayl")
+OPTIONAL_APPS=("Install all" "Brave" "Dropbox" "Franz" "gdm-settings" "LaTex" "nordvpn" "remmina" "scrcpy" "Slack" "speedtest" "superpaper" "Upscayl")
+OPTIONAL_SCRIPTS=("app-brave" "app-dropbox" "app-discord" "app-franz" "app-gdm-settings" "app-latex" "app-nordvpn" "app-remmina" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-upscayl")
 
 # Inform the user about the selection
 echo "Select the optional applications you want to install. You can select 'Install all' to install every application."

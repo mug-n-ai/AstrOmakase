@@ -180,6 +180,13 @@ Its intuitive interface and extensive customization options make it an excellent
 This tool allows you to customize various aspects of the login screen, such as background images, layout settings, and themes.
 By using gdm-settings, you can personalize your login experience to better match your aesthetic preferences or organisational requirements, providing a more tailored and engaging user interface.
 
+**remmina** (optional) 
+++++++++++++++++++++++++++++
+
+`remmina <https://remmina.org/>`_ is a feature-rich remote desktop client designed for connecting to remote systems using various protocols such as RDP, VNC, SSH, and more. 
+It provides a user-friendly interface that allows users to seamlessly manage multiple remote connections, offering support for scaling, multi-monitor setups, and clipboard sharing. 
+`remmina` is ideal for system administrators, IT professionals, and users who need to access remote desktops and servers efficiently. 
+Its extensive plugin support and customisable settings make it a versatile tool for remote access and system management on Linux systems.
 
 **SuperPaper** (optional)
 ++++++++++++++++++++++++++++
