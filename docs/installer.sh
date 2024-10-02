@@ -24,10 +24,3 @@ echo "Downloading boot.sh from $BOOT_URL..."
 
 # Download and execute the boot.sh script
 wget -qO- $BOOT_URL | bash
-
-if [ $? -ne 0 ]; then
-    echo "Failed to download or execute the boot.sh script. Exiting."
-    exit 1
-fi
-
-echo "boot.sh script executed successfully."
