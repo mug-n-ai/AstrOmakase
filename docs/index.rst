@@ -143,6 +143,7 @@ General Tools
 - **Gnome-sushi**: A quick file previewer for GNOME.
 - **HDFCompass**: A tool for browsing and analyzing HDF5 data.
 - **Kdiff3**: A diff and merge program for comparing files and directories.
+- **krita**: A professional free and open-source painting program.
 - **OBS Studio**: Open-source software for video recording and live streaming.
 - **OnlyOffice**: Office suite for document editing, project management, and CRM.
 - **Okular**: A versatile document viewer.

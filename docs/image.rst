@@ -12,6 +12,14 @@ This section covers the tools available for image and video editing, enabling yo
 
 GIMP’s robust toolset includes advanced features like layer manipulation, masks, filters, and colour adjustments, making it suitable for both simple edits and complex graphic design projects. Its extensibility through plugins and scripts allows for additional functionality, ensuring that GIMP can be tailored to meet a wide range of image editing needs.
 
+**krita **
+++++++++++++++++++++++++++++
+
+`krita <https://krita.org/>`_ is a professional, open-source painting and digital art application designed for artists, illustrators, and concept designers. 
+It offers a comprehensive suite of tools for digital painting, sketching, and image editing, including an extensive brush engine, layer management, vector tools, and support for high-bit-depth colour spaces. 
+`krita` is highly customisable, allowing users to tailor the interface and tools to their specific workflow needs. 
+Its robust feature set, coupled with its user-friendly interface, makes it an essential tool for both professional and aspiring digital artists on Linux and other platforms.
+
 **OBS Studio**
 ++++++++++++++++++++++++++++
 
