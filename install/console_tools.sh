@@ -27,3 +27,5 @@ apt_install plocate
 apt_install zoxide
 
 apt_install nmap
+
+apt_install pavucontrol

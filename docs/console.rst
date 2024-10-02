@@ -34,6 +34,11 @@ This section introduces various console tools that enhance terminal-based workfl
 
 `nmap <https://nmap.org/>`_ is a powerful and versatile network scanning tool designed to discover hosts and services on a computer network. It offers a comprehensive suite of features, including host discovery, port scanning, service version detection, and operating system identification. With its flexible scripting engine and extensive customization options, `nmap`` enables users to perform detailed network audits, security assessments, and troubleshoot connectivity issues effectively. Whether you are a network administrator, security professional, or enthusiast, `nmap` serves as an essential tool for maintaining and securing network infrastructures, providing deep insights into network topology and potential vulnerabilities.
 
+**pavucontrol** 
+++++++++++++++++++++++++++++
+
+`pavucontrol <https://freedesktop.org/software/pulseaudio/pavucontrol/>_` is a powerful and intuitive volume control tool for the PulseAudio sound server. It provides a graphical interface that allows users to easily manage audio devices and streams, offering detailed control over input and output settings. With `pavucontrol`, users can adjust individual application volumes, configure audio input/output devices, and switch between audio profiles. It is an essential tool for those looking to fine-tune their audio setup and resolve sound issues on Linux systems.
+
 **plocate**
 ++++++++++++++++++++++++++++
 
