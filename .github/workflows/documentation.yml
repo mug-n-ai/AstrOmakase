@@ -1,14 +1,9 @@
 name: documentation
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
-  workflow_dispatch:
-
+  release:
+    types: [published]
+  
 permissions:
   contents: write
 
@@ -38,11 +33,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build
-
-
-      # - name: Running the Sphinx to gh-pages Action
-      #   uses: uibcdf/action-sphinx-docs-to-gh-pages@v2.1.0
-      #   with:
-      #     branch: master
-      #     dir_docs: docs
-      #     sphinx-apidoc: false
