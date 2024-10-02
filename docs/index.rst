@@ -164,6 +164,7 @@ Console Tools
 - **htop** and **btop**: Two interactive process viewers for Unix systems.
 - **lt**: A tool for listing files and directories in a tree-like format.
 - **nmap**: A network exploration tool and security scanner.
+- **pavucontrol**: A volume control tool for the PulseAudio sound server.
 - **plocate**: A tool for quickly locating files on the filesystem.
 - **screen**: A terminal multiplexer for managing multiple windows in a single session.
 - **zoxide**: A fast, flexible, and smart directory jumper.
