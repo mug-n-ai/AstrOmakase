@@ -17,14 +17,13 @@ echo "   Welcome to the AstrOmakase Installer    "
 echo "========================================="
 echo "This script will guide you through the installation of AstrOmakase on your Ubuntu 24.04 system."
 echo "If Omakub is not detected, you will have the option to install it for an enhanced experience."
-echo -e "\nBegin installation (or abort with Ctrl+C)...\n"
+echo "\nBegin installation (or abort with Ctrl+C)...\n"
 
 INSTALL_DIR=~/.local/share/astromakase
 
 if [ ! -d "$INSTALL_DIR" ]; then
     echo "=> AstrOmakase is for fresh Ubuntu 24.04 installations only!"
 fi
-echo -e "\nBegin installation (or abort with ctrl+c)..."
 
 echo "Installing git..."
 sudo apt-get install -y git >/dev/null
