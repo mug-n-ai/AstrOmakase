@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # set onlyoffice as default for office files
-xdg-mime default onlyoffice-desktopeditors.desktop application/vnd.openxmlformats-officedocument.wordprocessingml.document
-xdg-mime default onlyoffice-desktopeditors.desktop application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-xdg-mime default onlyoffice-desktopeditors.desktop application/vnd.openxmlformats-officedocument.presentationml.presentation
-xdg-mime default onlyoffice-desktopeditors.desktop text/csv
+xdg-mime default onlyoffice-desktopeditors_onlyoffice-desktopeditors.desktop application/vnd.openxmlformats-officedocument.wordprocessingml.document
+xdg-mime default onlyoffice-desktopeditors_onlyoffice-desktopeditors.desktop application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+xdg-mime default onlyoffice-desktopeditors_onlyoffice-desktopeditors.desktop application/vnd.openxmlformats-officedocument.presentationml.presentation
+xdg-mime default onlyoffice-desktopeditors_onlyoffice-desktopeditors.desktop text/csv
 
 
 # set Chrome as default web browser
@@ -29,4 +29,4 @@ xdg-mime default zed.desktop text/x-c++hdr
 xdg-mime default zed.desktop text/x-c++src
 
 # set Okular as default for PDF files
-xdg-mime default okular.desktop application/pdf
+xdg-mime default okular_okular.desktop application/pdf
