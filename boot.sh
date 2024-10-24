@@ -59,4 +59,8 @@ echo "Installation starting..."
 source ~/.local/share/astromakase/install.sh
 
 # Logout to pickup changes
-gum confirm "Ready to logout for all settings to take effect?" && gnome-session-quit --logout --no-prompt
+if gum confirm "Ready to logout for all settings to take effect?"; then
+    gnome-session-quit --logout --no-prompt
+else
+    echo "Logout cancelled. You can log out later for changes to take effect."
+fi
