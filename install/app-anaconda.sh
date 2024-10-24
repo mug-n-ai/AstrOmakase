@@ -95,6 +95,7 @@ install_anaconda() {
     update_path_and_initialize_conda
 }
 
+
 update_path_and_initialize_conda() {
     echo "Updating PATH environment variable..."
     export PATH="$HOME/anaconda3/bin:$PATH"
@@ -119,6 +120,17 @@ initialize_conda() {
     source ~/.bashrc
 }
 
+
+setting_default_conda_channels() {
+    echo "Setting default Conda channels..."
+    conda config --add channels defaults
+    if [ $? -ne 0 ]; then
+        print_error "Failed to set default Conda channels. Exiting."
+        exit 1
+    fi
+    print_success "Default Conda channels set successfully."
+}
+
 update_conda() {
     echo "Updating Conda..."
     conda update -n base -c defaults conda -y
@@ -141,7 +153,7 @@ install_common_packages() {
 
 install_additional_packages() {
     echo "Installing additional packages..."
-    conda install -n base h5py tqdm -y
+    conda install -n base h5py tqdm pre-commit --y
     if [ $? -ne 0 ]; then
         print_error "Failed to install additional packages. Exiting."
         exit 1
@@ -152,6 +164,7 @@ install_additional_packages() {
 main() {
     cleanup_mise_python
     check_anaconda_installed
+    setting_default_conda_channels
     update_conda
     install_common_packages
     install_additional_packages
