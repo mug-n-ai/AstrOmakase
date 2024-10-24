@@ -153,7 +153,7 @@ install_common_packages() {
 
 install_additional_packages() {
     echo "Installing additional packages..."
-    conda install -n base h5py tqdm pre-commit --y
+    conda install -n base h5py tqdm --y
     if [ $? -ne 0 ]; then
         print_error "Failed to install additional packages. Exiting."
         exit 1
