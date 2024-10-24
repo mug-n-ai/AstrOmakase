@@ -63,4 +63,5 @@ if gum confirm "Ready to logout for all settings to take effect?"; then
     gnome-session-quit --logout --no-prompt
 else
     echo "Logout cancelled. You can log out later for changes to take effect."
+    echo "Please, ignore the error below."
 fi
