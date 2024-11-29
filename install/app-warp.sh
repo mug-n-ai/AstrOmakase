@@ -11,7 +11,7 @@ PREFS_FILE="${HOME}/.config/warp-terminal/user_preferences.json"
 DEFAULT_CONFIG_FILE="$INSTALL_DIR/settings/config/warp-terminal/user_preferences.json"
 
 echo "Starting Warp terminal setup..."
-
+    
 # Function to install Warp terminal
 install_warp_terminal() {
     echo "Checking if Warp terminal is already installed..."

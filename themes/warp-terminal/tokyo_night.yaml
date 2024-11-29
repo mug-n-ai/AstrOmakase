@@ -1,25 +1,24 @@
-accent: "#5a8cf7" # Accent color made a brighter and cooler blue
-background: "#121a26" # Slightly darker blue-tinted background
+# This is the default Tokyo Night theme for the Warp Terminal from https://github.com/warpdotdev/themes
+accent: "#7aa2f7"
+background: "#1a1b26"
 details: darker
-foreground: "#b0c3f7" # Softer blue for text
-
+foreground: "#a9b1d6"
 terminal_colors:
   bright:
-    black: "#3b4969"  # Darker shade with blue undertones
-    blue: "#5a8cf7"   # Brighter and cooler blue
-    cyan: "#1fb3f5"   # More vivid cyan leaning towards blue
-    green: "#81dfff"  # Green shifted towards teal-blue
-    magenta: "#9baef7" # Muted magenta with blue influence
-    red: "#f76484"    # Softer red to balance the palette
-    white: "#d0d8f7"  # Cool white with bluish tint
-    yellow: "#ffd173" # Warmer yellow for contrast
-
+    black: "#444b6a"
+    blue: "#7da6ff"
+    cyan: "#0db9d7"
+    green: "#b9f27c"
+    magenta: "#bb9af7"
+    red: "#ff7a93"
+    white: "#acb0d0"
+    yellow: "#ff9e64"
   normal:
-    black: "#252f45"  # Blue-toned dark black
-    blue: "#4c77f7"   # Rich blue for normal
-    cyan: "#2a93c1"   # Cyan shifted closer to blue
-    green: "#6cc3ff"  # Vibrant blue-green
-    magenta: "#8f9df7" # Magenta softened with blue tones
-    red: "#d95a74"    # Slightly cooler red
-    white: "#6c82c2"  # Blueish gray for normal text
-    yellow: "#f4c559" # A toned-down, more pastel yellow
+    black: "#32344a"
+    blue: "#7aa2f7"
+    cyan: "#449dab"
+    green: "#9ece6a"
+    magenta: "#ad8ee6"
+    red: "#f7768e"
+    white: "#787c99"
+    yellow: "#e0af68"
