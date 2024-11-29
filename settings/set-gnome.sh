@@ -2,8 +2,7 @@
 
 echo "Setting GNOME wallpaper..."
 
-INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-WALLPAPER="$INSTALL_DIR/../content/wallpaper.png"
+WALLPAPER="$INSTALL_DIR/content/wallpaper.png"
 
 # Check if the wallpaper file exists
 if [[ -f "$WALLPAPER" ]]; then
