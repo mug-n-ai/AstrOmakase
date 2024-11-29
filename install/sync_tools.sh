@@ -3,6 +3,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
+install_package "rclone" "rclone" "rclone" "apt" "None"
 
-apt_install rclone
-apt_install rsync
+install_package "rsync" "rsync" "rsync" "apt" "None"
+

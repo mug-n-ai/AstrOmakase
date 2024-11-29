@@ -12,20 +12,23 @@ else
     apt_install fastfetch
 fi
 
-apt_install screen
+install_package "okular" "okular" "okular" "snap" "None"
 
-apt_install htop
+install_package "screen" "screen" "screen" "apt" "None"
 
-apt_install btop
+install_package "htop" "htop" "htop" "apt" "None"
 
-apt_install eza
+install_package "btop" "btop" "btop" "apt" "None"
 
-apt_install fd-find
+install_package "eza" "eza" "eza" "apt" "None"
 
-apt_install plocate
+install_package "fd-find" "fd" "fd-find" "apt" "None"
 
-apt_install zoxide
+install_package "plocate" "plocate" "plocate" "apt" "None"
 
-apt_install nmap
+install_package "zoxide" "zoxide" "zoxide" "apt" "None"
 
-apt_install pavucontrol
+install_package "nmap" "nmap" "nmap" "apt" "None"
+
+install_package "pavucontrol" "pavucontrol" "pavucontrol" "apt" "None"
+
