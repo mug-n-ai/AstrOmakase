@@ -133,12 +133,19 @@ setting_default_conda_channels() {
 
 update_conda() {
     echo "Updating Conda..."
-    conda update -n base -c defaults conda -y
-    if [ $? -ne 0 ]; then
-        print_error "Failed to update Conda. Exiting."
-        exit 1
+    gump --yesno "Do you want to update Conda?" --title "Conda Update" --yes-label "Yes" --no-label "No"
+    response=$?
+    if [ $response -eq 0 ]; then
+        echo "Updating Conda..."
+        conda update -n base -c defaults conda -y
+        if [ $? -ne 0 ]; then
+            print_error "Failed to update Conda. Exiting."
+            exit 1
+        fi
+        print_success "Conda updated successfully."
+    else
+        print_success "Skipped Conda update."
     fi
-    print_success "Conda updated successfully."
 }
 
 install_common_packages() {
