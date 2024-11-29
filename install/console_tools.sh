@@ -12,6 +12,20 @@ else
     apt_install fastfetch
 fi
 
+echo "Setting up FastFetch..."
+INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [ -f "$HOME/.config/fastfetch/config.jsonc" ]; then
+  gum confirm "It appears that a fastfetch configuration is already set. Do you want to overwrite it?" && rm "$HOME/.config/fastfetch/config.jsonc"
+fi
+
+if [ ! -f "$HOME/.config/fastfetch/config.jsonc" ]; then
+  # Use Omakub fastfetch config
+  mkdir -p ~/.config/fastfetch
+  cp $INSTALL_DIR/config/fastfetch/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
+fi
+
+
 install_package "okular" "okular" "okular" "snap" "None"
 
 install_package "screen" "screen" "screen" "apt" "None"

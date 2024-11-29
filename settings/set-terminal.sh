@@ -36,16 +36,6 @@ sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emula
 
 echo "Done. To configure the default terminal, run 'sudo update-alternatives --config x-terminal-emulator'."
 
+sudo update-alternatives --config x-terminal-emulator
 
-echo "Setting up FastFetch..."
-INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-if [ -f "$HOME/.config/fastfetch/config.jsonc" ]; then
-  gum confirm "It appears that a fastfetch configuration is already set. Do you want to overwrite it?" && rm "$HOME/.config/fastfetch/config.jsonc"
-fi
-
-if [ ! -f "$HOME/.config/fastfetch/config.jsonc" ]; then
-  # Use Omakub fastfetch config
-  mkdir -p ~/.config/fastfetch
-  cp $INSTALL_DIR/config/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
-fi
