@@ -49,6 +49,10 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 - **Xournal++**: A PDF editor and note-taking application.
 - **Zed**: A high-performance, multiplayer code editor.
 
+### Console Emulator
+
+**Warp** terminal is pre-configured with the **Tokyo Night** theme to provide a modern and optimized command-line experience
+
 ### Console Tools
 
 - **fastfetch**: A fast system information tool written in Rust.

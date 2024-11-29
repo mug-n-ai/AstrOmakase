@@ -157,6 +157,12 @@ General Tools
 - **Xournal++**: A PDF annotation and note-taking tool.
 - **Zed**: A high-performance multiplayer code editor.
 
+Console Emulator
++++++++++++++++++
+
+**Warp** terminal is pre-configured with the **Tokyo Night** theme to provide a modern and optimized command-line experience
+
+
 Console Tools
 +++++++++++++
 

@@ -1,5 +1,13 @@
 .. _console:
 
+Console Emulator
+================
+
+In this setup, we have configured **Warp** as the default terminal emulator (see `Warp website <https://warp.dev/`_), preloaded with the visually appealing **Tokyo Night** theme. Warp stands out as an innovative terminal designed to enhance user productivity with its advanced features. Key highlights include an elegant and customizable interface, native support for inline autocomplete and suggestions, and optimized performance for handling intensive operations.
+
+Choosing Warp modernizes workflows while providing built-in tools that reduce the need for complex manual configurations. This makes it an excellent choice for developers, sysadmins, and anyone seeking a terminal that combines efficiency with simplicity. With Warp and the Tokyo Night theme, you'll enjoy a pleasant and highly productive command-line environment tailored for any task.
+
+
 Console Tools
 ==============
 
