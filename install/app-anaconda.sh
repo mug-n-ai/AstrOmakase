@@ -122,22 +122,21 @@ initialize_conda() {
 
 
 setting_default_conda_channels() {
-    gump --yesno "Do you want to set default Conda channels?" --title "Conda Channels" --yes-label "Yes" --no-label "No"
-    response=$?
-    if [ $response -eq 0 ]; then
+    if gum confirm "Do you want to set default Conda channels?"; then
+        echo "Setting default Conda channels..."
         conda config --add channels defaults
         if [ $? -ne 0 ]; then
             print_error "Failed to set default Conda channels. Exiting."
             exit 1
         fi
         print_success "Default Conda channels set successfully."
+    else
+        print_success "Skipped setting default Conda channels."
     fi
 }
 
 update_conda() {
-    gump --yesno "Do you want to update Conda?" --title "Conda Update" --yes-label "Yes" --no-label "No"
-    response=$?
-    if [ $response -eq 0 ]; then
+    if gum confirm "Do you want to update Conda?"; then
         echo "Updating Conda..."
         conda update -n base -c defaults conda -y
         if [ $? -ne 0 ]; then
@@ -151,15 +150,16 @@ update_conda() {
 }
 
 install_common_packages() {
-    gump --yesno "Do you want to install common packages?" --title "Common Packages" --yes-label "Yes" --no-label "No"
-    response=$?
-    if [ $response -eq 0 ]; then
+    if gum confirm "Do you want to install common packages?"; then    
+        echo "Installing common packages..."
         conda install -n base numpy pandas matplotlib scipy astropy jupyter pip h5py tqdm -y
         if [ $? -ne 0 ]; then
             print_error "Failed to install common packages. Exiting."
             exit 1
         fi
         print_success "Common packages installed successfully."
+    else
+        print_success "Skipped installing common packages."
     fi
 }
 
