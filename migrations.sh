@@ -15,6 +15,7 @@ if [ -f ~/.local/share/astromakase/version_previous ]; then
             sudo apt autoremove -y
             echo "Migration complete."
         fi
+    fi
     if [ "$PREVIOUS_VERSION" == "0.2.5" ]; then
         if dpkg -l | grep -q okular; then
             echo "Migrating changing repository for speedtest..."
