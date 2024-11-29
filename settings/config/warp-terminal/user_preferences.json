@@ -1,0 +1,24 @@
+{
+  "prefs": {
+    "NotebookFontSize": "14.0",
+    "ReceivedReferralTheme": "\"Inactive\"",
+    "AgentModeOnboardingBlockShown": "true",
+    "AltScreenPadding": "{\"Custom\":{\"uniform_padding\":0.0}}",
+    "TelemetryEnabled": "true",
+    "AIRequestLimitInfo": "{\"limit\":100,\"num_requests_used_since_refresh\":0,\"is_unlimited\":false}",
+    "HasAutoOpenedWelcomeFolder": "true",
+    "WelcomeTipsFeaturesUsed": "[{\"Action\":\"ThemePicker\"},{\"Hint\":\"CreateBlock\"}]",
+    "AliasExpansionBannerSeen": "true",
+    "HonorPS1": "false",
+    "SameLinePromptBlockState": "\"DoNotShow\"",
+    "FontSize": "13.0",
+    "CrashReportingEnabled": "true",
+    "SavedPrompt": "\"Default\"",
+    "Theme": {
+      "Custom": {
+        "name": "Tokyo Night",
+        "path": "/opt/themes/tokyo_night.yaml"
+      }
+    }
+  }
+}

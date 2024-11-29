@@ -1,0 +1,25 @@
+accent: "#5a8cf7" # Accent color made a brighter and cooler blue
+background: "#121a26" # Slightly darker blue-tinted background
+details: darker
+foreground: "#b0c3f7" # Softer blue for text
+
+terminal_colors:
+  bright:
+    black: "#3b4969"  # Darker shade with blue undertones
+    blue: "#5a8cf7"   # Brighter and cooler blue
+    cyan: "#1fb3f5"   # More vivid cyan leaning towards blue
+    green: "#81dfff"  # Green shifted towards teal-blue
+    magenta: "#9baef7" # Muted magenta with blue influence
+    red: "#f76484"    # Softer red to balance the palette
+    white: "#d0d8f7"  # Cool white with bluish tint
+    yellow: "#ffd173" # Warmer yellow for contrast
+
+  normal:
+    black: "#252f45"  # Blue-toned dark black
+    blue: "#4c77f7"   # Rich blue for normal
+    cyan: "#2a93c1"   # Cyan shifted closer to blue
+    green: "#6cc3ff"  # Vibrant blue-green
+    magenta: "#8f9df7" # Magenta softened with blue tones
+    red: "#d95a74"    # Slightly cooler red
+    white: "#6c82c2"  # Blueish gray for normal text
+    yellow: "#f4c559" # A toned-down, more pastel yellow
