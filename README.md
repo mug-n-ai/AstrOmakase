@@ -54,7 +54,7 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 - **fastfetch**: A fast system information tool written in Rust.
 - **fd**: A simple, fast, and user-friendly alternative to `find`.
 - **htop** and **btop** two interactive process viewers for Unix systems.
-- **lt**: A tool for listing files and directories in a tree-like format.
+- **lt (eza)**: A tool for listing files and directories in a tree-like format.
 - **nmap**: A network exploration tool and security scanner.
 - **pavucontrol**: A volume control tool for PulseAudio.
 - **plocate**: A tool for quickly locating files on the filesystem.
