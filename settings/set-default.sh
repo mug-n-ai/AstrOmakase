@@ -31,6 +31,3 @@ xdg-mime default zed.desktop application/json
 xdg-mime default zed.desktop text/x-ini
 xdg-mime default zed.desktop text/x-config
 
-
-# set Okular as default for PDF files
-xdg-mime default okular_okular.desktop application/pdf
