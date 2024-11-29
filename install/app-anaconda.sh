@@ -122,17 +122,19 @@ initialize_conda() {
 
 
 setting_default_conda_channels() {
-    echo "Setting default Conda channels..."
-    conda config --add channels defaults
-    if [ $? -ne 0 ]; then
-        print_error "Failed to set default Conda channels. Exiting."
-        exit 1
+    gump --yesno "Do you want to set default Conda channels?" --title "Conda Channels" --yes-label "Yes" --no-label "No"
+    response=$?
+    if [ $response -eq 0 ]; then
+        conda config --add channels defaults
+        if [ $? -ne 0 ]; then
+            print_error "Failed to set default Conda channels. Exiting."
+            exit 1
+        fi
+        print_success "Default Conda channels set successfully."
     fi
-    print_success "Default Conda channels set successfully."
 }
 
 update_conda() {
-    echo "Updating Conda..."
     gump --yesno "Do you want to update Conda?" --title "Conda Update" --yes-label "Yes" --no-label "No"
     response=$?
     if [ $response -eq 0 ]; then
@@ -149,23 +151,16 @@ update_conda() {
 }
 
 install_common_packages() {
-    echo "Installing common packages..."
-    conda install -n base numpy pandas matplotlib scipy astropy jupyter pip -y
-    if [ $? -ne 0 ]; then
-        print_error "Failed to install common packages. Exiting."
-        exit 1
+    gump --yesno "Do you want to install common packages?" --title "Common Packages" --yes-label "Yes" --no-label "No"
+    response=$?
+    if [ $response -eq 0 ]; then
+        conda install -n base numpy pandas matplotlib scipy astropy jupyter pip h5py tqdm -y
+        if [ $? -ne 0 ]; then
+            print_error "Failed to install common packages. Exiting."
+            exit 1
+        fi
+        print_success "Common packages installed successfully."
     fi
-    print_success "Common packages installed successfully."
-}
-
-install_additional_packages() {
-    echo "Installing additional packages..."
-    conda install -n base h5py tqdm --y
-    if [ $? -ne 0 ]; then
-        print_error "Failed to install additional packages. Exiting."
-        exit 1
-    fi
-    print_success "Additional packages installed successfully."
 }
 
 main() {
@@ -174,7 +169,6 @@ main() {
     setting_default_conda_channels
     update_conda
     install_common_packages
-    install_additional_packages
     echo "Anaconda installed and set up successfully."
 }
 
