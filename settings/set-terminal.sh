@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Array of installed terminals
-TERMINALS=("/usr/bin/gnome-terminal" "/usr/bin/xterm" "/usr/bin/konsole" "/usr/bin/alacritty" "/usr/bin/warp")
+TERMINALS=("/usr/bin/gnome-terminal" "/usr/bin/xterm" "/usr/bin/konsole" "/usr/bin/alacritty" "/usr/bin/warp-terminal")
 
 echo "Collecting available terminal emulators..."
 
