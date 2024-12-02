@@ -6,7 +6,7 @@ echo "Setting favorite apps for dock..."
 apps=(
     "org.gnome.Nautilus.desktop"
     "google-chrome.desktop"
-    "Alacritty.desktop"
+    "dev.warp.Warp.desktop"
     "code.desktop"
     "Activity.desktop"
     "AstrOmakase.desktop"
