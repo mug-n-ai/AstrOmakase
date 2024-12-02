@@ -25,6 +25,15 @@ if [ -f ~/.local/share/astromakase/version_previous ]; then
             echo "Migration complete."
         fi
     fi 
+    if [ "$PREVIOUS_VERSION" == "0.2.7" ]; then
+        if dpkg -l | grep -q alacritty; then
+            echo "Migrating changing Alacritty for Warp..."
+            if gum confirm "Do you want to uninstall Alacritty?"; then    
+                sudo apt remove alacritty -y
+                echo "Migration complete."
+            fi
+        fi
+    fi 
 
     rm ~/.local/share/astromakase/version_previous
 else
