@@ -41,24 +41,24 @@ html[data-theme="light"] :root {
   * layout
   */
 
-  // links
+  /* // links */
   --pxd-color-link: var(--pxd-color-primary);
   --pxd-color-link-hover: var(--pxd-color-secondary);
   --pxd-color-link-active: var(--pxd-color-primary); /* Colore link attivo */
 
-  // inline code
+  /* // inline code */
   --pxd-color-inline-code: rgb(221, 158, 194); /* Viola rosa Tokyo Night */
 
-  // targeted content
+  /* // targeted content */
   --pxd-color-target: rgb(102, 51, 153); /* Viola scuro Tokyo Night */
 
-  // highlights
+  /* // highlights */
   --pxd-color-note-highlight: var(--pxd-color-secondary); /* Highlight note */
 
-  // titles
+  /* // titles */
   --pxd-color-title: var(--pxd-color-primary); /* Colore titoli */
 
-  // hide any content that should not be displayed in the light theme
+  /* // hide any content that should not be displayed in the light theme */
   .only-dark {
     display: none !important;
   }
@@ -111,29 +111,29 @@ html[data-theme="dark"] :root {
   * layout
   */
 
-  // links
+  /* // links */
   --pxd-color-link: var(--pxd-color-primary);
   --pxd-color-link-hover: var(--pxd-color-secondary);
   --pxd-color-link-active: var(--pxd-color-primary); /* Colore link attivo */
 
-  // inline code
+  /* // inline code */
   --pxd-color-inline-code: rgb(221, 158, 194); /* Viola rosa Tokyo Night */
 
-  // targeted content
+  /* // targeted content */
   --pxd-color-target: rgb(102, 51, 153); /* Viola scuro Tokyo Night */
 
-  // highlights
+  /* // highlights */
   --pxd-color-note-highlight: var(--pxd-color-secondary); /* Highlight note */
 
-  // titles
+  /* // titles */
   --pxd-color-title: var(--pxd-color-primary); /* Colore titoli */
 
-  // hide any content that should not be displayed in the dark theme
+  /* // hide any content that should not be displayed in the dark theme */
   .only-light {
     display: none !important;
   }
 
-  // specific brightness applied on images
+  /* // specific brightness applied on images */
   img {
     background: transparent !important;
     filter: brightness(0.9) contrast(1.1); /* Assicurati che questo non influisca sulla trasparenza */
