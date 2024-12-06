@@ -44,7 +44,7 @@ Run the following script to install AstrOmakase on your Ubuntu 24.04 system:
 
 .. code-block:: bash
 
-   wget -qO- https://lorenzomugnai.github.io/AstrOmakase/installer.sh | bash
+   wget -qO- https://mug-n-ai.github.io/AstrOmakase/installer.sh | bash
 
 During the installation, if Omakub is not detected, you will be prompted with the option to install it.
 

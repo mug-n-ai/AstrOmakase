@@ -3,7 +3,7 @@
 # AstrOmakase bootstrapper is inspired by the Omakase project by Basecamp.
 
 get_latest_release() {
-    curl --silent "https://api.github.com/repos/LorenzoMugnai/AstrOmakase/releases/latest" |
+    curl --silent "https://api.github.com/repos/mug-n-ai/AstrOmakase/releases/latest" |
     grep '"tag_name":' |
     sed -E 's/.*"([^"]+)".*/\1/'
 }
@@ -36,7 +36,7 @@ fi
 
 echo "Cloning stable AstrOmakase..."
 rm -rf $INSTALL_DIR
-git clone https://github.com/LorenzoMugnai/AstrOmakase.git $INSTALL_DIR >/dev/null
+git clone https://github.com/mug-n-ai/AstrOmakase.git $INSTALL_DIR >/dev/null
 
 # Restore the previous version file to the new directory, if it was saved
 if [ -f /tmp/version_previous ]; then

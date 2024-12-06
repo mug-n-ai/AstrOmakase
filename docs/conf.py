@@ -47,7 +47,7 @@ html_theme_options = {
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/LorenzoMugnai/AstrOmakase/tree/master",  # required
+            "url": "https://github.com/mug-n-ai/AstrOmakase/tree/master",  # required
             "icon": "fab fa-github-square",
             "type": "fontawesome",
         }

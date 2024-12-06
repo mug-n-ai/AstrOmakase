@@ -20,7 +20,7 @@ fi
 case $CHOICE in
     "updatestable")
         echo "Updating the system installing the next stable version..."
-        wget -qO- https://lorenzomugnai.github.io/AstrOmakase/installer.sh | bash
+        wget -qO- https://mug-n-ai.github.io/AstrOmakase/installer.sh | bash
         ;;
     "updatedevelop")
         cd $INSTALL_DIR
@@ -31,11 +31,11 @@ case $CHOICE in
         ;;
     "visitgithub")
         echo "Opening GitHub..."
-        $BROWSER "https://github.com/LorenzoMugnai/AstrOmakase"
+        $BROWSER "https://github.com/mug-n-ai/AstrOmakase"
         ;;
     "visitwebsite")
         echo "Opening website..."
-        $BROWSER "https://lorenzomugnai.github.io/AstrOmakase/"
+        $BROWSER "https://mug-n-ai.github.io/AstrOmakase/"
         ;;
     "quit")
         echo "Exiting..."
