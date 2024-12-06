@@ -2,7 +2,7 @@
 
 # Function to fetch the latest stable release tag from GitHub
 get_latest_release() {
-    curl --silent "https://api.github.com/repos/LorenzoMugnai/AstrOmakase/releases/latest" | # Get latest release from GitHub API
+    curl --silent "https://api.github.com/repos/mug-n-ai/AstrOmakase/releases/latest" | # Get latest release from GitHub API
     grep '"tag_name":' |                                                                    # Extract tag name line
     sed -E 's/.*"([^"]+)".*/\1/'                                                            # Extract only the tag name
 }
@@ -18,7 +18,7 @@ fi
 echo "Latest release: $LATEST_RELEASE"
 
 # Construct the URL for the boot.sh script from the latest release
-BOOT_URL="https://raw.githubusercontent.com/LorenzoMugnai/AstrOmakase/$LATEST_RELEASE/boot.sh"
+BOOT_URL="https://raw.githubusercontent.com/mug-n-ai/AstrOmakase/$LATEST_RELEASE/boot.sh"
 
 echo "Downloading boot.sh from $BOOT_URL..."
 
