@@ -7,6 +7,34 @@ In this setup, we have configured **Warp** as the default terminal emulator (see
 
 Choosing Warp modernizes workflows while providing built-in tools that reduce the need for complex manual configurations. This makes it an excellent choice for developers, sysadmins, and anyone seeking a terminal that combines efficiency with simplicity. With Warp and the Tokyo Night theme, you'll enjoy a pleasant and highly productive command-line environment tailored for any task.
 
+A custom blue-based Tokyo-Night theme is included to the terminal emulator to enhance the visual experience and provide a sleek, dark-themed interface. The Tokyo Night theme offers a harmonious blend of dark colours, making it easy on the eyes and ideal for extended terminal usage. The theme's contrast and colour palette ensure readability and visual appeal, creating a comfortable environment for working with text and code.
+If this theme is not automatically applied, you can manually set it in the terminal emulator settings:
+
+1. Open the terminal emulator.
+2. Click on the "Settings" button or `Ctrl + ,` to access the settings.
+
+    .. image:: _static/warp-settings.png
+        :alt: Warp Settings
+        :align: center
+        :width: 600px
+        :target: _blank
+
+3. In the "Appearance" section, select the "Dark" theme to open the theme options.
+
+    .. image:: _static/warp-themes.png
+        :alt: Warp Settings
+        :align: center
+        :width: 600px
+        :target: _blank
+
+4. Select the "Tokyo Night" theme from the list of available themes.
+
+    .. image:: _static/warp-tokyo.png
+        :alt: Warp Settings
+        :align: center
+        :width: 600px
+        :target: _blank
+
 
 Console Tools
 ==============
