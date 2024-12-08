@@ -17,7 +17,9 @@ echo "   Welcome to the AstrOmakase Installer    "
 echo "========================================="
 echo "This script will guide you through the installation of AstrOmakase on your Ubuntu 24.04 system."
 echo "If Omakub is not detected, you will have the option to install it for an enhanced experience."
-echo "\nBegin installation (or abort with Ctrl+C)...\n"
+echo " "
+echo "Begin installation (or abort with Ctrl+C)..."
+echo " "
 
 INSTALL_DIR=~/.local/share/astromakase
 
@@ -26,7 +28,10 @@ if [ ! -d "$INSTALL_DIR" ]; then
 fi
 
 echo "Installing git..."
-sudo apt-get install -y git >/dev/null
+if ! command -v git &>/dev/null; then
+    sudo apt-get update >/dev/null
+    sudo apt-get install -y git >/dev/null
+fi
 
 # Save the current version if it exists, to a temporary location
 if [ -f ~/.local/share/astromakase/version ]; then
@@ -36,12 +41,12 @@ fi
 
 echo "Cloning stable AstrOmakase..."
 rm -rf $INSTALL_DIR
-git clone https://github.com/mug-n-ai/AstrOmakase.git $INSTALL_DIR >/dev/null
+git clone https://github.com/mug-n-ai/AstrOmakase.git $INSTALL_DIR 
 
 # Restore the previous version file to the new directory, if it was saved
 if [ -f /tmp/version_previous ]; then
     mv /tmp/version_previous ~/.local/share/astromakase/version_previous
-    echo "Previous version restored."
+    echo "Previous version restored in the folder."
 fi
 
 cd $INSTALL_DIR
@@ -53,7 +58,9 @@ if [ -z "$LATEST_RELEASE" ]; then
     exit 1
 fi
 
-git -c advice.detachedHead=false checkout "tags/$LATEST_RELEASE" >/dev/null
+echo "Checking out the latest release..."
+git -c advice.detachedHead=false checkout "tags/$LATEST_RELEASE"
+echo "Latest release checked out."
 
 echo "Installation starting..."
 source ~/.local/share/astromakase/install.sh
