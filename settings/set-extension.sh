@@ -33,8 +33,8 @@ case $theme in
         color="#e920a3"
         ;;
     *)
-        echo "No matching theme found."
-        exit 1
+        echo "No matching theme found, using default color."
+        color="#208fe9"
         ;;
 esac
 
