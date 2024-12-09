@@ -2,7 +2,7 @@
 
 <img src="content/icon.png" alt="content/icon.png" width="200"/>
 
-![Version](https://raw.githubusercontent.com/mug-n-ai/AstrOmakase/main/.github/badges/version.svg)
+![Version](https://raw.githubusercontent.com/mug-n-ai/AstrOmakase/master/.github/badges/version.svg)
 ![Ubuntu OS](https://img.shields.io/badge/Ubuntu%20OS-24.04-green?style=flat&logo=ubuntu)
 ![license](https://img.shields.io/github/license/mug-n-ai/AstrOmakase)
 

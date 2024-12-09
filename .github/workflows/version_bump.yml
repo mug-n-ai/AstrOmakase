@@ -9,7 +9,7 @@ permissions:
 
 jobs:
     version-bump:
-        if: ${{ !contains(github.event.head_commit.message, 'Bump version to') && !contains(github.event.head_commit.message, 'Update badge') }}
+        if: ${{ !contains(github.event.head_commit.message, 'Bump version to') && !contains(github.event.head_commit.message, 'Update badge') && !contains(github.event.head_commit.message, 'no bump') }}
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout repository
