@@ -3,7 +3,7 @@ name: Auto Dev Version Bumper
 on:
     push:
         branches:
-            - main
+            - master
 
 jobs:
     version-bump:
