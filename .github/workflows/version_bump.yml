@@ -1,50 +1,52 @@
 name: Auto Dev Version Bumper
 
 on:
-  push:
+    push:
+        branches:
+            - main
 
 jobs:
-  version-bump:
-    if: ${{ !contains(github.event.head_commit.message, 'Bump version to') && !contains(github.event.head_commit.message, 'Update badge') }}
-    runs-on: ubuntu-latest
-    steps:
-        -   name: Checkout repository
-            uses: actions/checkout@v4
-            with:
-                fetch-depth: 0 
+    version-bump:
+        if: ${{ !contains(github.event.head_commit.message, 'Bump version to') && !contains(github.event.head_commit.message, 'Update badge') }}
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout repository
+                uses: actions/checkout@v4
+                with:
+                    fetch-depth: 0 
 
-        -   name: Run auto-dev-version-bumper
-            uses: LorenzoMugnai/auto-dev-version-bumper@main
-            with:
-                dev_suffix: "-beta"
+            -   name: Run auto-dev-version-bumper
+                uses: LorenzoMugnai/auto-dev-version-bumper@main
+                with:
+                    dev_suffix: "-beta"
                 env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
 
-        -   name: Read version
-            id: read_version
-            run: echo "VERSION=$(cat version)" >> $GITHUB_ENV
+            -   name: Read version
+                id: read_version
+                run: echo "VERSION=$(cat version)" >> $GITHUB_ENV
 
-        -   name: Create Badge
-            uses: sebymiano/shields-badge-generator@v1.0.4
-            with:
-                label: 'Version'
-                status: ${{ env.VERSION }}
-                color: 'blue'
-                logo: 'github'
-                path: '.github/badges/version.svg'
+            -   name: Create Badge
+                uses: sebymiano/shields-badge-generator@v1.0.4
+                with:
+                    label: 'Version'
+                    status: ${{ env.VERSION }}
+                    color: 'blue'
+                    logo: 'github'
+                    path: '.github/badges/version.svg'
 
-        -   name: Upload badge as artifact
-            uses: actions/upload-artifact@v4
-            with:
-                name: badge
-                path: '.github/badges/version.svg'
-                if-no-files-found: error
-        
-        -   name: Commit and push badge
-            run: |
-                git config --local user.email "action@github.com"
-                git config --local user.name "GitHub Action"
-                git add .github/badges/version.svg
-                git commit -m "Update badge" || echo "No changes to commit"
-                git push origin HEAD
+            -   name: Upload badge as artifact
+                uses: actions/upload-artifact@v4
+                with:
+                    name: badge
+                    path: '.github/badges/version.svg'
+                    if-no-files-found: error
+            
+            -   name: Commit and push badge
+                run: |
+                    git config --local user.email "action@github.com"
+                    git config --local user.name "GitHub Action"
+                    git add .github/badges/version.svg
+                    git commit -m "Update badge" || echo "No changes to commit"
+                    git push origin HEAD
 
