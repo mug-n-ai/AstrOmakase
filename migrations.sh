@@ -4,7 +4,7 @@ CURRENT_VERSION=$(cat ~/.local/share/astromakase/version)
 
 # Check if a previous version exists and migrate if necessary
 if [ -f ~/.local/share/astromakase/version_previous ]; then
-    PREVIOUS_VERSION=$(cat ~/.local/share/astromakase/version_previous)
+    PREVIOUS_VERSION=$(cat ~/.local/share/astromakase/version_previous | sed 's/^\([0-9]\+\.[0-9]\+\.[0-9]\+\).*/\1/')
     echo "Previous version detected: $PREVIOUS_VERSION"
     echo "Preparing for migrating from version $PREVIOUS_VERSION to $CURRENT_VERSION..."    
     # Perform migration based on the previous version
