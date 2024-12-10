@@ -18,7 +18,7 @@ jobs:
                     fetch-depth: 0 
 
             -   name: Run auto-dev-version-bumper
-                uses: LorenzoMugnai/auto-dev-version-bumper@main
+                uses: LorenzoMugnai/auto-dev-version-bumper@1.1
                 with:
                     dev_suffix: "-beta"
                 env:
