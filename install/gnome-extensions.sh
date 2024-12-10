@@ -53,6 +53,31 @@ else
     gext install IP-Finder@linxgem33.com
 fi
 
+if extension_installed "tactile@lundal.io"; then
+    print_success "Extension 'tactile@lundal.io' is already installed."
+else
+    gext install tactile@lundal.io
+fi
+
+if extension_installed "blur-my-shell@aunetx"; then
+    print_success "Extension 'blur-my-shell@aunetx' is already installed."
+else
+    gext install blur-my-shell@aunetx
+fi
+
+if extension_installed "space-bar@luchrioh"; then
+    print_success "Extension 'space-bar@luchrioh' is already installed."
+else
+    gext install space-bar@luchrioh
+fi
+
+if extension_installed "undecorate@sun.wxg@gmail.com"; then
+    print_success "Extension 'undecorate@sun.wxg@gmail.com' is already installed."
+else
+    gext install undecorate@sun.wxg@gmail.com
+fi
+
+
 # Compile gsettings schemas only if the extensions were installed
 if [ -f ~/.local/share/gnome-shell/extensions/tophat@fflewddur.github.io/schemas/org.gnome.shell.extensions.tophat.gschema.xml ]; then
     sudo cp ~/.local/share/gnome-shell/extensions/tophat@fflewddur.github.io/schemas/org.gnome.shell.extensions.tophat.gschema.xml /usr/share/glib-2.0/schemas/
@@ -60,6 +85,18 @@ fi
 
 if [ -f ~/.local/share/gnome-shell/extensions/AlphabeticalAppGrid@stuarthayhurst/schemas/org.gnome.shell.extensions.AlphabeticalAppGrid.gschema.xml ]; then
     sudo cp ~/.local/share/gnome-shell/extensions/AlphabeticalAppGrid@stuarthayhurst/schemas/org.gnome.shell.extensions.AlphabeticalAppGrid.gschema.xml /usr/share/glib-2.0/schemas/
+fi
+
+if [ -f ~/.local/share/gnome-shell/extensions/tactile@lundal.io/schemas/org.gnome.shell.extensions.tactile.gschema.xml ]; then
+    sudo cp ~/.local/share/gnome-shell/extensions/tactile@lundal.io/schemas/org.gnome.shell.extensions.tactile.gschema.xml /usr/share/glib-2.0/schemas/
+fi
+
+if [ -f ~/.local/share/gnome-shell/extensions/blur-my-shell\@aunetx/schemas/org.gnome.shell.extensions.blur-my-shell.gschema.xml ]; then
+    sudo cp ~/.local/share/gnome-shell/extensions/blur-my-shell\@aunetx/schemas/org.gnome.shell.extensions.blur-my-shell.gschema.xml /usr/share/glib-2.0/schemas/
+fi
+
+if [ -f ~/.local/share/gnome-shell/extensions/space-bar\@luchrioh/schemas/org.gnome.shell.extensions.space-bar.gschema.xml ]; then
+    sudo cp ~/.local/share/gnome-shell/extensions/space-bar\@luchrioh/schemas/org.gnome.shell.extensions.space-bar.gschema.xml /usr/share/glib-2.0/schemas/
 fi
 
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas/

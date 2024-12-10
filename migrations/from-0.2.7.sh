@@ -23,3 +23,12 @@ echo  "Removing mise: to uninstall, select Yes when prompted"
 if command_exists mise; then
     sudo mise implode
 fi
+
+echo "cleaning bashrc..."
+if ! grep -q 'source ~/.local/share/omakub/defaults/bash/rc' "$HOME/.bashrc"; then
+# todo remove the line
+
+
+rm -rf $OMAKUB_DIR
+
+echo "Migration complete."

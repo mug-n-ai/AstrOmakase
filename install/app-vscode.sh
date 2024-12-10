@@ -22,11 +22,16 @@ else
 	echo "Removing temporary files..."
 	rm code.deb
 	if [ $? -ne 0 ]; then
-	    print_error "Failed to remove temporary files."
+		print_error "Failed to remove temporary files."
 	else
-	    print_success "Temporary files removed successfully."
+		print_success "Temporary files removed successfully."
 	fi
 	cd -
+
+	echo "Installing pre configured settings..."
+	mkdir -p ~/.config/Code/User
+	cp ~/.local/share/astromakase/configs/vscode.json ~/.config/Code/User/settings.json
+
 
 	echo "Installing default supported themes..."
 	code --install-extension enkia.tokyo-night

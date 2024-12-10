@@ -3,6 +3,8 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
+conda activate
+
 if ! command -v pre-commit &> /dev/null; then
 
     # Install pre-commit

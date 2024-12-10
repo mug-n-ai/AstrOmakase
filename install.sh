@@ -68,6 +68,9 @@ for app in "${SELECTED_APPS[@]}"; do
     done
 done
 
+echo "Installing applications..."
+for application in $INSTALL_DIR/applications/*.sh; do source $application; done
+
 # Settings the tools
 echo "Setting environment..."
 for setter in $INSTALL_DIR/settings/*.sh; do source $setter; done

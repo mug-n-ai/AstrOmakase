@@ -9,21 +9,15 @@ if [ -f ~/.local/share/astromakase/version_previous ]; then
     echo "Preparing for migrating from version $PREVIOUS_VERSION to $CURRENT_VERSION..."    
     # Perform migration based on the previous version
     if [ "$PREVIOUS_VERSION" == "0.2.2" ]; then
-        if dpkg -l | grep -q okular; then
-            echo "Migrating Okular from apt to snap..."
-            sudo apt purge okular -y
-            sudo apt autoremove -y
-            echo "Migration complete."
-        fi
+        source "$INSTALL_DIR/migrations/from-0.2.2.sh"
     fi
+
     if [ "$PREVIOUS_VERSION" == "0.2.5" ]; then
-        if dpkg -l | grep -q okular; then
-            echo "Migrating changing repository for speedtest..."
-            sudo apt remove speedtest-cli -y
-            sudo rm /etc/apt/sources.list.d/ookla_speedtest-cli.list
-            sudo rm /etc/apt/keyrings/ookla_speedtest-cli-archive-keyring.gpg
-            echo "Migration complete."
-        fi
+        source "$INSTALL_DIR/migrations/from-0.2.5.sh"
+    fi 
+
+    if [ "$PREVIOUS_VERSION" == "0.2.7" ]; then
+        source "$INSTALL_DIR/migrations/from-0.2.7.sh"
     fi 
 
     rm ~/.local/share/astromakase/version_previous
