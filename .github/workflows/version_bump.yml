@@ -23,7 +23,8 @@ jobs:
                     dev_suffix: "-beta"
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-
+                    GITHUB_SHA: ${{ github.event.after }}
+                    
             -   name: Read version
                 id: read_version
                 run: echo "VERSION=$(cat version)" >> $GITHUB_ENV
