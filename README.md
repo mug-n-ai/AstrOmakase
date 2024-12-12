@@ -87,8 +87,7 @@ Additionally, some tools not commonly used in the astronomy field have been excl
 
 #### Font Configuration
 
-AstrOmakase uses the **Inter Font Family** for its modern, elegant design and exceptional readability across various screen resolutions. Inter is optimised for digital displays, offering a clean and professional aesthetic that complements the tools provided in this suite. By using Inter Mono in terminal applications, AstrOmakase ensures consistency and clarity for developers and researchers working with code.
-
+AstrOmakase leverages the **Inter Font** Family for its sleek, modern design and outstanding readability on digital displays. Inter is carefully optimised for screen usage, providing a clean and professional aesthetic that enhances the overall user experience. To complement this, AstrOmakase adopts **Cascadia Code Nerd** Font for terminal and monospace applications, ensuring a clear and visually appealing interface for developers and researchers working with code. This combination strikes a perfect balance between elegance and functionality.
 
 ### Installation
 
