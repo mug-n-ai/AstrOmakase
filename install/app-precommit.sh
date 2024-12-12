@@ -3,6 +3,8 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
+eval "$($HOME/anaconda3/bin/conda shell.bash hook)"
+
 conda activate
 
 if ! command -v pre-commit &> /dev/null; then
