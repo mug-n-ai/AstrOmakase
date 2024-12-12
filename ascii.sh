@@ -13,13 +13,13 @@ ascii_art=(
 
 # Define the color gradient (shades of purple)
 colors=(
-    '\033[38;5;129m' # Medium Purple
-    '\033[38;5;135m' # Light Purple
-    '\033[38;5;141m' # Pale Purple
-    '\033[38;5;147m' # Bright Purple
-    '\033[38;5;183m' # Soft Magenta
-    '\033[38;5;219m' # Pinkish Purple
-    '\033[38;5;225m' # Light Magenta
+    '\033[38;5;27m'  # Dark Blue
+    '\033[38;5;33m'  # Medium Blue
+    '\033[38;5;39m'  # Deep Sky Blue
+    '\033[38;5;45m'  # Light Blue
+    '\033[38;5;51m'  # Cyan Blue
+    '\033[38;5;87m'  # Soft Blue
+    '\033[38;5;123m' # Pale Blue
 )
 
 # Reset color code
