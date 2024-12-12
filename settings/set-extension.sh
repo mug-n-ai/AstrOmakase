@@ -53,7 +53,7 @@ gsettings set org.gnome.shell.extensions.tophat meter-fg-color "$color"
 gsettings set org.gnome.shell.extensions.alphabetical-app-grid folder-order-position 'end'
 
 # Configure Tactile
-gsettings set org.gnome.shell.extensions.tactile col-0 1sudo cp ~/.local/share/gnome-shell/extensions/tactile@lundal.io/schemas/org.gnome.shell.extensions.tactile.gschema.xml /usr/share/glib-2.0/schemas/
+gsettings set org.gnome.shell.extensions.tactile col-0 1
 
 gsettings set org.gnome.shell.extensions.tactile col-1 2
 gsettings set org.gnome.shell.extensions.tactile col-2 1
