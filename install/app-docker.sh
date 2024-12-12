@@ -1,7 +1,9 @@
 echo "Installing Docker and Lazydocker..."
 
-if !command_exists docker; then
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../common_functions.sh"
 
+if !command_exists docker; then
     # Add the official Docker repo
     sudo install -m 0755 -d /etc/apt/keyrings
     sudo wget -qO /etc/apt/keyrings/docker.asc https://download.docker.com/linux/ubuntu/gpg
@@ -26,4 +28,8 @@ if !command_exists docker; then
     rm lazydocker.tar.gz lazydocker
     cd -
 
+    print_success "Docker and Lazydocker installed successfully."
+
+else
+    print_success "Docker is already installed. Exiting script."
 fi
