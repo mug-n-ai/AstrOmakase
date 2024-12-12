@@ -25,19 +25,13 @@ The name "AstrOmakase" combines "astronomy" with the Japanese word "omakase," wh
 .. image:: _static/desktop.png
    :alt: Desktop view of AstrOmakase
 
+.. note::
+   AstrOmakase is inspired by the `Omakub project <https://github.com/basecamp/omakub>`_. Ww wanto to express our gratitude to the Omakub team for their excellent work and for providing a solid foundation for AstrOmakase.
+
 Installation
 ------------
 
 AstrOmakase simplifies the setup process, enabling you to focus on your research and development tasks without the hassle of manual configuration.
-
-.. note::
-   AstrOmakase is inspired by the `Omakub project <https://github.com/basecamp/omakub>`_. While it can function independently, it is recommended to install Omakub first for a better experience. For more details, visit the `Omakub website <https://omakub.org/>`_ and `documentation <https://manual.omakub.org/>`_.
-
-   To install Omakub:
-
-   .. code-block:: bash
-
-      wget -qO- https://omakub.org/install | bash
 
 
 Run the following script to install AstrOmakase on your Ubuntu 24.04 system:
@@ -46,17 +40,6 @@ Run the following script to install AstrOmakase on your Ubuntu 24.04 system:
 
    wget -qO- https://mug-n-ai.github.io/AstrOmakase/installer.sh | bash
 
-During the installation, if Omakub is not detected, you will be prompted with the option to install it.
-
-.. important::
-   If you choose to install Omakub, the installer will proceed with the Omakub installation.
-   **After Omakub is installed**, you will need to log out and log back in to apply the necessary environment changes.
-   Once you have logged back in, **rerun the AstrOmakase installation script to complete the setup** process.
-   If you choose not to install Omakub:
-
-.. note::
-   If you choose to not install Omakub, the installation will continue without Omakub.
-   Note that some features may be limited or unavailable without Omakub.
 
 How to Update
 --------------
