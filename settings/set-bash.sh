@@ -23,4 +23,5 @@ fi
 [ -f "$HOME/.inputrc" ] && mv $HOME/.inputrc $HOME/.inputrc.bak
 
 # Replace the inputrc file with the default configuration from AstrOmakase
-cp $HOME/.local/share/astromakase/settings/config/inputrc $HOME/.inputrc
+cp $HOME/.local/share/astromakase/settings/config/bash/inputrc $HOME/.inputrc
+echo "inputrc file updated"
