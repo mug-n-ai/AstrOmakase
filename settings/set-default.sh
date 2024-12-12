@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Setting default applications..."
+
+echo "Setting default applications for office fles types..."
 # set onlyoffice as default for office files
 xdg-mime default onlyoffice-desktopeditors_onlyoffice-desktopeditors.desktop application/vnd.openxmlformats-officedocument.wordprocessingml.document
 xdg-mime default onlyoffice-desktopeditors_onlyoffice-desktopeditors.desktop application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
@@ -7,10 +10,11 @@ xdg-mime default onlyoffice-desktopeditors_onlyoffice-desktopeditors.desktop app
 xdg-mime default onlyoffice-desktopeditors_onlyoffice-desktopeditors.desktop text/csv
 
 
+echo "Setting default browser..."
 # set Chrome as default web browser
 xdg-settings set default-web-browser google-chrome.desktop
 
-
+echo "Setting default applications for text file types..."
 # set Zed editor as default for text file types
 xdg-mime default zed.desktop text/plain
 xdg-mime default zed.desktop text/x-python
