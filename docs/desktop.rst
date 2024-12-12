@@ -203,3 +203,11 @@ This tool is ideal for users with multi-monitor setups who want to enhance their
 `Scrcpy <https://github.com/Genymobile/scrcpy>`_ is a powerful application for screen mirroring and controlling Android devices from your desktop.
 It provides high-resolution, low-latency mirroring of your device's screen, allowing you to interact with apps, view notifications, and manage your content directly from your computer.
 Scrcpy's performance and ease of use make it a valuable tool for developers, testers, or anyone who needs to access their Android device's interface while working on a larger screen.
+
+Ulauncher
+++++++++++++++++++++++++++++
+
+`Ulauncher <https://ulauncher.io/>`_ is a fast and lightweight application launcher designed to streamline your workflow on Linux systems.
+It supports fuzzy search, keyboard navigation, and a wide range of extensions to enhance productivity.
+With its minimalist interface, Ulauncher allows you to quickly find and launch applications, open files, or run custom commands, all without interrupting your focus.
+Its extensibility and speed make it an excellent tool for users seeking an efficient and customisable way to access their desktop applications and functions.

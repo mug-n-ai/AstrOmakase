@@ -150,9 +150,10 @@ General Tools
 - **PDFsam**: A tool for splitting and merging PDF files.
 - **PreCommit**: A framework for managing pre-commit hooks across multiple languages.
 - **qBittorrent**: A lightweight, open-source BitTorrent client.
-- **VLC Media Player**: A media player supporting most multimedia files and streaming protocols.
 - **rSync**: A utility for efficient file transfer and synchronization.
 - **rClone**: A command-line program to manage files on cloud storage.
+- **Ulauncher**: A fast and lightweight application launcher for Linux, supporting extensions and fuzzy search.
+- **VLC Media Player**: A media player supporting most multimedia files and streaming protocols.
 - **VSCode**: A complete and versatile code editor.
 - **Xournal++**: A PDF annotation and note-taking tool.
 - **Zed**: A high-performance multiplayer code editor.
