@@ -14,8 +14,7 @@ gsettings set org.gnome.desktop.wm.preferences theme 'Yaru-blue-dark'
 
 echo "Setting GNOME wallpaper..."
 
-WALLPAPER="$INSTALL_DIR/content/wallpaper.png"
-
+WALLPAPER="$HOME/.local/share/astromakase/content/wallpaper.png"
 # Check if the wallpaper file exists
 if [[ -f "$WALLPAPER" ]]; then
     echo "Wallpaper file found: $WALLPAPER"
