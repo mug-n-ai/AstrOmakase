@@ -16,6 +16,15 @@ With Anaconda, users can easily create isolated environments for various project
 
 Anaconda's integrated development environment, Jupyter Notebook, allows for interactive coding and data visualisation, making it a powerful tool for exploratory data analysis and creating reproducible research. Overall, Anaconda provides a comprehensive ecosystem for managing and developing data-driven projects efficiently.
 
+Docker
+++++++++++++++++++++++++++++
+
+`Docker <https://www.docker.com/>`_ is a leading platform for developing, shipping, and running applications inside containers.
+Containers are lightweight, portable, and self-sufficient packages that include everything an application needs to run, such as code, runtime, libraries, and system tools.
+Docker simplifies deployment workflows by enabling consistent environments across development, testing, and production stages.
+Its vast ecosystem of tools and images makes it a versatile solution for developers, system administrators, and teams looking to enhance their software deployment processes efficiently.
+
+
 **PreCommit**
 +++++++++++++
 

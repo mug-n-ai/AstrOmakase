@@ -137,6 +137,7 @@ General Tools
 
 - **Anaconda**: A powerful distribution for Python and R programming, widely used for scientific computing. Includes libraries like **NumPy**, **SciPy**, and **Matplotlib**.
 - **Chrome**: A fast, secure, and easy-to-use web browser.
+- **Docker**: A containerisation platform that allows developers to package and run applications in isolated environments, ensuring consistent behaviour across different systems.
 - **Flameshot**: A simple yet powerful screenshot tool.
 - **GitHub CLI**: Command-line interface for GitHub (`gh`).
 - **GIMP**: GNU Image Manipulation Program, a versatile graphics editor.

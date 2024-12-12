@@ -29,6 +29,7 @@ Here is a list of tools included in AstrOmakase that are added to the standard O
 
 - **Anaconda**: A powerful distribution for Python and R programming languages, widely used for scientific computing. Anaconda installation includes popular data science libraries such as **NumPy**, **SciPy**, and **Matplotlib**.
 - **Chrome browser**: A fast, secure, and easy-to-use web browser.
+- **Docker**: A containerisation platform that allows developers to package and run applications in isolated environments, ensuring consistent behaviour across different systems.
 - **Flameshot**: A powerful yet simple-to-use screenshot tool.
 - **GitHub CLI**: gh is GitHub on the command line.
 - **GIMP**: GNU Image Manipulation Program, a versatile graphics editor.
