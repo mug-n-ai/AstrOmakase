@@ -85,6 +85,11 @@ Additionally, some tools not commonly used in the astronomy field have been excl
 - **Zoom**: A video conferencing tool for meetings and webinars.
 - **Upscayl**: A tool for upscaling images using AI.
 
+#### Font Configuration
+
+AstrOmakase uses the **Inter Font Family** for its modern, elegant design and exceptional readability across various screen resolutions. Inter is optimised for digital displays, offering a clean and professional aesthetic that complements the tools provided in this suite. By using Inter Mono in terminal applications, AstrOmakase ensures consistency and clarity for developers and researchers working with code.
+
+
 ### Installation
 
 Run the script below to install AstrOmakase on your Ubuntu 24.04 system:
