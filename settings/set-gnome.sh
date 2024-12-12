@@ -25,11 +25,12 @@ if [[ -f "$WALLPAPER" ]]; then
 
     if [ ! -d "$WALLPAPER_DEST_DIR" ]; then mkdir -p "$WALLPAPER_DEST_DIR"; fi
 
-    [ ! -f $WALLPAPER_DEST_DIR ] && cp $WALLPAPER $WALLPAPER_DEST_DIR
-    gsettings set org.gnome.desktop.background picture-uri $WALLPAPER_DEST_DIR
-    gsettings set org.gnome.desktop.background picture-uri-dark $WALLPAPER_DEST_DIR
-    gsettings set org.gnome.desktop.background picture-options 'zoom'
+    cp "$WALLPAPER" "$WALLPAPER_DEST_PATH"
 
+    URI="file://$WALLPAPER_DEST_PATH"
+    gsettings set org.gnome.desktop.background picture-uri "$URI"
+    gsettings set org.gnome.desktop.background picture-uri-dark "$URI"
+    gsettings set org.gnome.desktop.background picture-options 'zoom'
 else
     echo "Wallpaper file not found: $WALLPAPER"
     exit 1
