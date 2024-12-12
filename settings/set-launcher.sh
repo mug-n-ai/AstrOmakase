@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Creazione del file AstrOmakase.desktop
+# Create the AstrOmakase.desktop file
 cat <<EOF >~/.local/share/applications/AstrOmakase.desktop
 [Desktop Entry]
 Version=1.0
@@ -15,11 +15,10 @@ MimeType=text/html;text/xml;application/xhtml_xml;
 StartupNotify=true
 EOF
 
-
-# Aggiungi i permessi di esecuzione al file astromakase
+# Add execution permissions to the astromakase file
 sudo chmod +x $HOME/.local/share/astromakase/bin/astromakase
 
-# Aggiunta del percorso al file .bashrc solo se non esiste già
+# Add the path to .bashrc only if it does not already exist
 if ! grep -q 'export PATH="$HOME/.local/share/astromakase/bin:$PATH"' "$HOME/.bashrc"; then
     echo 'export PATH="$HOME/.local/share/astromakase/bin:$PATH"' >> "$HOME/.bashrc"
     echo "PATH added to .bashrc"
@@ -27,7 +26,7 @@ else
     echo "PATH already exists in .bashrc"
 fi
 
-# Rendi effettivo il cambiamento nella sessione corrente
+# Apply the PATH change to the current session
 export PATH="$HOME/.local/share/astromakase/bin:$PATH"
 
 echo "Setup complete!"
