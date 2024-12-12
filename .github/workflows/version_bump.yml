@@ -9,7 +9,6 @@ permissions:
 
 jobs:
     version-bump:
-        if: ${{ !contains(github.event.head_commit.message, 'Bump version to') && !contains(github.event.head_commit.message, 'Update badge') && !contains(github.event.head_commit.message, 'no bump') }}
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout repository
@@ -19,6 +18,7 @@ jobs:
                     persist-credentials: true
 
             -   name: Run auto-dev-version-bumper
+                if: ${{ !contains(github.event.head_commit.message, 'Bump version to') && !contains(github.event.head_commit.message, 'Update badge') && !contains(github.event.head_commit.message, 'no bump') }}
                 uses: LorenzoMugnai/auto-dev-version-bumper@1.1
                 with:
                     dev_suffix: "-beta"
@@ -39,14 +39,13 @@ jobs:
                     logo: 'github'
                     path: 'content/version.svg'
 
-            -   name: Upload badge as artifact
-                uses: actions/upload-artifact@v4
-                with:
-                    name: badge
-                    path: 'content/version.svg'
-                    if-no-files-found: error
-            
+            -   name: Ensure Git permissions
+                run: sudo chmod -R u+rw .git
+
             -   name: Commit and push badge
-                uses: stefanzweifel/git-auto-commit-action@v5
-                with:
-                    commit_message: "Update badge"
+                run: |
+                    git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+                    git config --global user.name "github-actions[bot]"
+                    git add content/version.svg
+                    git commit -m "Update badge" || echo "No changes to commit"
+                    git push origin HEAD
