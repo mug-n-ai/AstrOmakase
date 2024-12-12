@@ -305,35 +305,23 @@ Welcome to AstrOmakase!</div>
 <p>AstrOmakase is more than just a collection of software. It is a thoughtfully crafted setup tailored to streamline your research workflow.</p>
 <p>The name “AstrOmakase” combines “astronomy” with the Japanese word “omakase,” which means “I’ll leave it up to you.” Just as in an omakase dining experience, where the chef selects and prepares a personalized meal, AstrOmakase provides a tailored software environment, allowing you to focus on your research without worrying about configuring each tool individually.</p>
 <img alt="Desktop view of AstrOmakase" src="_images/desktop.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>AstrOmakase is inspired by the <a class="reference external" href="https://github.com/basecamp/omakub">Omakub project</a>. Ww wanto to express our gratitude to the Omakub team for their excellent work and for providing a solid foundation for AstrOmakase.</p>
+</div>
 </section>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
 <p>AstrOmakase simplifies the setup process, enabling you to focus on your research and development tasks without the hassle of manual configuration.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>AstrOmakase is inspired by the <a class="reference external" href="https://github.com/basecamp/omakub">Omakub project</a>. While it can function independently, it is recommended to install Omakub first for a better experience. For more details, visit the <a class="reference external" href="https://omakub.org/">Omakub website</a> and <a class="reference external" href="https://manual.omakub.org/">documentation</a>.</p>
-<p>To install Omakub:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>-qO-<span class="w"> </span>https://omakub.org/install<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
-</pre></div>
-</div>
-</div>
 <p>Run the following script to install AstrOmakase on your Ubuntu 24.04 system:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>-qO-<span class="w"> </span>https://mug-n-ai.github.io/AstrOmakase/installer.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
 </pre></div>
 </div>
-<p>During the installation, if Omakub is not detected, you will be prompted with the option to install it.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>If you choose to install Omakub, the installer will proceed with the Omakub installation.
-<strong>After Omakub is installed</strong>, you will need to log out and log back in to apply the necessary environment changes.
-Once you have logged back in, <strong>rerun the AstrOmakase installation script to complete the setup</strong> process.
-If you choose not to install Omakub:</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you choose to not install Omakub, the installation will continue without Omakub.
-Note that some features may be limited or unavailable without Omakub.</p>
-</div>
+</section>
+<section id="how-to-use">
+<h2>How to Use<a class="headerlink" href="#how-to-use" title="Link to this heading">#</a></h2>
+<p>To learn how to use this setting, please refer to the Menu section below to learn about the tools included in AstrOmakase. The tools are organised into categories for easy navigation and access.</p>
+<p>If you want to learn about the keybinds, shortcuts and gestures, please refer to the Keybindings section below.</p>
 </section>
 <section id="how-to-update">
 <h2>How to Update<a class="headerlink" href="#how-to-update" title="Link to this heading">#</a></h2>
@@ -409,6 +397,15 @@ Console Tools</div>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference internal" href="console.html#console"><span class="std std-ref">Console Emulator</span></a></div>
 </div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Keybindings</div>
+<p class="sd-card-text">This section covers keybindings, gestures and shortcuts for AstrOmakase.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="keybinds.html#keybinds"><span class="std std-ref">Pre-configured keybindings, shortcuts, and gestures for AstrOmakase</span></a></div>
+</div>
 </div>
 </div>
 <section id="general-tools">
@@ -416,6 +413,7 @@ Console Tools</div>
 <ul class="simple">
 <li><p><strong>Anaconda</strong>: A powerful distribution for Python and R programming, widely used for scientific computing. Includes libraries like <strong>NumPy</strong>, <strong>SciPy</strong>, and <strong>Matplotlib</strong>.</p></li>
 <li><p><strong>Chrome</strong>: A fast, secure, and easy-to-use web browser.</p></li>
+<li><p><strong>Docker</strong>: A containerisation platform that allows developers to package and run applications in isolated environments, ensuring consistent behaviour across different systems.</p></li>
 <li><p><strong>Flameshot</strong>: A simple yet powerful screenshot tool.</p></li>
 <li><p><strong>GitHub CLI</strong>: Command-line interface for GitHub (<cite>gh</cite>).</p></li>
 <li><p><strong>GIMP</strong>: GNU Image Manipulation Program, a versatile graphics editor.</p></li>
@@ -429,9 +427,10 @@ Console Tools</div>
 <li><p><strong>PDFsam</strong>: A tool for splitting and merging PDF files.</p></li>
 <li><p><strong>PreCommit</strong>: A framework for managing pre-commit hooks across multiple languages.</p></li>
 <li><p><strong>qBittorrent</strong>: A lightweight, open-source BitTorrent client.</p></li>
-<li><p><strong>VLC Media Player</strong>: A media player supporting most multimedia files and streaming protocols.</p></li>
 <li><p><strong>rSync</strong>: A utility for efficient file transfer and synchronization.</p></li>
 <li><p><strong>rClone</strong>: A command-line program to manage files on cloud storage.</p></li>
+<li><p><strong>Ulauncher</strong>: A fast and lightweight application launcher for Linux, supporting extensions and fuzzy search.</p></li>
+<li><p><strong>VLC Media Player</strong>: A media player supporting most multimedia files and streaming protocols.</p></li>
 <li><p><strong>VSCode</strong>: A complete and versatile code editor.</p></li>
 <li><p><strong>Xournal++</strong>: A PDF annotation and note-taking tool.</p></li>
 <li><p><strong>Zed</strong>: A high-performance multiplayer code editor.</p></li>
@@ -481,6 +480,10 @@ Console Tools</div>
 <li><p><strong>Zoom</strong>: A video conferencing tool for meetings and webinars.</p></li>
 <li><p><strong>Upscayl</strong>: A tool for upscaling images using AI.</p></li>
 </ul>
+</section>
+<section id="font-configuration">
+<h3>Font Configuration<a class="headerlink" href="#font-configuration" title="Link to this heading">#</a></h3>
+<p>AstrOmakase leverages the <strong>Inter Font</strong> Family for its sleek, modern design and outstanding readability on digital displays. Inter is carefully optimised for screen usage, providing a clean and professional aesthetic that enhances the overall user experience. To complement this, AstrOmakase adopts <strong>Cascadia Code Nerd</strong> Font for terminal and monospace applications, ensuring a clear and visually appealing interface for developers and researchers working with code. This combination strikes a perfect balance between elegance and functionality.</p>
 </section>
 </section>
 </section>
@@ -549,6 +552,7 @@ Finally, submit a <cite>Pull Request &lt;https://docs.github.com/en/pull-request
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to AstrOmakase’s Documentation!</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-astromakase">What is AstrOmakase?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to Use</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update">How to Update</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-menu">The Menu</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-tools">General Tools</a></li>
@@ -556,6 +560,7 @@ Finally, submit a <cite>Pull Request &lt;https://docs.github.com/en/pull-request
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#console-tools">Console Tools</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astronomy-tools">Astronomy Tools</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-tools">Optional Tools</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#font-configuration">Font Configuration</a></li>
 </ul>
 </li>
 </ul>
