@@ -23,4 +23,4 @@ fi
 [ -f "~/.inputrc" ] && mv ~/.inputrc ~/.inputrc.bak
 
 # Replace the inputrc file with the default configuration from AstrOmakase
-cp ~/.local/share/astriomakase/settings/configs/inputrc ~/.inputrc
+cp ~/.local/share/astriomakase/settings/config/inputrc ~/.inputrc
