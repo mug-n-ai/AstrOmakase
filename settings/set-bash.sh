@@ -20,7 +20,7 @@ else
 fi 
 
 # Backup the existing inputrc file if it exists
-[ -f "~/.inputrc" ] && mv ~/.inputrc ~/.inputrc.bak
+[ -f "$HOME/.inputrc" ] && mv $HOME/.inputrc $HOME/.inputrc.bak
 
 # Replace the inputrc file with the default configuration from AstrOmakase
-cp ~/.local/share/astriomakase/settings/config/inputrc ~/.inputrc
+cp $HOME/.local/share/astromakase/settings/config/inputrc $HOME/.inputrc
