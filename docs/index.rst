@@ -41,6 +41,13 @@ Run the following script to install AstrOmakase on your Ubuntu 24.04 system:
    wget -qO- https://mug-n-ai.github.io/AstrOmakase/installer.sh | bash
 
 
+How to Use 
+--------------
+
+To learn how to use this setting, please refer to the Menu section below to learn about the tools included in AstrOmakase. The tools are organised into categories for easy navigation and access.
+
+If you want to learn about the keybinds, shortcuts and gestures, please refer to the Keybindings section below.
+
 How to Update
 --------------
 
@@ -113,6 +120,12 @@ Below is a list of tools included in AstrOmakase that are added to the standard 
       :link-type: ref
 
       This section covers terminal tools for your Linux environment.
+
+   .. grid-item-card:: Keybindings
+      :link: keybinds
+      :link-type: ref
+
+      This section covers keybindings, gestures and shortcuts for AstrOmakase.
 
 
 General Tools
