@@ -24,9 +24,14 @@ if command_exists mise; then
     sudo mise implode
 fi
 
-echo "cleaning bashrc..."
-if ! grep -q 'source ~/.local/share/omakub/defaults/bash/rc' "$HOME/.bashrc"; then
-# todo remove the line
+echo "Cleaning .bashrc..."
+OMAKUB_BASHRC_LINE='source ~/.local/share/omakub/defaults/bash/rc'
+if grep -q "$OMAKUB_BASHRC_LINE" "$HOME/.bashrc"; then
+    sed -i "/$OMAKUB_BASHRC_LINE/d" "$HOME/.bashrc"
+    echo "Removed Omakub-specific line from .bashrc"
+else
+    echo "No Omakub-specific line found in .bashrc"
+fi
 
 
 rm -rf $OMAKUB_DIR
