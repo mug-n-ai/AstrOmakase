@@ -30,22 +30,20 @@ jobs:
                 id: read_version
                 run: echo "VERSION=$(cat version)" >> $GITHUB_ENV
 
-            -   name: Create Badge
-                uses: sebymiano/shields-badge-generator@v1.0.4
-                with:
-                    label: 'Version'
-                    status: ${{ env.VERSION }}
-                    color: 'blue'
-                    logo: 'github'
-                    path: 'content/version.svg'
-
+            -   name: Update README badge
+                run: |
+                    VERSION=$(cat version)
+                    README="README.md"
+                    sed -i "s|\\(https://img.shields.io/static/v1?label=Version&message=\\)[^&]*|\\1$VERSION|g" $README
+        
             -   name: Ensure Git permissions
                 run: sudo chmod -R u+rw .git
-
-            -   name: Commit and push badge
+        
+            -   name: Commit and push updated README
                 run: |
                     git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
                     git config --global user.name "github-actions[bot]"
-                    git add content/version.svg
+                    git add README.md
                     git commit -m "Update badge" || echo "No changes to commit"
                     git push origin HEAD
+        
