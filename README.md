@@ -3,7 +3,6 @@
 <img src="content/icon.png" alt="content/icon.png" width="200"/>
 
 ![Version](https://img.shields.io/static/v1?label=Version&message=0.3.0-beta2&color=blue&logo=github)
-![Version](https://raw.githubusercontent.com/mug-n-ai/AstrOmakase/master/content/version.svg?cache-bust=1)
 ![Ubuntu OS](https://img.shields.io/badge/Ubuntu%20OS-24.04-green?style=flat&logo=ubuntu)
 ![license](https://img.shields.io/github/license/mug-n-ai/AstrOmakase)
 
