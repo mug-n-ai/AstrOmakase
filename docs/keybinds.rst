@@ -63,8 +63,11 @@ Press ``<Super>t`` to activate Tiling Assistant’s interactive tiling mode. Thi
 - ``<Super>t`` + ``QW``: Top-left and centre area
 - ``<Super>t`` + ``QA``: Left column
 
-.. tip::
-   The keys used for tiling (default: ``Q``, ``W``, ``E``, ``A``, ``S``, ``D``, ``Z``, ``X``, ``C``) can be expanded or modified based on user preferences in Tiling Assistant’s settings.
+The keys used for tiling (default: ``Q``, ``W``, ``E``, ``A``, ``S``, ``D``, ``Z``, ``X``, ``C``) can be expanded or modified based on user preferences in Tiling Assistant’s settings.
+This can ce accessed by pressing ``<Super>Shift>t``.
+
+.. image:: _static/tiling.png
+
 
 Using Ulauncher
 ----------------
@@ -74,6 +77,9 @@ Ulauncher is your go-to tool for quick application launching and actions. Press 
 - **Application Names:** Launch any installed application by typing its name.
 - **File Search:** Access files by their names if indexed.
 - **Custom Extensions:** Use Ulauncher’s plugins to add functionality like calculator operations, dictionary searches, or script executions.
+
+.. image:: _static/ulauncher.png
+
 
 Configuration files for Ulauncher are pre-set but can be modified in ``$HOME/.config/ulauncher/settings.json``.
 
