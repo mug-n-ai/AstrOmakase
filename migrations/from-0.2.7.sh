@@ -26,11 +26,26 @@ fi
 
 echo "Cleaning .bashrc..."
 OMAKUB_BASHRC_LINE='source ~/.local/share/omakub/defaults/bash/rc'
+SET_H_LINE='set -h'
+
+# Escape special characters for use in sed
+ESCAPED_OMAKUB_LINE=$(printf '%s\n' "$OMAKUB_BASHRC_LINE" | sed 's/[.[\*^$\/]/\\&/g')
+ESCAPED_SET_H_LINE=$(printf '%s\n' "$SET_H_LINE" | sed 's/[.[\*^$\/]/\\&/g')
+
+# Remove Omakub line if present
 if grep -q "$OMAKUB_BASHRC_LINE" "$HOME/.bashrc"; then
-    sed -i "/$OMAKUB_BASHRC_LINE/d" "$HOME/.bashrc"
+    sed -i "/$ESCAPED_OMAKUB_LINE/d" "$HOME/.bashrc"
     echo "Removed Omakub-specific line from .bashrc"
 else
     echo "No Omakub-specific line found in .bashrc"
+fi
+
+# Remove set -h if present
+if grep -q "$SET_H_LINE" "$HOME/.bashrc"; then
+    sed -i "/$ESCAPED_SET_H_LINE/d" "$HOME/.bashrc"
+    echo "Removed 'set -h' line from .bashrc"
+else
+    echo "No 'set -h' line found in .bashrc"
 fi
 
 
