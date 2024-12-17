@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo "Setting favorite apps for dock..."
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../common_functions.sh"
+
+print_title "Setting favorite apps for dock..."
 
 # Favorite apps for dock
 apps=(
@@ -51,3 +54,5 @@ if [ ${#installed_apps[@]} -gt 0 ]; then
 else
     echo "No favorite apps were found to set."
 fi
+
+print_success "Favorite apps for dock set successfully."

@@ -3,6 +3,8 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
+print_title "Installing GitHub CLI..."
+
 if command_exists gh; then
 
     print_success "GitHub CLI is already installed. Exiting script."

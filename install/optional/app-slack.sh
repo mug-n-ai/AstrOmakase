@@ -3,5 +3,6 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../../common_functions.sh"
 
+print_title "Installing Slack..."
 
 install_package "Slack" "slack" "slack" "snap" "None"

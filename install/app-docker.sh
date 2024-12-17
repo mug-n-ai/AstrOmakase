@@ -3,6 +3,8 @@ echo "Installing Docker and Lazydocker..."
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
+print_title "Installing Docker and Lazydocker..."
+
 if !command_exists docker; then
     # Add the official Docker repo
     sudo install -m 0755 -d /etc/apt/keyrings

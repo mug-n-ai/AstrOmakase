@@ -1,5 +1,7 @@
 #!/bin/bash
 
+print_title "Setting up AstrOmakase launcher..."
+
 # Create the AstrOmakase.desktop file
 cat <<EOF >~/.local/share/applications/AstrOmakase.desktop
 [Desktop Entry]
@@ -29,4 +31,4 @@ fi
 # Apply the PATH change to the current session
 export PATH="$HOME/.local/share/astromakase/bin:$PATH"
 
-echo "Setup complete!"
+print_success "AstrOmakase launcher setup complete"

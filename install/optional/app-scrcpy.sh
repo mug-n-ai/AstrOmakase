@@ -8,6 +8,7 @@ mkdir -p $APP_DIR
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../../common_functions.sh"
 
+print_title "Installing scrcpy..."
 
 echo "Checking if scrcpy is installed..."
 if command_exists scrcpy; then

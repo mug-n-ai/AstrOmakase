@@ -2,12 +2,16 @@
 
 # Function to print error messages
 print_error() {
-    echo "[ERROR] $1" >&2
+    echo -e "\033[0;31m[ERROR]\033[0m $1" >&2
 }
 
 # Function to print success messages
 print_success() {
-    echo "[SUCCESS] $1"
+    echo -e "\033[0;32m[SUCCESS]\033[0m $1"
+}
+
+print_title() {
+    echo -e "\033[1;34m$1\033[0m"
 }
 
 # Function to check if a command exists

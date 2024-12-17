@@ -1,5 +1,10 @@
 #!/bin/bash
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../common_functions.sh"
+
+print_title "Setting default terminal emulator..."
+
 # Array of installed terminals
 TERMINALS=("/usr/bin/gnome-terminal" "/usr/bin/xterm" "/usr/bin/konsole" "/usr/bin/alacritty" "/usr/bin/warp-terminal")
 
@@ -39,3 +44,4 @@ echo "Done. To configure the default terminal, run 'sudo update-alternatives --c
 sudo update-alternatives --config x-terminal-emulator
 
 
+print_success "Default terminal emulator set successfully."

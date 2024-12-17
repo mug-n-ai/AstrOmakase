@@ -1,5 +1,11 @@
 #!/bin/bash
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../common_functions.sh"
+
+
+print_title "Migrating from 0.2.7..."
+
 OMAKUB_DIR="$HOME/.local/share/omakub"
 
 
@@ -52,3 +58,5 @@ fi
 rm -rf $OMAKUB_DIR
 
 echo "Migration complete."
+
+print_success "Migration from 0.2.7 complete"

@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo "Setting apps for autostart..."
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../common_functions.sh"
+
+print_title "Setting apps for autostart..."
 
 # Applications to start at boot
 startup_apps=(
@@ -31,3 +34,5 @@ for app in "${startup_apps[@]}"; do
         fi
     done
 done
+
+print_success "Apps set to autostart."

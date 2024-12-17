@@ -10,7 +10,7 @@ extension_installed() {
 }
 
 #install gnome extensions
-echo "Installing GNOME extensions..."
+print_title "Installing GNOME extensions..."
 
 # Check if gnome-shell-extension-manager is installed
 if command_exists gnome-shell-extension-manager; then

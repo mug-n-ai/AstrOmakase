@@ -164,6 +164,7 @@ install_common_packages() {
 }
 
 main() {
+    print_title "Setting up Anaconda..."
     cleanup_mise_python
     check_anaconda_installed
     setting_default_conda_channels

@@ -4,6 +4,8 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
+print_title "Installing Warp terminal..."
+
 # Define constants
 THEME_NAME="Tokyo Night"
 DEFAULT_THEME_PATH="${HOME}/.local/share/warp-terminal/themes/tokyo_night.yaml"

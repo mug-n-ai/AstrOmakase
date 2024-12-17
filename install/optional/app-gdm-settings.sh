@@ -3,6 +3,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../../common_functions.sh"
 
+print_title "Installing GDM Settings..."
 
 # echo "Checking if gdm-settings is already installed..."
 # if command_exists gdm-settings; then

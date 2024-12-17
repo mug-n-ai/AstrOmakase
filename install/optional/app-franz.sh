@@ -3,6 +3,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../../common_functions.sh"
 
+print_title "Installing Franz..."
 
 echo "Checking if Franz is installed..."
 if command_exists franz; then

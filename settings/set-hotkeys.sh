@@ -2,6 +2,11 @@
 
 # This keybindings are inspired by the Omakub project. Please visit the [Omakub project](https://github.com/basecamp/omakub) 
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../common_functions.sh"
+
+print_title "Setting hotkeys..."
+
 # Alt+F4 is very cumbersome
 gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
 

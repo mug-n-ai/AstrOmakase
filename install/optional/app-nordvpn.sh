@@ -3,6 +3,8 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../../common_functions.sh"
 
+print_title "Installing NordVPN..."
+
 echo "Checking if NordVPN is installed..."
 if command_exists nordvpn; then
     print_success "NordVPN is already installed. Skipping."

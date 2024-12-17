@@ -3,6 +3,8 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../../common_functions.sh"
 
+print_title "Installing Superpaper..."
+
 APP_DIR="$HOME/Applications"
 SUPERPAPER_APPIMAGE="$APP_DIR/Superpaper-latest-x86_64.AppImage"
 

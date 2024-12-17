@@ -4,7 +4,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
-echo "Installing libraries..."
+print_title "Installing libraries..."
 
 sudo apt install -y \
   build-essential pkg-config autoconf bison clang rustc \

@@ -3,6 +3,8 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
+print_title "Installing Google Chrome..."
+
 echo "Checking if Google Chrome is already installed..."
 if command_exists google-chrome; then
     print_success "Google Chrome is already installed. Exiting script."

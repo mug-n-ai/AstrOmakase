@@ -1,3 +1,8 @@
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../common_functions.sh"
+
+print_title "Setting up bash..."
+
 # Add the path to the .bashrc file only if it does not already exist
 if ! grep -q 'source "$HOME/.local/share/astromakase/settings/config/bash/init' "$HOME/.bashrc"; then
     echo ' ' >> "$HOME/.bashrc"
@@ -25,3 +30,5 @@ fi
 # Replace the inputrc file with the default configuration from AstrOmakase
 cp $HOME/.local/share/astromakase/settings/config/bash/inputrc $HOME/.inputrc
 echo "inputrc file updated"
+
+print_success "bash setup complete"

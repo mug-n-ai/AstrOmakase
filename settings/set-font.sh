@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo "Installing Inter Font and Cascadia Code Nerd Font..."
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../common_functions.sh"
+
+print_title "Installing Inter Font and Cascadia Code Nerd Font..."
 
 # Create the fonts directory if it doesn't exist
 mkdir -p ~/.local/share/fonts
@@ -61,4 +64,4 @@ gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Inter Bold 10'
 # Apply Cascadia Code Nerd Font as monospace font
 gsettings set org.gnome.desktop.interface monospace-font-name 'CaskaydiaCove Nerd Font 10'
 
-echo "Inter and Cascadia Code Nerd Fonts installed and applied successfully!"
+print_success "Inter and Cascadia Code Nerd Fonts installed and applied successfully!"

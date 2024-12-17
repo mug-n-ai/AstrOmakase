@@ -3,6 +3,8 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
+print_title "Installing Console Tools..."
+
 if command_exists fastfetch; then
     print_success "fastfetch is already installed. Exiting script."
 else

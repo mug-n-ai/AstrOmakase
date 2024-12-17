@@ -2,7 +2,10 @@
 
 #!/bin/bash
 
-echo "Setting Gnome Colors..."
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../common_functions.sh"
+
+print_title "Setting Gnome Colors..."
 
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface cursor-theme 'Yaru'
@@ -11,8 +14,9 @@ gsettings set org.gnome.desktop.interface icon-theme "Yaru-blue"
 gsettings set org.gnome.desktop.interface cursor-blink 'true'
 gsettings set org.gnome.desktop.wm.preferences theme 'Yaru-blue-dark'
 
+print_success "Gnome Colors set!"
 
-echo "Setting GNOME wallpaper..."
+print_title "Setting GNOME wallpaper..."
 
 WALLPAPER="$HOME/.local/share/astromakase/content/wallpaper.png"
 # Check if the wallpaper file exists
@@ -44,3 +48,5 @@ gsettings set org.gnome.mutter center-new-windows true
 
 # Reveal week numbers in the Gnome calendar
 gsettings set org.gnome.desktop.calendar show-weekdate true
+
+print_success "GNOME wallpaper set!"

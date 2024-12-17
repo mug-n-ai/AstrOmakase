@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo "Setting GNOME Shell extensions..."
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../common_functions.sh"
+
+print_title "Setting GNOME Shell extensions..."
 
 # Turn off default Ubuntu extensions
 gnome-extensions disable tiling-assistant@ubuntu.com
@@ -21,29 +24,7 @@ gsettings set org.gnome.shell.extensions.tophat network-usage-unit bits
 gsettings set org.gnome.shell.extensions.tophat show-animations false
 
 # Set TopHat color based on the current theme
-theme=$(gsettings get org.gnome.desktop.interface icon-theme)
-
-case $theme in
-    "'Yaru-purple'")
-        color="#924d8b"
-        ;;
-    "'Yaru-red'")
-        color="#e92020"
-        ;;
-    "'Yaru-blue'")
-        color="#208fe9"
-        ;;
-    "'Yaru-sage'"|"'Yaru-bark'")
-        color="#78ab50"
-        ;;
-    "'Yaru-magenta'")
-        color="#e920a3"
-        ;;
-    *)
-        echo "No matching theme found, using default color."
-        color="#208fe9"
-        ;;
-esac
+color="#208fe9"
 
 # Set the TopHat color
 gsettings set org.gnome.shell.extensions.tophat meter-fg-color "$color"
@@ -81,3 +62,5 @@ gsettings set org.gnome.shell.extensions.space-bar.behavior smart-workspace-name
 gsettings set org.gnome.shell.extensions.space-bar.shortcuts enable-activate-workspace-shortcuts false
 gsettings set org.gnome.shell.extensions.space-bar.shortcuts enable-move-to-workspace-shortcuts true
 gsettings set org.gnome.shell.extensions.space-bar.shortcuts open-menu "@as []"
+
+print_success "GNOME Shell extensions set!"

@@ -3,6 +3,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common_functions.sh"
 
+print_title "Installing Astronomy Software..."
 
 install_package "SAO DS9" "ds9" "saods9" "apt" "None"
 

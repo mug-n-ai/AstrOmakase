@@ -1,6 +1,10 @@
 #!/bin/bash
 
-echo "Setting default applications..."
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../common_functions.sh"
+
+
+print_title "Setting default applications..."
 
 echo "Setting default applications for office fles types..."
 # set onlyoffice as default for office files
@@ -35,3 +39,4 @@ xdg-mime default zed.desktop application/json
 xdg-mime default zed.desktop text/x-ini
 xdg-mime default zed.desktop text/x-config
 
+print_success "Default applications set successfully."
