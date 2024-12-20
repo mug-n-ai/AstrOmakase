@@ -19,7 +19,7 @@ jobs:
 
             -   name: Run auto-dev-version-bumper
                 if: ${{ !contains(github.event.head_commit.message, 'Bump version to') && !contains(github.event.head_commit.message, 'Update badge') && !contains(github.event.head_commit.message, 'no bump') }}
-                uses: LorenzoMugnai/auto-dev-version-bumper@1.1
+                uses: LorenzoMugnai/auto-dev-version-bumper@v1.1
                 with:
                     dev_suffix: "-beta"
                 env:
