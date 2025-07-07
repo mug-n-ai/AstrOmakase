@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
 # This settings are inspired by the Omakub project. Please visit the [Omakub project](https://github.com/basecamp/omakub) 
 
@@ -9,47 +9,96 @@ source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Setting Gnome Colors..."
 
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-gsettings set org.gnome.desktop.interface cursor-theme 'Yaru'
-gsettings set org.gnome.desktop.interface gtk-theme "Yaru-blue-dark"
-gsettings set org.gnome.desktop.interface icon-theme "Yaru-blue"
-gsettings set org.gnome.desktop.interface accent-color "blue" 2>/dev/null || true
-gsettings set org.gnome.desktop.interface cursor-blink 'true'
-gsettings set org.gnome.desktop.wm.preferences theme 'Yaru-blue-dark'
+# Function to set gsettings key idempotently
+set_gsetting_idempotent() {
+    local schema="$1"
+    local key="$2"
+    local value="$3"
+    local display_name="$4"
 
-print_success "Gnome Colors set!"
+    local current_value
+    current_value=$(gsettings get "$schema" "$key" 2>/dev/null || true)
+
+    # Remove quotes from current_value if it's a string
+    current_value=$(echo "$current_value" | sed "s/^'\(.*\)'$/\1/")
+
+    if [ "$current_value" = "$value" ]; then
+        print_success "Gnome setting '$display_name' is already set to '$value'. Skipping."
+    else
+        print_info "Setting Gnome setting '$display_name' to '$value'..."
+        if gsettings set "$schema" "$key" "$value"; then
+            print_success "Gnome setting '$display_name' set successfully."
+        else
+            print_error "Failed to set Gnome setting '$display_name' to '$value'."
+            return 1
+        fi
+    fi
+    return 0
+}
+
+set_gsetting_idempotent org.gnome.desktop.interface color-scheme "'prefer-dark'" "Color Scheme" || true
+set_gsetting_idempotent org.gnome.desktop.interface cursor-theme "'Yaru'" "Cursor Theme" || true
+set_gsetting_idempotent org.gnome.desktop.interface gtk-theme "'Yaru-blue-dark'" "GTK Theme" || true
+set_gsetting_idempotent org.gnome.desktop.interface icon-theme "'Yaru-blue'" "Icon Theme" || true
+set_gsetting_idempotent org.gnome.desktop.interface accent-color "'blue'" "Accent Color" || true
+set_gsetting_idempotent org.gnome.desktop.interface cursor-blink "true" "Cursor Blink" || true
+set_gsetting_idempotent org.gnome.desktop.wm.preferences theme "'Yaru-blue-dark'" "Window Manager Theme" || true
+
+print_success "Gnome Colors setup completed."
 
 print_title "Setting GNOME wallpaper..."
 
-WALLPAPER="$HOME/.local/share/astromakase/content/wallpaper.png"
-# Check if the wallpaper file exists
-if [[ -f "$WALLPAPER" ]]; then
-    echo "Wallpaper file found: $WALLPAPER"
+WALLPAPER_SOURCE="$HOME/.local/share/astromakase/content/wallpaper.png"
+WALLPAPER_DEST_DIR="$HOME/.local/share/backgrounds"
+WALLPAPER_DEST_PATH="$WALLPAPER_DEST_DIR/wallpaper.png"
+URI="file://$WALLPAPER_DEST_PATH"
 
-    WALLPAPER_DEST_DIR="$HOME/.local/share/backgrounds"
-    WALLPAPER_DEST_PATH="$WALLPAPER_DEST_DIR/wallpaper.png"
-
-    if [ ! -d "$WALLPAPER_DEST_DIR" ]; then mkdir -p "$WALLPAPER_DEST_DIR"; fi
-
-    cp "$WALLPAPER" "$WALLPAPER_DEST_PATH"
-
-    URI="file://$WALLPAPER_DEST_PATH"
-    gsettings set org.gnome.desktop.background picture-uri "$URI"
-    gsettings set org.gnome.desktop.background picture-uri-dark "$URI"
-    gsettings set org.gnome.desktop.background picture-options 'zoom'
+if [ ! -f "$WALLPAPER_SOURCE" ]; then
+    print_error "Wallpaper source file not found: $WALLPAPER_SOURCE. Skipping wallpaper setup."
 else
-    echo "Wallpaper file not found: $WALLPAPER"
-    exit 1
+    print_info "Wallpaper source file found: $WALLPAPER_SOURCE."
+
+    print_info "Ensuring wallpaper destination directory exists..."
+    if [ ! -d "$WALLPAPER_DEST_DIR" ]; then
+        if mkdir -p "$WALLPAPER_DEST_DIR"; then
+            print_success "Wallpaper destination directory created: $WALLPAPER_DEST_DIR."
+        else
+            print_error "Failed to create wallpaper destination directory: $WALLPAPER_DEST_DIR. Skipping wallpaper setup."
+            exit 1
+        fi
+    else
+        print_success "Wallpaper destination directory already exists: $WALLPAPER_DEST_DIR."
+    fi
+
+    print_info "Checking if wallpaper needs to be copied..."
+    if [ -f "$WALLPAPER_DEST_PATH" ] && cmp -s "$WALLPAPER_SOURCE" "$WALLPAPER_DEST_PATH"; then
+        print_success "Wallpaper is already copied and identical. Skipping copy."
+    else
+        print_info "Copying wallpaper from $WALLPAPER_SOURCE to $WALLPAPER_DEST_PATH..."
+        if cp "$WALLPAPER_SOURCE" "$WALLPAPER_DEST_PATH"; then
+            print_success "Wallpaper copied successfully."
+        else
+            print_error "Failed to copy wallpaper. Skipping wallpaper setup."
+            exit 1
+        fi
+    fi
+
+    set_gsetting_idempotent org.gnome.desktop.background picture-uri "'$URI'" "Desktop Background URI" || true
+    set_gsetting_idempotent org.gnome.desktop.background picture-uri-dark "'$URI'" "Desktop Background URI (Dark)" || true
+    set_gsetting_idempotent org.gnome.desktop.background picture-options "'zoom'" "Desktop Background Picture Options" || true
+
+    print_success "GNOME wallpaper setup completed."
 fi
 
-# Set GNOME settings
+print_title "Setting other GNOME settings..."
+
 # never suspend if plugged in
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 0
+set_gsetting_idempotent org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout "0" "Sleep Inactive AC Timeout" || true
 
 # Center new windows in the middle of the screen
-gsettings set org.gnome.mutter center-new-windows true
+set_gsetting_idempotent org.gnome.mutter center-new-windows "true" "Center New Windows" || true
 
 # Reveal week numbers in the Gnome calendar
-gsettings set org.gnome.desktop.calendar show-weekdate true
+set_gsetting_idempotent org.gnome.desktop.calendar show-weekdate "true" "Show Week Numbers in Calendar" || true
 
-print_success "GNOME wallpaper set!"
+print_success "Other GNOME settings setup completed."

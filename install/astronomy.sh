@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck disable=SC1091
@@ -6,77 +7,86 @@ source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing Astronomy Software..."
 
-install_package "SAO DS9" "ds9" "saods9" "apt" "None"
+install_package "SAO DS9" "ds9" "saods9" "apt" ""
+install_package "FITSVerify" "fitsverify" "ftools-fv" "apt" ""
+install_package "FTOOLS FV" "ftools-fv" "ftools-fv" "apt" ""
+install_package "Stellarium" "stellarium" "stellarium" "apt" ""
 
-install_package "FITSVerify" "fitsverify" "ftools-fv" "apt" "None"
-
-install_package "FTOOLS FV" "ftools-fv" "ftools-fv" "apt" "None"
-
-local dependencies_Stellarium=()
-install_package "Stellarium" "stellarium" "stellarium" "apt" "dependencies_Stellarium"
-
-echo "Installing Zotero..."
+# Install Zotero
+print_info "Installing Zotero..."
 if command_exists zotero; then
     print_success "Zotero is already installed. Skipping."
 else
-    if ! curl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash; then
-        print_error "Failed to install Zotero. Exiting."
+    print_info "Zotero not found. Running Zotero installation script..."
+    if curl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash; then
+        print_success "Zotero installed successfully."
+    else
+        print_error "Failed to install Zotero. Please check the output above for details."
         exit 1
     fi
-    print_success "Zotero installed successfully."
 fi
 
+# Install Zotero Connector for Chrome
+print_info "Installing Zotero Connector for Chrome..."
 
-echo "Installing Zotero Connector for Chrome..."
-# URL of the Zotero Connector extension CRX file
-extension_url="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=91.0.4472.124&x=id%3Dekhagklcjbdpajgpjgmbionohlpdbjgc%26installsource%3Dondemand%26uc"
+# Ensure jq and unzip are installed
+install_package "jq" "jq" "jq" "apt" "" || { print_error "jq is required for Zotero Connector installation."; exit 1; }
+install_package "unzip" "unzip" "unzip" "apt" "" || { print_error "unzip is required for Zotero Connector installation."; exit 1; }
 
-# Path where the extension will be downloaded
-download_path="/tmp/zotero_connector.crx"
+local extension_url="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=91.0.4472.124&x=id%3Dekhagklcjbdpajgpjgmbionohlpdbjgc%26installsource%3Dondemand%26uc"
+local download_path="/tmp/zotero_connector.crx"
+local chrome_extensions_dir="$HOME/.config/google-chrome/Default/Extensions"
+local extension_id="ekhagklcjbdpajgpjgmbionohlpdbjgc"
+local zotero_connector_install_dir="$chrome_extensions_dir/zotero_connector"
+local preferences_file="$HOME/.config/google-chrome/Default/Preferences"
 
-# Path where Chrome stores extensions
-chrome_extensions_dir="$HOME/.config/google-chrome/Default/Extensions"
-extension_id="ekhagklcjbdpajgpjgmbionohlpdbjgc"
-
-# Function to check if the Zotero Connector is already installed
-is_extension_installed() {
-    if [ -d "$chrome_extensions_dir/$extension_id" ]; then
-        return 0 # Extension is installed
-    else
-        return 1 # Extension is not installed
-    fi
-}
-
-# Check if Zotero Connector is already installed
-if is_extension_installed; then
-    echo "Zotero Connector is already installed."
+# Check if the Zotero Connector is already installed (by checking its directory)
+if [ -d "$zotero_connector_install_dir" ]; then
+    print_success "Zotero Connector appears to be already installed. Skipping installation."
 else
-    # Download the Zotero Connector CRX file
-    echo "Downloading Zotero Connector extension..."
-    wget -O "$download_path" "$extension_url"
+    print_info "Zotero Connector not found. Proceeding with installation."
 
-    # Verify the download
+    print_info "Downloading Zotero Connector extension..."
     if [ -f "$download_path" ]; then
-        echo "Download completed."
+        print_success "Zotero Connector CRX already exists. Skipping download."
     else
-        echo "Failed to download the extension."
+        if ! wget -O "$download_path" "$extension_url"; then
+            print_error "Failed to download the Zotero Connector extension."
+            exit 1
+        fi
+        print_success "Zotero Connector downloaded successfully."
+    fi
+
+    print_info "Installing Zotero Connector..."
+    mkdir -p "$chrome_extensions_dir" || { print_error "Failed to create Chrome extensions directory."; exit 1; }
+
+    if unzip -q "$download_path" -d "$zotero_connector_install_dir"; then
+        print_success "Zotero Connector unzipped successfully."
+    else
+        print_error "Failed to unzip Zotero Connector. Exiting."
         exit 1
     fi
 
-    # Create a directory for manual extensions if it doesn't exist
-    mkdir -p "$chrome_extensions_dir"
-
-    # Move the extension to the Chrome extensions directory
-    echo "Installing Zotero Connector..."
-    unzip -q "$download_path" -d "$chrome_extensions_dir/zotero_connector"
-
     # Enable Developer Mode in Chrome (required for manually installed extensions)
-    preferences="$HOME/.config/google-chrome/Default/Preferences"
-    jq '.extensions.settings."ekhagklcjbdpajgpjgmbionohlpdbjgc" = {"installation_mode": "developer"}' "$preferences" > "$preferences.tmp" && mv "$preferences.tmp" "$preferences"
+    # This part is tricky for idempotency and might require user intervention or a more robust jq operation.
+    # For now, we'll attempt to modify the preferences file.
+    print_info "Attempting to enable Developer Mode for Zotero Connector in Chrome preferences..."
+    if [ -f "$preferences_file" ]; then
+        if jq '.extensions.settings."'"$extension_id"'" = {"installation_mode": "developer"}' "$preferences_file" > "$preferences_file.tmp" && mv "$preferences_file.tmp" "$preferences_file"; then
+            print_success "Chrome preferences updated for Zotero Connector. You may need to restart Chrome."
+        else
+            print_error "Failed to update Chrome preferences for Zotero Connector. You may need to enable it manually."
+        fi
+    else
+        print_error "Chrome preferences file not found at $preferences_file. Cannot automatically enable Zotero Connector."
+    fi
 
-    # Clean up
-    rm "$download_path"
+    print_info "Cleaning up temporary files..."
+    if rm "$download_path"; then
+        print_success "Temporary files removed successfully."
+    else
+        print_error "Failed to remove temporary files."
+    fi
 
-    echo "Zotero Connector installed successfully. Please enable it in the Chrome extensions settings."
-
+    print_success "Zotero Connector installation process completed. Please enable it in your Chrome extensions settings if it's not active."
 fi
