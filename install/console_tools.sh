@@ -39,11 +39,15 @@ install_package "eza" "eza" "eza" "apt" "None"
 
 install_package "fd-find" "fd" "fd-find" "apt" "None"
 
-install_package "plocate" "plocate" "plocate" "apt" "None"
+local dependencies_plocate=()
+install_package "plocate" "plocate" "plocate" "apt" "dependencies_plocate"
 
-install_package "zoxide" "zoxide" "zoxide" "apt" "None"
+local dependencies_zoxide=()
+install_package "zoxide" "zoxide" "zoxide" "apt" "dependencies_zoxide"
 
-install_package "nmap" "nmap" "nmap" "apt" "None"
+local dependencies_nmap=()
+install_package "nmap" "nmap" "nmap" "apt" "dependencies_nmap"
 
-install_package "pavucontrol" "pavucontrol" "pavucontrol" "apt" "None"
+local dependencies_pavucontrol=()
+install_package "pavucontrol" "pavucontrol" "pavucontrol" "apt" "dependencies_pavucontrol"
 

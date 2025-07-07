@@ -6,4 +6,5 @@ source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing qBittorrent..."
 
-install_package "qBittorrent" "qbittorrent" "qbittorrent" "apt" "None"
+local dependencies_qbittorrent=()
+install_package "qBittorrent" "qbittorrent" "qbittorrent" "apt" "dependencies_qbittorrent"

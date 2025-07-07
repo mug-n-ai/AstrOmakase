@@ -6,4 +6,5 @@ source "$SCRIPT_DIR/../../common_functions.sh"
 
 print_title "Installing Remmina..."
 
-install_package "remmina" "remmina" "remmina" "apt" "None"
+local dependencies_remmina=()
+install_package "remmina" "remmina" "remmina" "apt" "dependencies_remmina"

@@ -25,7 +25,7 @@ install_package() {
     local check_command="$2" # Command to check if installed (e.g., "google-chrome")
     local install_name="$3" # Name for apt/snap install (e.g., "google-chrome-stable")
     local package_manager="$4" # "apt" or "snap"
-    local dependencies="$5" # Space-separated list of dependencies, or "None"
+    local -n dependencies_array="$5" # Array of dependencies
 
     echo "Attempting to install $display_name..."
 
@@ -35,9 +35,9 @@ install_package() {
         return 0
     fi
 
-    if [ "$dependencies" != "None" ]; then
+    if [ ${#dependencies_array[@]} -gt 0 ]; then
         echo "Installing dependencies for $display_name..."
-        for dep in $dependencies; do
+        for dep in "${dependencies_array[@]}"; do
             apt_install "$dep"
         done
     fi

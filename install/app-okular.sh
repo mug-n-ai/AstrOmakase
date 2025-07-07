@@ -6,4 +6,5 @@ source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing Okular..."
 
-install_package "okular" "okular" "okular" "snap" "None"
+local dependencies_okular=()
+install_package "okular" "okular" "okular" "snap" "dependencies_okular"

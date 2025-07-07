@@ -6,4 +6,5 @@ source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing HDFCompass..."
 
-install_package "HDFCompass" "HDFCompass" "hdf-compass" "apt" "None"
+local dependencies_hdfcompass=()
+install_package "HDFCompass" "HDFCompass" "hdf-compass" "apt" "dependencies_hdfcompass"

@@ -7,6 +7,13 @@ set -e
 INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$INSTALL_DIR/common_functions.sh"
 
+# Ensure gum is installed
+if ! command_exists "gum"; then
+    echo "Installing gum..."
+    sudo apt-get update
+    sudo apt-get install -y gum
+fi
+
 source "$INSTALL_DIR/ascii.sh"
 echo "version $(cat version)"
 

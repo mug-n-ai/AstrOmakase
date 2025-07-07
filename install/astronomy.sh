@@ -12,7 +12,8 @@ install_package "FITSVerify" "fitsverify" "ftools-fv" "apt" "None"
 
 install_package "FTOOLS FV" "ftools-fv" "ftools-fv" "apt" "None"
 
-install_package "Stellarium" "stellarium" "stellarium" "apt" "None"
+local dependencies_Stellarium=()
+install_package "Stellarium" "stellarium" "stellarium" "apt" "dependencies_Stellarium"
 
 echo "Installing Zotero..."
 if command_exists zotero; then

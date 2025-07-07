@@ -6,4 +6,5 @@ source "$SCRIPT_DIR/../../common_functions.sh"
 
 print_title "Installing Discord..."
 
-install_package "Discord" "discord" "discord" "snap" "None"
+local dependencies_discord=()
+install_package "Discord" "discord" "discord" "snap" "dependencies_discord"

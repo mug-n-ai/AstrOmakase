@@ -6,4 +6,5 @@ source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing Sushi..."
 
-install_package "sushi" "sushi" "gnome-sushi" "apt" "None"
+local dependencies_sushi=()
+install_package "sushi" "sushi" "gnome-sushi" "apt" "dependencies_sushi"

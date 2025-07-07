@@ -12,6 +12,7 @@ sudo add-apt-repository universe -y
 sudo add-apt-repository ppa:agornostal/ulauncher -y
 sudo apt update -y
 
-install_package "ulauncher" "ulauncher" "ulauncher" "apt" "None"
+local dependencies_ulauncher=()
+install_package "ulauncher" "ulauncher" "ulauncher" "apt" "dependencies_ulauncher"
 
 

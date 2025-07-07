@@ -6,4 +6,5 @@ source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing Krita..."
 
-install_package "krita" "krita" "krita" "apt" "None"
+local dependencies_krita=()
+install_package "krita" "krita" "krita" "apt" "dependencies_krita"

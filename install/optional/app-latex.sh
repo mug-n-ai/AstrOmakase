@@ -6,4 +6,5 @@ source "$SCRIPT_DIR/../../common_functions.sh"
 
 print_title "Installing LaTeX..."
 
-install_package "texstudio" "texstudio" "texstudio" "apt" "None"
+local dependencies_latex=()
+install_package "texstudio" "texstudio" "texstudio" "apt" "dependencies_latex"

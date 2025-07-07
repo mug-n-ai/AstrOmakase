@@ -3,9 +3,7 @@
 # AstrOmakase bootstrapper is inspired by the Omakase project by Basecamp.
 
 get_latest_release() {
-    curl --silent "https://api.github.com/repos/mug-n-ai/AstrOmakase/releases/latest" |
-    grep '"tag_name":' |
-    sed -E 's/.*"([^"]+)".*/\1/'
+    curl --silent "https://api.github.com/repos/mug-n-ai/AstrOmakase/releases/latest" | jq -r '.tag_name'
 }
 
 
@@ -30,6 +28,12 @@ echo "Installing git..."
 if ! command -v git &>/dev/null; then
     sudo apt-get update >/dev/null
     sudo apt-get install -y git >/dev/null
+fi
+
+echo "Installing jq..."
+if ! command -v jq &>/dev/null; then
+    sudo apt-get update >/dev/null
+    sudo apt-get install -y jq >/dev/null
 fi
 
 # Save the current version if it exists, to a temporary location

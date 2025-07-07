@@ -6,4 +6,5 @@ source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing VLC..."
 
-install_package "vlc" "vlc" "vlc" "apt" "None"
+local dependencies_vlc=()
+install_package "vlc" "vlc" "vlc" "apt" "dependencies_vlc"

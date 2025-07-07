@@ -6,7 +6,9 @@ source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing Sync Tools..."
 
-install_package "rclone" "rclone" "rclone" "apt" "None"
+local dependencies_rclone=()
+install_package "rclone" "rclone" "rclone" "apt" "dependencies_rclone"
 
-install_package "rsync" "rsync" "rsync" "apt" "None"
+local dependencies_rsync=()
+install_package "rsync" "rsync" "rsync" "apt" "dependencies_rsync"
 

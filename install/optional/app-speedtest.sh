@@ -6,4 +6,5 @@ source "$SCRIPT_DIR/../../common_functions.sh"
 
 print_title "Installing Speedtest..."
 
-install_package "speedtest-cli" "speedtest-cli" "speedtest-cli" "apt" "None"
+local dependencies_speedtest=()
+install_package "speedtest-cli" "speedtest-cli" "speedtest-cli" "apt" "dependencies_speedtest"

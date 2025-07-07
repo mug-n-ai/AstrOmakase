@@ -6,4 +6,5 @@ source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing GIMP..."
 
-install_package "gimp" "gimp" "gimp" "apt" "None"
+local dependencies_gimp=()
+install_package "gimp" "gimp" "gimp" "apt" "dependencies_gimp"

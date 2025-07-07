@@ -6,4 +6,5 @@ source "$SCRIPT_DIR/../../common_functions.sh"
 
 print_title "Installing Dropbox..."
 
-install_package "Dropbox" "nautilus-dropbox" "nautilus-dropbox" "apt" "None"
+local dependencies_dropbox=()
+install_package "Dropbox" "nautilus-dropbox" "nautilus-dropbox" "apt" "dependencies_dropbox"

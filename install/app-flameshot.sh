@@ -6,4 +6,5 @@ source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing Flameshot..."
 
-install_package "flameshot" "flameshot" "flameshot" "apt" "None"
+local dependencies_flameshot=()
+install_package "flameshot" "flameshot" "flameshot" "apt" "dependencies_flameshot"

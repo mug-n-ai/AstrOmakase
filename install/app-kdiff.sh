@@ -6,4 +6,5 @@ source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing KDiff3..."
 
-install_package "kdiff3" "kdiff3" "kdiff3" "apt" "None"
+local dependencies_kdiff3=()
+install_package "kdiff3" "kdiff3" "kdiff3" "apt" "dependencies_kdiff3"

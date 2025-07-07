@@ -17,4 +17,5 @@ print_title "Installing GDM Settings..."
 #     print_success "gdm-settings installed successfully."
 # fi
 
-install_package "gdm-settings" "gdm-settings" "gdm-settings" "apt" "libglib2.0-dev-bin"
+local dependencies=("libglib2.0-dev-bin")
+install_package "gdm-settings" "gdm-settings" "gdm-settings" "apt" "dependencies"
