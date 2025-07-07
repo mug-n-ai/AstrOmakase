@@ -197,6 +197,7 @@ Optional Tools
 - **SuperPaper**: A multi-monitor wallpaper manager.
 - **Speedtest**: A tool to test internet speed.
 - **Zoom**: A video conferencing tool for meetings and webinars.
+- **Gemini CLI**: A command-line interface for interacting with the Gemini API.
 - **Upscayl**: A tool for upscaling images using AI.
 
 

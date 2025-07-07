@@ -83,6 +83,7 @@ Additionally, some tools not commonly used in the astronomy field have been excl
 - **SuperPaper**: A multi-monitor wallpaper manager.
 - **Speedtest**: A tool for testing internet speed.
 - **Zoom**: A video conferencing tool for meetings and webinars.
+- **Gemini CLI**: A command-line interface for interacting with the Gemini API.
 - **Upscayl**: A tool for upscaling images using AI.
 
 #### Font Configuration

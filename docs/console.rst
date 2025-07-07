@@ -94,3 +94,8 @@ This section introduces various console tools that enhance terminal-based workfl
 ++++++++++++++++++++++++++++
 
 `Speedtest <https://github.com/sivel/speedtest-cli>`_ is a tool for measuring the performance of your network connection, including download and upload speeds, latency, and overall connection quality. It provides a quick and easy way to test and monitor your internet performance from the command line (command is `speedtest-cli`), helping you diagnose network issues and ensure optimal connectivity.
+
+**Gemini CLI** (optional)
+++++++++++++++++++++++++++++
+
+`Gemini CLI` is a command-line interface for interacting with the Gemini API. It allows you to access Gemini's capabilities directly from your terminal, enabling tasks such as generating text, summarizing information, and more.

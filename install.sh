@@ -28,6 +28,7 @@ OPTIONAL_APPS_MAP["speedtest"]="app-speedtest"
 OPTIONAL_APPS_MAP["superpaper"]="app-superpaper"
 OPTIONAL_APPS_MAP["Upscayl"]="app-upscayl"
 OPTIONAL_APPS_MAP["Discord"]="app-discord" # Added Discord as it was in OPTIONAL_SCRIPTS but not OPTIONAL_APPS
+OPTIONAL_APPS_MAP["Gemini CLI"]="app-gemini-cli"
 
 OPTIONAL_APP_NAMES=("Install all")
 for app_name in "${!OPTIONAL_APPS_MAP[@]}"; do
@@ -69,19 +70,23 @@ source "$INSTALL_DIR/migrations.sh"
 
 # Install additional tools
 echo "Installing AstrOmakase tools..."
+# shellcheck disable=SC1090
 for installer in "$INSTALL_DIR"/install/*.sh; do source "$installer"; done
 
 # Install the selected optional software
 for script_name in "${APPS_TO_INSTALL[@]}"; do
     echo "Installing ${script_name}..."
+    # shellcheck disable=SC1090
     source "$INSTALL_DIR/install/optional/${script_name}.sh"
 done
 
 echo "Installing applications..."
+# shellcheck disable=SC1090
 for application in "$INSTALL_DIR"/applications/*.sh; do source "$application"; done
 
 # Settings the tools
 echo "Setting environment..."
+# shellcheck disable=SC1090
 for setter in "$INSTALL_DIR"/settings/*.sh; do source "$setter"; done
 
 if $RUNNING_GNOME; then
