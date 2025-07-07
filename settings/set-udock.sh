@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck disable=SC1091
@@ -12,7 +13,7 @@ apps=(
     "google-chrome.desktop"
     "dev.warp.Warp.desktop"
     "code.desktop"
-    "onlyoffice-desktopeditors.desktop'"
+    "onlyoffice-desktopeditors.desktop"
     "Activity.desktop"
     "AstrOmakase.desktop"
 )
@@ -28,32 +29,43 @@ desktop_dirs=(
     "$HOME/.local/share/applications"
 )
 
+print_info "Checking for existence of specified applications..."
 # Check if a .desktop file exists for each app
 for app in "${apps[@]}"; do
-    found=0
+    local found=false
     for dir in "${desktop_dirs[@]}"; do
         if [ -f "$dir/$app" ]; then
             installed_apps+=("$app")
-            found=1
+            found=true
             break
         fi
     done
-    if [ $found -eq 0 ]; then
-        echo "Warning: $app not found in any of the specified directories."
+    if [ "$found" = false ]; then
+        print_info "Warning: '$app' not found in any of the specified directories. It will not be added to the dock."
     fi
 done
 
-# Convert the array to a format suitable for gsettings
-if [ ${#installed_apps[@]} -gt 0 ]; then
-    favorites_list=$(printf "'%s'," "${installed_apps[@]}")
-    favorites_list="[${favorites_list%,}]"
-
-    # Set the favorite apps
-    gsettings set org.gnome.shell favorite-apps "$favorites_list"
-
-    echo "Favorites set to: $favorites_list"
+if [ ${#installed_apps[@]} -eq 0 ]; then
+    print_info "No favorite apps were found to set. Skipping dock configuration."
 else
-    echo "No favorite apps were found to set."
+    # Convert the array to a format suitable for gsettings
+    local new_favorites_list="$(printf "'%s'," "${installed_apps[@]}")"
+    new_favorites_list="[${new_favorites_list%,}]"
+
+    local current_favorites_list
+    current_favorites_list=$(gsettings get org.gnome.shell favorite-apps 2>/dev/null || true)
+
+    if [ "$current_favorites_list" = "$new_favorites_list" ]; then
+        print_success "Favorite apps for dock are already set correctly. Skipping update."
+    else
+        print_info "Setting favorite apps for dock to: $new_favorites_list..."
+        if gsettings set org.gnome.shell favorite-apps "$new_favorites_list"; then
+            print_success "Favorite apps for dock set successfully."
+        else
+            print_error "Failed to set favorite apps for dock."
+            exit 1
+        fi
+    fi
 fi
 
-print_success "Favorite apps for dock set successfully."
+print_success "Favorite apps for dock setup completed."
