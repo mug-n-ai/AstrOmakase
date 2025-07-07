@@ -11,6 +11,7 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface cursor-theme 'Yaru'
 gsettings set org.gnome.desktop.interface gtk-theme "Yaru-blue-dark"
 gsettings set org.gnome.desktop.interface icon-theme "Yaru-blue"
+gsettings set org.gnome.desktop.interface accent-color "blue" 2>/dev/null || true
 gsettings set org.gnome.desktop.interface cursor-blink 'true'
 gsettings set org.gnome.desktop.wm.preferences theme 'Yaru-blue-dark'
 
