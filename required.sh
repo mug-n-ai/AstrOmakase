@@ -28,8 +28,7 @@ else
 fi
 
 echo "Adding Flathub repository to Flatpak..."
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-if [ $? -ne 0 ]; then
+if ! flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo; then
     print_error "Failed to add Flathub repository. Exiting."
     exit 1
 fi

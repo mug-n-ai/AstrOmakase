@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Function to print error messages
 print_error() {
@@ -20,51 +21,60 @@ command_exists() {
 }
 
 install_package() {
-    # $1: Name of the package
-    # $2: Name of the package as it appears in dpkg -l
-    # $3: Name of the package as it appears in apt or snap
-    # $4: Package manager (apt or snap)
-    echo "Checking if $1 is already installed..."
-    if command_exists "$2"; then
-        print_success ""$1" is already installed. Exiting script."
+    local display_name="$1" # Name for display purposes (e.g., "Google Chrome")
+    local check_command="$2" # Command to check if installed (e.g., "google-chrome")
+    local install_name="$3" # Name for apt/snap install (e.g., "google-chrome-stable")
+    local package_manager="$4" # "apt" or "snap"
+    local dependencies="$5" # Space-separated list of dependencies, or "None"
 
-    else
-        if [ "$5" != "None" ]; then
-            echo "Installing dependencies..."
-            for dep in $5; do
-                apt_install "$dep"
-            done
-        fi
+    echo "Attempting to install $display_name..."
 
-        echo "Installing $1..."
-        if [ "$4" = "apt" ]; then
-            apt_install "$3"
-        elif [ "$4" = "snap" ]; then
-            snap_install "$3"
-        else
-            print_error "Invalid package manager. Exiting."
-            exit 1
-        fi
+    # Check if already installed using the provided check_command
+    if command_exists "$check_command"; then
+        print_success "'$display_name' is already installed."
+        return 0
     fi
 
-    print_success "$1 setup completed successfully."
+    if [ "$dependencies" != "None" ]; then
+        echo "Installing dependencies for $display_name..."
+        for dep in $dependencies; do
+            apt_install "$dep"
+        done
+    fi
 
+    echo "Installing $display_name..."
+    if [ "$package_manager" = "apt" ]; then
+        apt_install "$install_name"
+    elif [ "$package_manager" = "snap" ]; then
+        snap_install "$install_name"
+    else
+        print_error "Invalid package manager specified for $display_name. Exiting."
+        exit 1
+    fi
+
+    print_success "$display_name setup completed successfully."
 }
 
 apt_install() {
-    sudo apt install -y "$1"
-    if [ $? -ne 0 ]; then
-        print_error "Failed to install $1. Exiting."
-        exit 1
+    local package_name="$1"
+    if dpkg -s "$package_name" &> /dev/null; then
+        print_success "'$package_name' is already installed."
+        return 0
     fi
-    print_success "$1 installed successfully."
+
+    echo "Installing '$package_name' via apt..."
+    sudo apt install -y "$package_name"
+    print_success "'$package_name' installed successfully."
 }
 
 snap_install() {
-    sudo snap install "$1"
-    if [ $? -ne 0 ]; then
-        print_error "Failed to install $1 via Snap. Exiting."
-        exit 1
+    local package_name="$1"
+    if snap list | grep -q "^$package_name\s"; then
+        print_success "'$package_name' is already installed via Snap."
+        return 0
     fi
-    print_success "$1 installed successfully via Snap."
+
+    echo "Installing '$package_name' via Snap..."
+    sudo snap install "$package_name"
+    print_success "'$package_name' installed successfully via Snap."
 }

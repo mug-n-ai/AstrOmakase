@@ -23,4 +23,4 @@ BOOT_URL="https://raw.githubusercontent.com/mug-n-ai/AstrOmakase/$LATEST_RELEASE
 echo "Downloading boot.sh from $BOOT_URL..."
 
 # Download and execute the boot.sh script
-wget -qO- $BOOT_URL | bash
+wget -qO- "$BOOT_URL" | bash

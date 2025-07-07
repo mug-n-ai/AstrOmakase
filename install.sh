@@ -14,35 +14,49 @@ echo "version $(cat version)"
 source "$INSTALL_DIR/preinstall_checks.sh"
 
 # Define the options and corresponding script names
-OPTIONAL_APPS=("Install all" "Brave" "Dropbox" "Franz" "gdm-settings" "LaTex" "nordvpn" "remmina" "scrcpy" "Slack" "speedtest" "superpaper" "Upscayl")
-OPTIONAL_SCRIPTS=("app-brave" "app-dropbox" "app-discord" "app-franz" "app-gdm-settings" "app-latex" "app-nordvpn" "app-remmina" "app-scrcpy" "app-slack" "app-speedtest" "app-superpaper" "app-upscayl")
+declare -A OPTIONAL_APPS_MAP
+OPTIONAL_APPS_MAP["Brave"]="app-brave"
+OPTIONAL_APPS_MAP["Dropbox"]="app-dropbox"
+OPTIONAL_APPS_MAP["Franz"]="app-franz"
+OPTIONAL_APPS_MAP["gdm-settings"]="app-gdm-settings"
+OPTIONAL_APPS_MAP["LaTex"]="app-latex"
+OPTIONAL_APPS_MAP["nordvpn"]="app-nordvpn"
+OPTIONAL_APPS_MAP["remmina"]="app-remmina"
+OPTIONAL_APPS_MAP["scrcpy"]="app-scrcpy"
+OPTIONAL_APPS_MAP["Slack"]="app-slack"
+OPTIONAL_APPS_MAP["speedtest"]="app-speedtest"
+OPTIONAL_APPS_MAP["superpaper"]="app-superpaper"
+OPTIONAL_APPS_MAP["Upscayl"]="app-upscayl"
+OPTIONAL_APPS_MAP["Discord"]="app-discord" # Added Discord as it was in OPTIONAL_SCRIPTS but not OPTIONAL_APPS
+
+OPTIONAL_APP_NAMES=("Install all")
+for app_name in "${!OPTIONAL_APPS_MAP[@]}"; do
+    OPTIONAL_APP_NAMES+=("$app_name")
+done
 
 # Inform the user about the selection
 echo "Select the optional applications you want to install. You can select 'Install all' to install every application."
 
 # Use Gum to present the options and get user input
-SELECTED_APPS=$(gum choose --no-limit "${OPTIONAL_APPS[@]}")
+SELECTED_APPS_RAW=$(gum choose --no-limit "${OPTIONAL_APP_NAMES[@]}")
 
-# Convert the space-separated string to an array, handling spaces in names
-mapfile -t SELECTED_APPS_ARRAY <<< "$SELECTED_APPS"
+# Convert the space-separated string to an array
+IFS=$'\n' read -d '' -r -a SELECTED_APPS_ARRAY <<< "$SELECTED_APPS_RAW"
 
-# Check if "Install all" was selected
-INSTALL_ALL=false
-for APP in "${SELECTED_APPS_ARRAY[@]}"; do
-    if [ "$APP" == "Install all" ]; then
-        INSTALL_ALL=true
-        break
-    fi
-done
-
-# If "Install all" is selected, override all other selections and install everything
-if [ "$INSTALL_ALL" = true ]; then
-    echo "'Install all' selected. Installing all applications."
-    SELECTED_APPS=("${OPTIONAL_APPS[@]:1}")  # Exclude "Install all" from the list
+# Determine which apps to install
+APPS_TO_INSTALL=()
+if printf '%s\n' "${SELECTED_APPS_ARRAY[@]}" | grep -q -x "Install all"; then
+    echo "'Install all' selected. Installing all optional applications."
+    for app_name in "${!OPTIONAL_APPS_MAP[@]}"; do
+        APPS_TO_INSTALL+=("${OPTIONAL_APPS_MAP[$app_name]}")
+    done
 else
-    # Use only the selected apps
-    SELECTED_APPS=("${SELECTED_APPS_ARRAY[@]}")
-    echo "Installing the following optional applications: ${SELECTED_APPS[*]}"
+    echo "Installing the following optional applications: ${SELECTED_APPS_ARRAY[*]}"
+    for app_name in "${SELECTED_APPS_ARRAY[@]}"; do
+        if [[ -n "${OPTIONAL_APPS_MAP[$app_name]}" ]]; then
+            APPS_TO_INSTALL+=("${OPTIONAL_APPS_MAP[$app_name]}")
+        fi
+    done
 fi
 
 # Install required tools first
@@ -55,25 +69,20 @@ source "$INSTALL_DIR/migrations.sh"
 
 # Install additional tools
 echo "Installing AstrOmakase tools..."
-for installer in $INSTALL_DIR/install/*.sh; do source $installer; done
+for installer in "$INSTALL_DIR"/install/*.sh; do source "$installer"; done
 
 # Install the selected optional software
-for app in "${SELECTED_APPS[@]}"; do
-    # Find the index of the selected app
-    for i in "${!OPTIONAL_APPS[@]}"; do
-        if [[ "${OPTIONAL_APPS[$i]}" == "$app" ]]; then
-            echo "Installing ${OPTIONAL_APPS[$i]}..."
-            source "$INSTALL_DIR/install/optional/${OPTIONAL_SCRIPTS[$i]}.sh"
-        fi
-    done
+for script_name in "${APPS_TO_INSTALL[@]}"; do
+    echo "Installing ${script_name}..."
+    source "$INSTALL_DIR/install/optional/${script_name}.sh"
 done
 
 echo "Installing applications..."
-for application in $INSTALL_DIR/applications/*.sh; do source $application; done
+for application in "$INSTALL_DIR"/applications/*.sh; do source "$application"; done
 
 # Settings the tools
 echo "Setting environment..."
-for setter in $INSTALL_DIR/settings/*.sh; do source $setter; done
+for setter in "$INSTALL_DIR"/settings/*.sh; do source "$setter"; done
 
 if $RUNNING_GNOME; then
     gsettings set org.gnome.desktop.screensaver lock-enabled true

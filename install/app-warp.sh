@@ -2,6 +2,7 @@
 
 # Define the script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck disable=SC1091
 source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing Warp terminal..."
@@ -27,9 +28,7 @@ install_warp_terminal() {
     sudo install -D -o root -g root -m 644 warpdotdev.gpg /etc/apt/keyrings/warpdotdev.gpg
     sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/warpdotdev.gpg] https://releases.warp.dev/linux/deb stable main" > /etc/apt/sources.list.d/warpdotdev.list'
     rm warpdotdev.gpg
-    sudo apt update && sudo apt install warp-terminal -y
-
-    if [[ $? -ne 0 ]]; then
+    if ! (sudo apt update && sudo apt install warp-terminal -y); then
         print_error "Failed to install Warp terminal. Exiting."
         exit 1
     fi
@@ -40,9 +39,7 @@ install_warp_terminal() {
 copy_themes() {
     echo "Copying theme files..."
     mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/warp-terminal/themes/"
-    cp "$INSTALL_DIR/themes/warp-terminal/"* "${XDG_DATA_HOME:-$HOME/.local/share}/warp-terminal/themes/"
-
-    if [[ $? -ne 0 ]]; then
+    if ! cp "$INSTALL_DIR/themes/warp-terminal/"* "${XDG_DATA_HOME:-$HOME/.local/share}/warp-terminal/themes/"; then
         print_error "Failed to copy theme files. Exiting."
         exit 1
     fi
@@ -61,12 +58,10 @@ update_preferences() {
         mkdir -p "$(dirname "$PREFS_FILE")"
 
         # Copy default configuration and update theme path
-        jq --arg theme_name "$THEME_NAME" \
+        if ! jq --arg theme_name "$THEME_NAME" \
             --arg theme_path "$DEFAULT_THEME_PATH" \
             '.prefs.Theme = {"Custom": {"name": $theme_name, "path": $theme_path}}' \
-            "$DEFAULT_CONFIG_FILE" > "$PREFS_FILE"
-
-        if [[ $? -ne 0 ]]; then
+            "$DEFAULT_CONFIG_FILE" > "$PREFS_FILE"; then
             print_error "Failed to prepare preferences file from default configuration."
             exit 1
         fi

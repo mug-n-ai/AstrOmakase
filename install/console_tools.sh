@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck disable=SC1091
 source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing Console Tools..."
@@ -22,7 +23,7 @@ fi
 
 if [ ! -f "$HOME/.config/fastfetch/config.jsonc" ]; then
   mkdir -p ~/.config/fastfetch
-  cp $INSTALL_DIR/config/fastfetch/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
+  cp "$INSTALL_DIR"/config/fastfetch/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
 fi
 
 

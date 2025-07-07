@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck disable=SC1091
 source "$SCRIPT_DIR/../../common_functions.sh"
 
 print_title "Installing Superpaper..."
@@ -25,11 +26,10 @@ install_superpaper() {
     URL="https://github.com/hhannine/superpaper/releases/download/$LATEST_VERSION/Superpaper-$FILE_VERSION-x86_64.AppImage"
 
     # Create the Applications directory if it doesn't exist
-    mkdir -p $APP_DIR
+    mkdir -p "$APP_DIR"
 
     # Download the AppImage
-    wget -O $SUPERPAPER_APPIMAGE $URL
-    if [ $? -ne 0 ]; then
+    if ! wget -O "$SUPERPAPER_APPIMAGE" "$URL"; then
         print_error "Failed to download Superpaper. Exiting."
         exit 1
     fi
@@ -45,7 +45,7 @@ install_superpaper() {
     echo "Downloaded Superpaper version $LATEST_VERSION"
 
     # Make the AppImage executable
-    chmod +x $SUPERPAPER_APPIMAGE
+    chmod +x "$SUPERPAPER_APPIMAGE"
 
     # Create a desktop entry for Superpaper
     cat <<EOF > ~/.local/share/applications/superpaper.desktop
@@ -58,7 +58,7 @@ Categories=Utility;
 EOF
 
     # Optional: Download an icon for Superpaper
-    wget -O $HOME/Applications/superpaper.png https://github.com/hhannine/superpaper/blob/master/superpaper/resources/superpaper.png
+    wget -O "$HOME/Applications/superpaper.png" https://github.com/hhannine/superpaper/blob/master/superpaper/resources/superpaper.png
 
     # Refresh desktop database
     update-desktop-database ~/.local/share/applications/

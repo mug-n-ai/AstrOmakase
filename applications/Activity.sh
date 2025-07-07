@@ -1,3 +1,6 @@
+#!/bin/bash
+set -e
+
 cat <<EOF >~/.local/share/applications/Activity.desktop
 [Desktop Entry]
 Version=1.0

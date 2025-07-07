@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck disable=SC1091
 source "$SCRIPT_DIR/../../common_functions.sh"
 
 print_title "Installing Franz..."
@@ -10,8 +11,7 @@ if command_exists franz; then
     print_success "Franz is already installed. Skipping."
 else
 	echo "Installing dependencies..."
-	sudo apt install -y libx11-dev libxext-dev libxss-dev libxkbfile-dev
-	if [ $? -ne 0 ]; then
+	if ! sudo apt install -y libx11-dev libxext-dev libxss-dev libxkbfile-dev; then
 	    print_error "Failed to install dependencies. Exiting."
 	    exit 1
 	fi
@@ -24,8 +24,7 @@ else
 	fi
 
 	echo "Downloading Franz..."
-	wget -O /tmp/franz.deb "$LATEST_FRANZ_URL"
-	if [ $? -ne 0 ]; then
+	if ! wget -O /tmp/franz.deb "$LATEST_FRANZ_URL"; then
 	    print_error "Failed to download Franz. Exiting."
 	    exit 1
 	fi
@@ -34,8 +33,7 @@ else
 
 	# Remove the downloaded .deb file
 	echo "Cleaning up..."
-	rm /tmp/franz.deb
-	if [ $? -ne 0 ]; then
+	if ! rm /tmp/franz.deb; then
 	    print_error "Failed to remove temporary files."
 	else
 	    print_success "Removed temporary files."

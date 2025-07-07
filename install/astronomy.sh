@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck disable=SC1091
 source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing Astronomy Software..."
@@ -17,8 +18,7 @@ echo "Installing Zotero..."
 if command_exists zotero; then
     print_success "Zotero is already installed. Skipping."
 else
-    curl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash
-    if [ $? -ne 0 ]; then
+    if ! curl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash; then
         print_error "Failed to install Zotero. Exiting."
         exit 1
     fi
@@ -35,6 +35,7 @@ download_path="/tmp/zotero_connector.crx"
 
 # Path where Chrome stores extensions
 chrome_extensions_dir="$HOME/.config/google-chrome/Default/Extensions"
+extension_id="ekhagklcjbdpajgpjgmbionohlpdbjgc"
 
 # Function to check if the Zotero Connector is already installed
 is_extension_installed() {

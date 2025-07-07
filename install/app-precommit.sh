@@ -1,11 +1,12 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck disable=SC1091
 source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing pre-commit..."
 
-eval "$($HOME/anaconda3/bin/conda shell.bash hook)"
+eval "$("$HOME"/anaconda3/bin/conda shell.bash hook)"
 
 conda activate
 

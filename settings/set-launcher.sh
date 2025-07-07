@@ -18,11 +18,11 @@ StartupNotify=true
 EOF
 
 # Add execution permissions to the astromakase file
-sudo chmod +x $HOME/.local/share/astromakase/bin/astromakase
+sudo chmod +x "$HOME"/.local/share/astromakase/bin/astromakase
 
 # Add the path to .bashrc only if it does not already exist
-if ! grep -q 'export PATH="$HOME/.local/share/astromakase/bin:$PATH"' "$HOME/.bashrc"; then
-    echo 'export PATH="$HOME/.local/share/astromakase/bin:$PATH"' >> "$HOME/.bashrc"
+if ! grep -q "export PATH=\"$HOME/.local/share/astromakase/bin:$PATH\"" "$HOME/.bashrc"; then
+    echo "export PATH=\"$HOME/.local/share/astromakase/bin:$PATH\"" >> "$HOME/.bashrc"
     echo "PATH added to .bashrc"
 else
     echo "PATH already exists in .bashrc"

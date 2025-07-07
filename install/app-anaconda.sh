@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck disable=SC1091
 source "$SCRIPT_DIR/../common_functions.sh"
 
 
@@ -12,15 +13,15 @@ cleanup_mise_python() {
     # Check if the directory exists
     if [ -d "$MISE_INSTALLS_DIR" ]; then
         # Check if there are any Python installations
-        if [ "$(ls -A $MISE_INSTALLS_DIR)" ]; then
-            gum confirm "This will delete all Python installations in Mise to make Anaconda the default Python environment manager and avoid conflicts. Do you want to proceed?" && {
+        if [ "$(ls -A "$MISE_INSTALLS_DIR")" ]; then
+            if gum confirm "This will delete all Python installations in Mise to make Anaconda the default Python environment manager and avoid conflicts. Do you want to proceed?"; then
                 echo "Deleting Python installations in Mise..."
                 # Remove all Python installations
-                rm -rf "$MISE_INSTALLS_DIR"/*
+                rm -rf "${MISE_INSTALLS_DIR:?}"/*
                 echo "All Python installations have been deleted from Mise."
-            } || {
+            else
                 echo "Operation cancelled by the user."
-            }
+            fi
         fi
     else
         echo "Mise installs directory for Python does not exist."
@@ -43,7 +44,7 @@ check_anaconda_installed() {
 
 handle_conda_not_found() {
     print_error "Anaconda directory exists, but 'conda' command is not found."
-    read -p "Do you want to attempt to repair the installation? (y/n): " response
+    read -r -p "Do you want to attempt to repair the installation? (y/n): " response
     if [[ "$response" =~ ^[Yy]$ ]]; then
         repair_anaconda_installation
     else
@@ -56,8 +57,10 @@ repair_anaconda_installation() {
     echo "Attempting to repair the Anaconda installation by updating PATH..."
     export PATH="$HOME/anaconda3/bin:$PATH"
     # Add to .bashrc for permanence
-    echo 'export PATH="$HOME/anaconda3/bin:$PATH"' >> ~/.bashrc
+    echo "export PATH=\"$HOME/anaconda3/bin:$PATH\"" >> ~/.bashrc
+    # shellcheck source=/dev/null
     source ~/.bashrc
+
     if command -v conda &> /dev/null; then
         print_success "'conda' command is now available."
         initialize_conda
@@ -69,24 +72,21 @@ repair_anaconda_installation() {
 
 install_anaconda() {
     echo "Downloading Anaconda installer..."
-    wget -O /tmp/anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
-    if [ $? -ne 0 ]; then
+    if ! wget -O /tmp/anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh; then
         print_error "Failed to download Anaconda installer. Exiting."
         exit 1
     fi
     print_success "Anaconda installer downloaded successfully."
 
     echo "Installing Anaconda..."
-    bash /tmp/anaconda.sh -b -p $HOME/anaconda3
-    if [ $? -ne 0 ]; then
+    if ! bash /tmp/anaconda.sh -b -p "$HOME"/anaconda3; then
         print_error "Failed to install Anaconda. Exiting."
         exit 1
     fi
     print_success "Anaconda installed successfully."
 
     echo "Cleaning up..."
-    rm /tmp/anaconda.sh
-    if [ $? -ne 0 ]; then
+    if ! rm /tmp/anaconda.sh; then
         print_error "Failed to remove temporary files."
     else
         print_success "Removed temporary files."
@@ -100,9 +100,12 @@ update_path_and_initialize_conda() {
     echo "Updating PATH environment variable..."
     export PATH="$HOME/anaconda3/bin:$PATH"
     # Add to .bashrc for permanence
-    echo 'export PATH="$HOME/anaconda3/bin:$PATH"' >> ~/.bashrc
+    echo "export PATH=\"$HOME/anaconda3/bin:$PATH\"" >> ~/.bashrc
+    # shellcheck source=/dev/null
     source ~/.bashrc
-    if [ $? -ne 0 ]; then
+
+    # shellcheck disable=SC1090
+    if ! source ~/.bashrc; then
         print_error "Failed to update PATH environment variable. Exiting."
         exit 1
     fi
@@ -116,7 +119,8 @@ initialize_conda() {
     conda init
 
     # Add priority to system PATH after conda init
-    echo 'export PATH=/usr/bin:$PATH' >> ~/.bashrc
+    echo "export PATH=/usr/bin:$PATH" >> ~/.bashrc
+    # shellcheck source=/dev/null
     source ~/.bashrc
 }
 
@@ -124,8 +128,7 @@ initialize_conda() {
 setting_default_conda_channels() {
     if gum confirm "Do you want to set default Conda channels?"; then
         echo "Setting default Conda channels..."
-        conda config --add channels defaults
-        if [ $? -ne 0 ]; then
+        if ! conda config --add channels defaults; then
             print_error "Failed to set default Conda channels. Exiting."
             exit 1
         fi
@@ -138,8 +141,7 @@ setting_default_conda_channels() {
 update_conda() {
     if gum confirm "Do you want to update Conda?"; then
         echo "Updating Conda..."
-        conda update -n base -c defaults conda -y
-        if [ $? -ne 0 ]; then
+        if ! conda update -n base -c defaults conda -y; then
             print_error "Failed to update Conda. Exiting."
             exit 1
         fi
@@ -152,8 +154,7 @@ update_conda() {
 install_common_packages() {
     if gum confirm "Do you want to install common packages?"; then    
         echo "Installing common packages..."
-        conda install -n base numpy pandas matplotlib scipy astropy jupyter pip h5py tqdm -y
-        if [ $? -ne 0 ]; then
+        if ! conda install -n base numpy pandas matplotlib scipy astropy jupyter pip h5py tqdm -y; then
             print_error "Failed to install common packages. Exiting."
             exit 1
         fi

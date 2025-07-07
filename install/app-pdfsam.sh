@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck disable=SC1091
 source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing PDFsam..."
@@ -11,8 +12,7 @@ if command_exists pdfsam; then
 
 else
     echo "Downloading PDFsam .deb package..."
-    wget -O /tmp/pdfsam.deb https://github.com/torakiki/pdfsam/releases/download/v5.2.3/pdfsam_5.2.3-1_amd64.deb
-    if [ $? -ne 0 ]; then
+    if ! wget -O /tmp/pdfsam.deb https://github.com/torakiki/pdfsam/releases/download/v5.2.3/pdfsam_5.2.3-1_amd64.deb; then
         print_error "Failed to download PDFsam. Exiting."
         exit 1
     fi
@@ -21,8 +21,7 @@ else
     apt_install /tmp/pdfsam.deb
 
     echo "Cleaning up..."
-    rm /tmp/pdfsam.deb
-    if [ $? -ne 0 ]; then
+    if ! rm /tmp/pdfsam.deb; then
         print_error "Failed to remove temporary files."
     else
         print_success "Removed temporary files."

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck disable=SC1091
 source "$SCRIPT_DIR/../common_functions.sh"
 
 
@@ -14,6 +15,7 @@ echo "Removing un-needed tools"
 TO_REMOVE_APP=("1password" "audacity" "ollama" "pinta" "signal" "spotify" "steam" "web" "rubymine")
 for app in "${TO_REMOVE_APP[@]}"; do
     echo "Uninstalling ${app}..."
+    # shellcheck disable=SC1090
     if ! source "$OMAKUB_DIR/uninstall/app-${app}.sh"; then
         echo "Failed to uninstall ${app}. It might not be installed."
     fi
@@ -55,7 +57,7 @@ else
 fi
 
 
-rm -rf $OMAKUB_DIR
+rm -rf "$OMAKUB_DIR"
 
 echo "Migration complete."
 

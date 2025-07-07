@@ -62,6 +62,7 @@ git -c advice.detachedHead=false checkout "tags/$LATEST_RELEASE"
 echo "Latest release checked out."
 
 echo "Installation starting..."
+# shellcheck source=/dev/null
 source ~/.local/share/astromakase/install.sh
 
 # Logout to pickup changes

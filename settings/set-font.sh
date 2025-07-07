@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck disable=SC1091
 source "$SCRIPT_DIR/../common_functions.sh"
 
 print_title "Installing Inter Font and Cascadia Code Nerd Font..."
@@ -9,7 +10,7 @@ print_title "Installing Inter Font and Cascadia Code Nerd Font..."
 mkdir -p ~/.local/share/fonts
 
 # Fetch the latest release of Inter Font
-cd /tmp
+(cd /tmp || exit
 inter_latest_release=$(curl -s https://api.github.com/repos/rsms/inter/releases/latest | grep "browser_download_url.*zip" | cut -d '"' -f 4)
 
 # Check if the Inter URL was fetched successfully
@@ -52,7 +53,7 @@ else
 fi
 
 # Clean up temporary files
-rm -rf Inter.zip InterFont CascadiaCode.zip CascadiaFont
+rm -rf Inter.zip InterFont CascadiaCode.zip CascadiaFont)
 
 # Refresh font cache
 fc-cache -fv
