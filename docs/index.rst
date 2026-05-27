@@ -40,6 +40,15 @@ Run the following script to install AstrOmakase on your Ubuntu 24.04 system:
 
    wget -qO- https://mug-n-ai.github.io/AstrOmakase/installer.sh | bash
 
+If you already use an LLM coding assistant, you can ask it to install AstrOmakase for you. Copy this prompt into your assistant from a terminal on the Ubuntu 24.04 machine you want to configure:
+
+.. code-block:: text
+
+   Install AstrOmakase on this Ubuntu 24.04 machine.
+   Use the official installer command: wget -qO- https://mug-n-ai.github.io/AstrOmakase/installer.sh | bash
+   Before running it, explain that the installer configures the desktop, terminal, coding tools, astronomy tools, and optional applications. During the optional application prompt, help me choose the apps I want, including OpenCode if I want the opencode/oh-my-openagent setup.
+   After installation, verify that the astromakase command is available and summarize any manual steps still needed, such as logging out for desktop settings to take effect.
+
 
 How to Use 
 --------------
