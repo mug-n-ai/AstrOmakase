@@ -36,6 +36,7 @@ OPTIONAL_APPS_MAP["superpaper"]="app-superpaper"
 OPTIONAL_APPS_MAP["Upscayl"]="app-upscayl"
 OPTIONAL_APPS_MAP["Discord"]="app-discord" # Added Discord as it was in OPTIONAL_SCRIPTS but not OPTIONAL_APPS
 OPTIONAL_APPS_MAP["Gemini CLI"]="app-gemini-cli"
+OPTIONAL_APPS_MAP["OpenCode"]="app-opencode"
 
 OPTIONAL_APP_NAMES=("Install all")
 for app_name in "${!OPTIONAL_APPS_MAP[@]}"; do

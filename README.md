@@ -84,6 +84,7 @@ Additionally, some tools not commonly used in the astronomy field have been excl
 - **Speedtest**: A tool for testing internet speed.
 - **Zoom**: A video conferencing tool for meetings and webinars.
 - **Gemini CLI**: A command-line interface for interacting with the Gemini API.
+- **OpenCode**: An AI coding agent installed with `oh-my-openagent` support, matching the local agent setup used on this workstation.
 - **Upscayl**: A tool for upscaling images using AI.
 
 #### Font Configuration

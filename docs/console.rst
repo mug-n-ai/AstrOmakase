@@ -99,3 +99,8 @@ This section introduces various console tools that enhance terminal-based workfl
 ++++++++++++++++++++++++++++
 
 `Gemini CLI` is a command-line interface for interacting with the Gemini API. It allows you to access Gemini's capabilities directly from your terminal, enabling tasks such as generating text, summarizing information, and more.
+
+**OpenCode** (optional)
+++++++++++++++++++++++++++++
+
+`OpenCode <https://opencode.ai/>`_ is an AI coding agent for the terminal. AstrOmakase installs it with the official OpenCode installer and adds `oh-my-openagent <https://github.com/code-yeongyu/oh-my-openagent>`_ so the same agent-oriented OpenCode workflow used on this workstation is available after setup.
